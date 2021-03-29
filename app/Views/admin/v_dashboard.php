@@ -1,5 +1,17 @@
 <?= $this->extend('admin/layout/v_template'); ?>
 
+<?= $this->section('css'); ?>
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="<?= base_url('admin_assets/plugins/daterangepicker/daterangepicker.css'); ?>">
+  <!-- summernote -->
+  <link rel="stylesheet" href="<?= base_url('admin_assets/plugins/summernote/summernote-bs4.min.css'); ?>">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="<?= base_url('admin_assets/plugins/jqvmap/jqvmap.min.css'); ?>">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="<?= base_url('admin_assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'); ?>">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="<?= base_url('admin_assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css'); ?>">
+<?= $this->endSection(); ?>
 <?= $this->section('content-header'); ?>
     <div class="col-sm-6">
         <h1 class="m-0">Dashboard</h1>
@@ -11,6 +23,7 @@
         </ol>
     </div><!-- /.col -->
 <?= $this->endSection(); ?>
+
 <?= $this->section('content'); ?>
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -592,4 +605,26 @@
 
 
   <?= $this->endSection(); ?>
+<?= $this->section('js'); ?>
+<!-- ChartJS -->
+<script src="<?= base_url('admin_assets/plugins/chart.js/Chart.min.js'); ?>"></script>
+<!-- Sparkline -->
+<script src="<?= base_url('admin_assets/plugins/sparklines/sparkline.js'); ?>"></script>
+<!-- JQVMap -->
+<script src="<?= base_url('admin_assets/plugins/jqvmap/jquery.vmap.min.js'); ?>"></script>
+<script src="<?= base_url('admin_assets/plugins/jqvmap/maps/jquery.vmap.usa.js'); ?>"></script>
+<!-- jQuery Knob Chart -->
+<script src="<?= base_url('admin_assets/plugins/jquery-knob/jquery.knob.min.js'); ?>"></script>
+<!-- daterangepicker -->
+<script src="<?= base_url('admin_assets/plugins/moment/moment.min.js'); ?>"></script>
+<script src="<?= base_url('admin_assets/plugins/daterangepicker/daterangepicker.js'); ?>"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="<?= base_url('admin_assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js'); ?>"></script>
+<!-- Summernote -->
+<script src="<?= base_url('admin_assets/plugins/summernote/summernote-bs4.min.js'); ?>"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?= base_url('admin_assets/dist/js/demo.js'); ?>"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="<?= base_url('admin_assets/dist/js/pages/dashboard.js'); ?>"></script>
+<?= $this->endSection(); ?>
   
