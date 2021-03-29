@@ -34,6 +34,9 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+// ADMIN ROUTE
+$routes->get('/admin/dashboard', 'Admin\DashboardController::dashboard');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
