@@ -34,14 +34,27 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-// Auth Route
-$routes->get('/admin/login', 'Admin\AuthController::loginPage',['as' => 'login.page']);
-$routes->post('/admin/login', 'Admin\AuthController::login',['as' => 'login.process']);
-// temporary logout before
-$routes->get('/admin/logout', 'Admin\AuthController::logout',['as' => 'logout.process']);
 
 // Admin Route
-$routes->get('/admin/dashboard', 'Admin\DashboardController::dashboard',['as' => 'admin.dashboard','filter' => 'auth']);
+$routes->group('admin', function($routes)
+{
+	// Auth Route
+	$routes->get('login', 'Admin\AuthController::loginPage',['as' => 'login.page']);
+	$routes->post('login', 'Admin\AuthController::login',['as' => 'login.process']);
+	// temporary logout before
+	$routes->get('logout', 'Admin\AuthController::logout',['as' => 'logout.process']);
+	$routes->get('dashboard', 'Admin\DashboardController::dashboard',['as' => 'admin.dashboard','filter' => 'auth']);
+	// Kategori Route
+	$routes->get('kategori', 'Admin\KategoriController::index', ['as' => 'kategori.index']);
+	$routes->post('kategori', 'Admin\KategoriController::store', ['as' => 'kategori.store']);
+	$routes->delete('kategori', 'Admin\KategoriController::delete', ['as' => 'kategori.delete']);
+	$routes->put('kategori', 'Admin\KategoriController::update', ['as' => 'kategori.update']);
+	$routes->get('kategori/create', 'Admin\KategoriController::create', ['as' => 'kategori.create']);
+	$routes->get('kategori/(:segment)', 'Admin\KategoriController::detail/$1', ['as' => 'kategori.detail']);
+	$routes->get('kategori/edit/(:segment)', 'Admin\KategoriController::edit/$1', ['as' => 'kategori.edit']);
+});
+
+
 
 /*
  * --------------------------------------------------------------------
