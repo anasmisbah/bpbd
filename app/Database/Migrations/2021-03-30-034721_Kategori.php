@@ -18,6 +18,11 @@ class Kategori extends Migration
 				'nama'       => [
 					'type'       => 'VARCHAR',
 					'constraint' => '255',
+					'unique'         => true,
+				],
+				'slug'       => [
+					'type'       => 'VARCHAR',
+					'constraint' => '255',
 				],
 				'created_at' =>[
 					'type'=>'DATETIME',

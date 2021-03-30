@@ -12,36 +12,43 @@ class KategoriSeeder extends Seeder
 		$data = [
 			[
 				'nama' => 'Pemerintahan',
+				'slug' =>'pemerintahan',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],	
 			[
 				'nama' => 'Umum',
+				'slug' =>'umum',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],	
 			[
 				'nama' => 'Sosial',
+				'slug' =>'sosial',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],	
 			[
 				'nama' => 'Pendidikan',
+				'slug' =>'pendidikan',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],
 			[
 				'nama' => 'Pelatihan',
+				'slug' =>'pelatihan',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],
 			[
 				'nama' => 'Lingkungan',
+				'slug' =>'lingkungan',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],
 			[
 				'nama' => 'Agama',
+				'slug' =>'agama',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],
@@ -52,21 +59,25 @@ class KategoriSeeder extends Seeder
 			],
 			[
 				'nama' => 'Politik',
+				'slug' =>'politik',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],
 			[
 				'nama' => 'Hukum',
+				'slug' =>'hukum',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],
 			[
-				'nama' => 'Seni Budaya & Hiburan',
+				'nama' => 'Seni Budaya',
+				'slug' =>'seni-budaya',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],	
 			[
 				'nama' => 'Hiburan',
+				'slug' =>'hiburan',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],
