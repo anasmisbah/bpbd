@@ -54,6 +54,7 @@ class KategoriSeeder extends Seeder
 			],
 			[
 				'nama' => 'Wisata',
+				'slug' =>'wisata',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],
