@@ -30,7 +30,7 @@ class AuthController extends BaseController
             if($verify_pass){
                 $ses_data = [
                     'id'       => $data['id'],
-                    'username'     => $data['username'],
+                    'nama'     => $data['nama'],
                     'email'    => $data['email'],
                     'logged_in'     => TRUE
                 ];

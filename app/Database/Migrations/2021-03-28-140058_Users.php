@@ -15,13 +15,14 @@ class Users extends Migration
 							'unsigned'       => true,
 							'auto_increment' => true,
 					],
-					'username'       => [
+					'nama'       => [
 							'type'       => 'VARCHAR',
 							'constraint' => '255',
 					],
 					'email' => [
 							'type' => 'VARCHAR',
 							'constraint' => '255',
+							'unique'         => true,
 					],
 					'password' => [
 							'type' => 'VARCHAR',
