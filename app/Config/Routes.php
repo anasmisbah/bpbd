@@ -52,6 +52,14 @@ $routes->group('admin', function($routes)
 	$routes->get('kategori/create', 'Admin\KategoriController::create', ['as' => 'kategori.create']);
 	$routes->get('kategori/(:segment)', 'Admin\KategoriController::detail/$1', ['as' => 'kategori.detail']);
 	$routes->get('kategori/edit/(:segment)', 'Admin\KategoriController::edit/$1', ['as' => 'kategori.edit']);
+	// Berita Route
+	$routes->get('berita', 'Admin\BeritaController::index', ['as' => 'berita.index']);
+	$routes->post('berita', 'Admin\BeritaController::store', ['as' => 'berita.store']);
+	$routes->delete('berita', 'Admin\BeritaController::delete', ['as' => 'berita.delete']);
+	$routes->post('berita/update', 'Admin\BeritaController::update', ['as' => 'berita.update']);
+	$routes->get('berita/create', 'Admin\BeritaController::create', ['as' => 'berita.create']);
+	$routes->get('berita/(:segment)', 'Admin\BeritaController::detail/$1', ['as' => 'berita.detail']);
+	$routes->get('berita/edit/(:segment)', 'Admin\BeritaController::edit/$1', ['as' => 'berita.edit']);
 });
 
 
