@@ -26,6 +26,7 @@
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form class="form-horizontal" action="<?= route_to('kategori.store'); ?>" method="POST">
+                <?= csrf_field(); ?>
                   <div class="card-body">
                     <div class="form-group row">
                         <label for="nama" class="col-sm-2 col-form-label">Nama</label>

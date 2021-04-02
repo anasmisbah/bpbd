@@ -29,7 +29,6 @@
                 <?= csrf_field(); ?>
                 <input type="hidden" name="id" value="<?= $kategori['id']; ?>">
                 <input type="hidden" name="slug" value="<?= $kategori['slug']; ?>">
-                <input type="hidden" name="_method" value="PUT">
                   <div class="card-body">
                     <div class="form-group row">
                         <label for="nama" class="col-sm-2 col-form-label">Nama</label>
