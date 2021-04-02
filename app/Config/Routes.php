@@ -43,23 +43,26 @@ $routes->group('admin', function($routes)
 	$routes->post('login', 'Admin\AuthController::login',['as' => 'login.process']);
 	// temporary logout before
 	$routes->get('logout', 'Admin\AuthController::logout',['as' => 'logout.process']);
-	$routes->get('dashboard', 'Admin\DashboardController::dashboard',['as' => 'admin.dashboard','filter' => 'auth']);
-	// Kategori Route
-	$routes->get('kategori', 'Admin\KategoriController::index', ['as' => 'kategori.index']);
-	$routes->post('kategori', 'Admin\KategoriController::store', ['as' => 'kategori.store']);
-	$routes->delete('kategori', 'Admin\KategoriController::delete', ['as' => 'kategori.delete']);
-	$routes->put('kategori', 'Admin\KategoriController::update', ['as' => 'kategori.update']);
-	$routes->get('kategori/create', 'Admin\KategoriController::create', ['as' => 'kategori.create']);
-	$routes->get('kategori/(:segment)', 'Admin\KategoriController::detail/$1', ['as' => 'kategori.detail']);
-	$routes->get('kategori/edit/(:segment)', 'Admin\KategoriController::edit/$1', ['as' => 'kategori.edit']);
-	// Berita Route
-	$routes->get('berita', 'Admin\BeritaController::index', ['as' => 'berita.index']);
-	$routes->post('berita', 'Admin\BeritaController::store', ['as' => 'berita.store']);
-	$routes->delete('berita', 'Admin\BeritaController::delete', ['as' => 'berita.delete']);
-	$routes->post('berita/update', 'Admin\BeritaController::update', ['as' => 'berita.update']);
-	$routes->get('berita/create', 'Admin\BeritaController::create', ['as' => 'berita.create']);
-	$routes->get('berita/(:segment)', 'Admin\BeritaController::detail/$1', ['as' => 'berita.detail']);
-	$routes->get('berita/edit/(:segment)', 'Admin\BeritaController::edit/$1', ['as' => 'berita.edit']);
+	$routes->group( '',['filter' => 'auth'], function($routes)
+	{		
+		$routes->get('dashboard', 'Admin\DashboardController::dashboard',['as' => 'admin.dashboard']);
+		// Kategori Route
+		$routes->get('kategori', 'Admin\KategoriController::index', ['as' => 'kategori.index']);
+		$routes->post('kategori', 'Admin\KategoriController::store', ['as' => 'kategori.store']);
+		$routes->delete('kategori', 'Admin\KategoriController::delete', ['as' => 'kategori.delete']);
+		$routes->put('kategori', 'Admin\KategoriController::update', ['as' => 'kategori.update']);
+		$routes->get('kategori/create', 'Admin\KategoriController::create', ['as' => 'kategori.create']);
+		$routes->get('kategori/(:segment)', 'Admin\KategoriController::detail/$1', ['as' => 'kategori.detail']);
+		$routes->get('kategori/edit/(:segment)', 'Admin\KategoriController::edit/$1', ['as' => 'kategori.edit']);
+		// Berita Route
+		$routes->get('berita', 'Admin\BeritaController::index', ['as' => 'berita.index']);
+		$routes->post('berita', 'Admin\BeritaController::store', ['as' => 'berita.store']);
+		$routes->delete('berita', 'Admin\BeritaController::delete', ['as' => 'berita.delete']);
+		$routes->post('berita/update', 'Admin\BeritaController::update', ['as' => 'berita.update']);
+		$routes->get('berita/create', 'Admin\BeritaController::create', ['as' => 'berita.create']);
+		$routes->get('berita/(:segment)', 'Admin\BeritaController::detail/$1', ['as' => 'berita.detail']);
+		$routes->get('berita/edit/(:segment)', 'Admin\BeritaController::edit/$1', ['as' => 'berita.edit']);
+	});
 });
 
 

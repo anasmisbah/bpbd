@@ -24,29 +24,27 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="<?= route_to('admin.dashboard'); ?>" class="nav-link">
+              <i class="nav-icon fas fa-home"></i>
               <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
+                Beranda 
               </p>
             </a>
           </li>
+          <li class="nav-header">Menu</li>
           <li class="nav-item">
             <a href="<?= route_to('kategori.index'); ?>" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-tags"></i>
               <p>
                 Kategori
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="<?= route_to('berita.index'); ?>" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-newspaper"></i>
               <p>
                 berita
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
