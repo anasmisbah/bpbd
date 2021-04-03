@@ -24,7 +24,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="<?= route_to('admin.dashboard'); ?>" class="nav-link">
+            <a href="<?= route_to('admin.dashboard'); ?>" class="nav-link" id="nav-dashboard">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Beranda 
@@ -33,7 +33,7 @@
           </li>
           <li class="nav-header">Menu</li>
           <li class="nav-item">
-            <a href="<?= route_to('kategori.index'); ?>" class="nav-link">
+            <a href="<?= route_to('kategori.index'); ?>" class="nav-link" id="nav-kategori">
               <i class="nav-icon fas fa-tags"></i>
               <p>
                 Kategori
@@ -41,7 +41,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?= route_to('berita.index'); ?>" class="nav-link">
+            <a href="<?= route_to('berita.index'); ?>" class="nav-link" id="nav-berita">
               <i class="nav-icon fas fa-newspaper"></i>
               <p>
                 berita
