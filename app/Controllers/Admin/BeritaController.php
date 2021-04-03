@@ -263,4 +263,31 @@ class BeritaController extends BaseController
 		}
 		return $dataKategori;
 	}
+
+	public function publish($id)
+	{
+		$berita = $this->beritaModel->find($id);
+		if (empty($berita)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException('berita '.$id.' tidak ditemukan');
+		}
+		$this->beritaModel->save([
+			'id'=>$berita['id'],
+			'status'=>0,
+			'published_at'=>new Time('now')
+		]);
+		return redirect()->route('berita.detail',[$berita['id']]);
+	}
+
+	public function draft($id)
+	{
+		$berita = $this->beritaModel->find($id);
+		if (empty($berita)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException('berita '.$id.' tidak ditemukan');
+		}
+		$this->beritaModel->save([
+			'id'=>$berita['id'],
+			'status'=>1,
+		]);
+		return redirect()->route('berita.detail',[$berita['id']]);
+	}
 }

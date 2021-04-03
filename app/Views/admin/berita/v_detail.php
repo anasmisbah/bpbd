@@ -23,11 +23,11 @@
           <ul class="nav nav-pills ml-auto">
             <?php if($berita['status'] == 0): ?>
               <li class="nav-item">
-                <a class="nav-link btn-secondary active mr-1" href="<?= route_to('berita.edit',$berita['id']); ?>">Draft&nbsp;&nbsp;<i class="fas fa-file-download"></i></a>
+                <a class="nav-link btn-secondary active mr-1" href="<?= route_to('berita.draft',$berita['id']); ?>">Draft&nbsp;&nbsp;<i class="fas fa-file-download"></i></a>
               </li>
             <?php elseif($berita['status'] == 1): ?>
               <li class="nav-item">
-                <a class="nav-link btn-success active mr-1" href="<?= route_to('berita.edit',$berita['id']); ?>">Terbit&nbsp;&nbsp;<i class="fas fa-paper-plane"></i></a>
+                <a class="nav-link btn-success active mr-1" href="<?= route_to('berita.publish',$berita['id']); ?>">Terbit&nbsp;&nbsp;<i class="fas fa-paper-plane"></i></a>
               </li>
             <?php endif; ?>
             <li class="nav-item">
@@ -102,12 +102,14 @@
 <?= $this->section('js'); ?>
 <script>
 $(function () {
-  let publishSate = '<?= $berita['published_at']; ?>'
+  let publishDate = '<?= $berita['published_at']; ?>'
   let createdAtDate = '<?= $berita['created_at']; ?>'
   let updatedAtDate = '<?= $berita['updated_at']; ?>'
   $('#keterangan-tanggal').html(`<strong>Dibuat pada: </strong> ${moment(createdAtDate).format('dddd, d MMMM YYYY H:mm')} WITA
 / <strong>Diubah pada: </strong>${moment(updatedAtDate).format('dddd, d MMMM YYYY H:mm')} WITA`)
-  $('#tgl-publish').html(moment(publishSate).format('dddd, d MMMM YYYY H:mm')+' WITA')
+  if (publishDate) {
+    $('#tgl-publish').html(moment(publishDate).format('dddd, d MMMM YYYY H:mm')+' WITA')
+  }
 })
 </script>
 <?= $this->endSection(); ?>

@@ -60,6 +60,8 @@ $routes->group('admin', function($routes)
 		$routes->delete('berita', 'Admin\BeritaController::delete', ['as' => 'berita.delete']);
 		$routes->post('berita/update', 'Admin\BeritaController::update', ['as' => 'berita.update']);
 		$routes->get('berita/create', 'Admin\BeritaController::create', ['as' => 'berita.create']);
+		$routes->get('berita/publish/(:segment)', 'Admin\BeritaController::publish/$1', ['as' => 'berita.publish']);
+		$routes->get('berita/draft/(:segment)', 'Admin\BeritaController::draft/$1', ['as' => 'berita.draft']);
 		$routes->get('berita/(:segment)', 'Admin\BeritaController::detail/$1', ['as' => 'berita.detail']);
 		$routes->get('berita/edit/(:segment)', 'Admin\BeritaController::edit/$1', ['as' => 'berita.edit']);
 	});
