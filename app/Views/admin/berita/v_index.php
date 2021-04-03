@@ -78,9 +78,9 @@
     </div>
     <!-- /.card -->
     <form class="d-inline" id="form-delete" style="display: none" action="" method="POST">
-    <?= csrf_field(); ?>
-    <input type="hidden" name="id" id="item_id">
-    <input type="hidden" name="_method" value="DELETE">
+        <?= csrf_field(); ?>
+        <input type="hidden" name="id" id="item_id">
+        <input type="hidden" name="_method" value="DELETE">
     </form>
 <?= $this->endSection(); ?>
 

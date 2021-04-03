@@ -75,7 +75,7 @@
               <?php if($berita['status'] == 0): ?>  
                 <tr>
                   <td style="width:10%">Tanggal Terbit</td>
-                  <td><?= $berita['published_at']; ?></td>
+                  <td id="tgl-publish"></td>
                 </tr>
               <?php endif; ?>
               <tr>
@@ -90,8 +90,8 @@
           </table>
         </div>
         <div class="card-footer text-right">
-          <span style="font-size: 14px">
-            <strong>Dibuat pada: </strong>
+          <span style="font-size: 14px" id="keterangan-tanggal">
+            
           </span>
         </div>
     </div>
@@ -99,7 +99,16 @@
 </div>
     <!-- /.card -->
 <?= $this->endSection(); ?>
-
 <?= $this->section('js'); ?>
+<script>
+$(function () {
+  let publishSate = '<?= $berita['published_at']; ?>'
+  let createdAtDate = '<?= $berita['created_at']; ?>'
+  let updatedAtDate = '<?= $berita['updated_at']; ?>'
+  $('#keterangan-tanggal').html(`<strong>Dibuat pada: </strong> ${moment(createdAtDate).format('dddd, d MMMM YYYY H:mm')} WITA
+/ <strong>Diubah pada: </strong>${moment(updatedAtDate).format('dddd, d MMMM YYYY H:mm')} WITA`)
+  $('#tgl-publish').html(moment(publishSate).format('dddd, d MMMM YYYY H:mm')+' WITA')
+})
+</script>
 <?= $this->endSection(); ?>
   
