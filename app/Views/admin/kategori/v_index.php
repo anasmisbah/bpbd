@@ -54,16 +54,9 @@
                     <a href="<?= route_to('kategori.edit',$item['id']); ?>" class="btn btn-warning btn-sm">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <form class="d-inline"
-                        onsubmit="return confirm('Apakah anda ingin menghapus admins secara permanen?')"
-                        action="<?= route_to('kategori.delete'); ?>"
-                        method="POST">
-                        <?= csrf_field(); ?>
-                        <input type="hidden" name="id" value="<?= $item['id']; ?>">
-                        <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash"></i></button>
-                    </form>
+                    <a href="javascript:;" data-action="<?= route_to('kategori.delete'); ?>" data-item_id="<?= $item['id']; ?>" class="btn btn-sm btn-danger btn-delete">
+                        <i class="fas fa-trash"></i>
+                    </a>
                     <a href="<?= route_to('kategori.detail',$item['id']); ?>" class="btn btn-info btn-sm">
                         <i class="fas fa-eye"></i>
                     </a>
@@ -76,6 +69,11 @@
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
+    <form class="d-inline" id="form-delete" style="display: none" action="" method="POST">
+        <?= csrf_field(); ?>
+        <input type="hidden" name="id" id="item_id">
+        <input type="hidden" name="_method" value="DELETE">
+    </form>
 <?= $this->endSection(); ?>
 
 <?= $this->section('js'); ?>
@@ -129,6 +127,29 @@ $(function () {
             title: error
         })
     }
+    $(document).on('click','.btn-delete',function(e){
+        e.preventDefault()
+        let action = $(this).data('action')
+        let itemId = $(this).data('item_id')
+
+        let form = $('#form-delete')
+        let inputItemId = $('#item_id')
+        form.attr('action',action)
+        inputItemId.val(itemId)
+
+        Swal.fire({
+            title: "Apakah anda yakin ingin menghapus?",
+            text: "Anda tidak dapat mengembalikan data setelah dihapus",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Iya, Hapus",
+            cancelButtonText : "Tidak"
+        }).then(function(result) {
+            if (result.value) {
+                form.submit()
+            }
+        });
+    });
 });
 </script>
 <?= $this->endSection(); ?>
