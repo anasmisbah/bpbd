@@ -1,6 +1,7 @@
 <?= $this->extend('admin/layout/v_template'); ?>
 
 <?= $this->section('css'); ?>
+<link href="<?= base_url('admin_assets/dist/css/magnific-popup.css'); ?>" rel="stylesheet" type="text/css" />
 <?= $this->endSection(); ?>
 <?= $this->section('content-header'); ?>
     <div class="col-sm-6">
@@ -80,7 +81,7 @@
               <?php endif; ?>
               <tr>
                 <td style="width:10%">Sampul</td>
-                <td><img src="<?= base_url('uploads/'.$berita['sampul']); ?>" alt="" class="img-thumbnail" width="100px"></td>
+                <td><a href="<?= base_url('uploads/'.$berita['sampul']); ?>" class="foto"><img src="<?= base_url('uploads/'.$berita['sampul']); ?>" alt="" class="img-thumbnail" width="100px"></a></td>
               </tr>
               <tr>
                 <td style="width:10%">Deskripsi</td>
@@ -100,6 +101,7 @@
     <!-- /.card -->
 <?= $this->endSection(); ?>
 <?= $this->section('js'); ?>
+<script src="<?= base_url('admin_assets/dist/js/jquery.magnific-popup.min.js'); ?>"></script>
 <script>
 $(function () {
   let publishDate = '<?= $berita['published_at']; ?>'
@@ -110,6 +112,9 @@ $(function () {
   if (publishDate) {
     $('#tgl-publish').html(moment(publishDate).format('dddd, d MMMM YYYY H:mm')+' WITA')
   }
+  $('.foto').magnificPopup({
+      type:'image'
+  })
 })
 </script>
 <?= $this->endSection(); ?>
