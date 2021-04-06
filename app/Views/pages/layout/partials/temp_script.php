@@ -21,10 +21,12 @@
  
 	 <!-- Template custom -->
 	 <script type="text/javascript" src="<?= base_url('pages_assets/js/custom.js'); ?>"></script>
-
+	 <script src="<?= base_url('admin_assets/plugins/moment/moment-with-locales.min.js'); ?>"></script>
+	 <?= $this->renderSection('js'); ?>
 	</div><!-- Body inner end -->
 <!-- Code injected by live-server -->
 <script type="text/javascript">
+moment.locale('id')
 	// <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
 		(function () {

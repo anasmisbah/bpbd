@@ -34,7 +34,7 @@
                                     </ul>
                                 </li>
 
-                                <li><a href="https://bpbd.kaltimprov.go.id/blog">Berita</a></li>
+                                <li><a href="<?= route_to('pages.list.berita'); ?>">Berita</a></li>
 
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Informasi Publik <i
