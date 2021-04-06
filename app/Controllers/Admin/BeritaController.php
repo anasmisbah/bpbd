@@ -82,7 +82,7 @@ class BeritaController extends BaseController
 				],
 			],
 			'sampul'=>[
-				'rules'=> 'max_size[sampul,1024]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
+				'rules'=> 'max_size[sampul,5000]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
 				'errors'=>[
 					'max_size' =>'Ukuran gambar terlalu besar',
 					'is_image'=> 'Yang anda pilih bukan gambar',
@@ -183,7 +183,7 @@ class BeritaController extends BaseController
 				],
 			],
 			'sampul'=>[
-				'rules'=> 'max_size[sampul,1024]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
+				'rules'=> 'max_size[sampul,5000]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
 				'errors'=>[
 					'max_size' =>'Ukuran gambar terlalu besar',
 					'is_image'=> 'Yang anda pilih bukan gambar',
@@ -205,7 +205,7 @@ class BeritaController extends BaseController
 			// pindahkan file ke folder img
 			$fileSampul->move('uploads/',$namaSampul);
 			// Hapus Gambar
-			if ($beritaLama['sampul'] != 'default.jpg') {
+			if ($beritaLama['sampul'] != 'sampul/default.jpg') {
 				unlink('uploads/'.$beritaLama['sampul']);
 			}
 			
@@ -243,7 +243,7 @@ class BeritaController extends BaseController
 			return redirect()->route('berita.index');
 		}
 		// cek gambar default
-		if ($berita['sampul'] != 'default.jpg') {
+		if ($berita['sampul'] != 'sampul/default.jpg') {
 			// Hapus Gambar
 			unlink('uploads/'.$berita['sampul']);
 		}
