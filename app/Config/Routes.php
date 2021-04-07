@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/berita','BeritaController::index', ['as' => 'pages.list.berita']);
+$routes->get('/berita/(:segment)','BeritaController::detail/$1', ['as' => 'pages.detail.berita']);
 
 // Admin Route
 $routes->group('admin', function($routes)

@@ -85,7 +85,7 @@
 										</span>
 									</div>
 									<h2 class="entry-title">
-										<a href="news-single.html"><?= $br['judul']; ?></a>
+										<a href="<?= route_to('pages.detail.berita',$br['slug']); ?>"><?= $br['judul']; ?></a>
 									</h2>
 								</div><!-- header end -->
 
@@ -94,7 +94,7 @@
 								</div>
 
 								<div class="post-footer">
-									<a href="news-single.html" class="btn btn-primary">Continue Reading</a>
+									<a href="<?= route_to('pages.detail.berita',$br['slug']); ?>" class="btn btn-primary">Continue Reading</a>
 								</div>
 
 							</div><!-- post-body end -->

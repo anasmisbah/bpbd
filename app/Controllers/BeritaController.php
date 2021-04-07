@@ -31,4 +31,18 @@ class BeritaController extends BaseController
 		];
 		return view('pages/berita/v_list_berita',$data);
 	}
+
+	public function detail($slug)
+	{
+		$beritaTerbaru = $this->beritaModel->getLatestBerita();
+		$berita = $this->beritaModel->getDataBerita($slug);
+		$berita['kategori'] = $this->kategoriBeritaModel->getKategoriBerita($berita['id']);
+		$kategori = $this->kategoriModel->findAll();
+		$data = [
+			'berita' =>$berita,
+			'kategori' =>$kategori,
+			'beritaTerbaru' =>$beritaTerbaru,
+		];
+		return view('pages/berita/v_detail_berita',$data);
+	}
 }
