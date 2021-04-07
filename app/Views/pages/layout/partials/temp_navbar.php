@@ -75,7 +75,7 @@
                             <li><a target='_BLANK' href='http://tv.bnpb.go.id/'>BNPB TV </a></li>
                           </ul>
                       </li>
-                      <li class="nav-item active"><a class="nav-link" href="<?= route_to('pages.list.berita'); ?>">Berita</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?= route_to('pages.list.berita'); ?>">Berita</a></li>
                       <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Informasi Publik <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
@@ -93,7 +93,7 @@
                             <li><a href="#">Sistem Penanggulangan Bencana</a></li>
                           </ul>
                       </li>
-                      <li class="nav-item active"><a class="nav-link" href="#">Kontak</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
                     </ul>
                 </div>
               </nav>

@@ -20,7 +20,7 @@ class BeritaModel extends Model
 
 	public function getLatestBerita()
 	{
-		return $this->select('berita.id,berita.slug,berita.judul,berita.sampul,berita.published_at')->where('status',0)->orderBy('published_at','DESC')->findAll(3);
+		return $this->select('berita.id,berita.slug,berita.judul,berita.sampul,berita.published_at,berita.deskripsi')->where('status',0)->orderBy('published_at','DESC')->findAll(3);
 	}
 
 	public function getDataBerita($slug)

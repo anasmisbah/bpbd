@@ -34,6 +34,9 @@
     .logo img {
         height: 80px;
     }
+    .footer-logo {
+        max-height: 75px;
+    }
   </style>
   <?= $this->renderSection('css'); ?>
 </head>
