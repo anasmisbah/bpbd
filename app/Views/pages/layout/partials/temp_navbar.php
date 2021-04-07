@@ -4,7 +4,7 @@
           <div class="row align-items-center">
             <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
                 <a class="d-block" href="index.html">
-                  <img loading="lazy" src="<?= base_url('pages_assets/images/logo.png'); ?>" alt="Constra">
+                  <img loading="lazy" src="<?= base_url('pages_assets/images/logo_app_bg.png'); ?>" width="200" alt="Constra">
                 </a>
             </div><!-- logo end -->
   
@@ -13,16 +13,16 @@
                   <li>
                     <div class="info-box">
                       <div class="info-box-content">
-                          <p class="info-box-title">Call Us</p>
-                          <p class="info-box-subtitle">(+9) 847-291-4353</p>
+                          <p class="info-box-title">No.Telepon</p>
+                          <p class="info-box-subtitle">(0541) 741040</p>
                       </div>
                     </div>
                   </li>
                   <li>
                     <div class="info-box">
                       <div class="info-box-content">
-                          <p class="info-box-title">Email Us</p>
-                          <p class="info-box-subtitle">office@Constra.com</p>
+                          <p class="info-box-title">Alamat email</p>
+                          <p class="info-box-subtitle">bpbd@kaltimprov.go.id</p>
                       </div>
                     </div>
                   </li>
@@ -35,7 +35,7 @@
                     </div>
                   </li>
                   <li class="header-get-a-quote">
-                    <a class="btn btn-primary" href="contact.html">Get A Quote</a>
+                    <a class="btn btn-primary" href="contact.html">Tanggap Tangkas Tangguh</a>
                   </li>
                 </ul><!-- Ul end -->
             </div><!-- header right end -->
@@ -56,67 +56,44 @@
                 
                 <div id="navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav mr-auto">
-                      <li class="nav-item dropdown active">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Home <i class="fa fa-angle-down"></i></a>
-                          <ul class="dropdown-menu" role="menu">
-                            <li class="active"><a href="index.html">Home One</a></li>
-                            <li><a href="index-2.html">Home Two</a></li>
-                          </ul>
-                      </li>
-
+                      <li class="nav-item active"><a class="nav-link" href="<?= route_to('pages.beranda'); ?>">Beranda</a></li>
                       <li class="nav-item dropdown">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profil <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="team.html">Our People</a></li>
-                            <li><a href="testimonials.html">Testimonials</a></li>
-                            <li><a href="faq.html">Faq</a></li>
-                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="#">Sejarah BPBD Kaltim</a></li>
+                            <li><a href="#">Visi & Misi BPBD Kaltim</a></li>
+                            <li><a href="#">Tugas & Fungsi</a></li>
+                            <li><a href="#">Struktur Organisasi</a></li>
                           </ul>
                       </li>
-              
                       <li class="nav-item dropdown">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Projects <i class="fa fa-angle-down"></i></a>
+                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Layanan <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="projects.html">Projects All</a></li>
-                            <li><a href="projects-single.html">Projects Single</a></li>
+                            <li><a target='_BLANK' href='http://lpse.bnpb.go.id/eproc4'>LPSE</a></li>
+                            <li><a target='_BLANK' href='https://lapor.go.id/'>Lapor! </a></li>
+                            <li><a target='_BLANK' href='http://dibi.bnpb.go.id/'>DIBI BNPB </a></li>
+                            <li><a target='_BLANK' href='http://tv.bnpb.go.id/'>BNPB TV </a></li>
                           </ul>
                       </li>
-              
+                      <li class="nav-item active"><a class="nav-link" href="<?= route_to('pages.list.berita'); ?>">Berita</a></li>
                       <li class="nav-item dropdown">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services <i class="fa fa-angle-down"></i></a>
+                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Informasi Publik <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="services.html">Services All</a></li>
-                            <li><a href="service-single.html">Services Single</a></li>
+                            <li><a href="#">Publikasi</a></li>
+                            <li><a href="#">Kerjasama</a></li>
+                            <li><a href="#">Buku</a></li>
+                            <li><a href="#">Produk Hukum</a></li>
                           </ul>
                       </li>
-              
                       <li class="nav-item dropdown">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Features <i class="fa fa-angle-down"></i></a>
+                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pengetahuan Bencana <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="typography.html">Typography</a></li>
-                            <li><a href="404.html">404</a></li>
-                            <li class="dropdown-submenu">
-                                <a href="#!" class="dropdown-toggle" data-toggle="dropdown">Parent Menu</a>
-                                <ul class="dropdown-menu">
-                                  <li><a href="#!">Child Menu 1</a></li>
-                                  <li><a href="#!">Child Menu 2</a></li>
-                                  <li><a href="#!">Child Menu 3</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="#">Definisi Bencana</a></li>
+                            <li><a href="#">Potensi Ancaman Bencana</a></li>
+                            <li><a href="#">Sistem Penanggulangan Bencana</a></li>
                           </ul>
                       </li>
-              
-                      <li class="nav-item dropdown">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">News <i class="fa fa-angle-down"></i></a>
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="news-left-sidebar.html">News Left Sidebar</a></li>
-                            <li><a href="news-right-sidebar.html">News Right Sidebar</a></li>
-                            <li><a href="news-single.html">News Single</a></li>
-                          </ul>
-                      </li>
-              
-                      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                      <li class="nav-item active"><a class="nav-link" href="#">Kontak</a></li>
                     </ul>
                 </div>
               </nav>
@@ -131,7 +108,7 @@
 
         <div class="search-block" style="display: none;">
           <label for="search-field" class="w-100 mb-0">
-            <input type="text" class="form-control" id="search-field" placeholder="Type what you want and enter">
+            <input type="text" class="form-control" id="search-field" placeholder="Cari berita dan informasi seputar BPBP KALTIM">
           </label>
           <span class="search-close">&times;</span>
         </div><!-- Site search end -->

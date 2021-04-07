@@ -30,5 +30,10 @@
   <link rel="stylesheet" href="<?= base_url('pages_assets/plugins/colorbox/colorbox.css'); ?>">
   <!-- Template styles-->
   <link rel="stylesheet" href="<?= base_url('pages_assets/css/style.css'); ?>">
+  <style>
+    .logo img {
+        height: 80px;
+    }
+  </style>
   <?= $this->renderSection('css'); ?>
 </head>
