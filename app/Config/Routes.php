@@ -43,7 +43,7 @@ $routes->group('admin', function($routes)
 	$routes->get('login', 'Admin\AuthController::loginPage',['as' => 'login.page']);
 	$routes->post('login', 'Admin\AuthController::login',['as' => 'login.process']);
 	// temporary logout before
-	$routes->get('logout', 'Admin\AuthController::logout',['as' => 'logout.process']);
+	$routes->post('logout', 'Admin\AuthController::logout',['as' => 'logout.process']);
 	$routes->group( '',['filter' => 'auth'], function($routes)
 	{		
 		$routes->get('dashboard', 'Admin\DashboardController::dashboard',['as' => 'admin.dashboard']);
