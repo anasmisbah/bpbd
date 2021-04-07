@@ -21,6 +21,7 @@
                               <i class="fa fa-folder-open"></i><a href="#"> Berita</a>
                            </span>
                            <span class="post-meta-date" id="tgl-publish"><i class="fa fa-calendar"></i></span>
+                           <span class="post-comment"><i class="fa fa-eye"></i><a href="#"> <?= $berita['dilihat']; ?></a></span>
                         </div>
                         <h2 class="entry-title">
                            <a href="#"><?= $berita['judul']; ?></a>

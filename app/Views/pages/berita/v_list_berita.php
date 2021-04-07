@@ -6,11 +6,10 @@
             <div class="row">
                <div class="col-xs-12">
                   <div class="banner-heading">
-                     <h1 class="banner-title">News</h1>
+                     <h1 class="banner-title">Berita</h1>
                      <ol class="breadcrumb">
-                        <li>Home</li>
-                        <li>News</li>
-                        <li><a href="#">News Left Sidebar</a></li>
+                        <li>Beranda</li>
+                        <li>Berita</li>
                      </ol>
                   </div>
                </div><!-- Col end -->
@@ -83,6 +82,7 @@
 										<span class="post-meta-date tgl-publish" data-date="<?= $br['published_at']; ?>">
 											<i class="fa fa-calendar"></i>
 										</span>
+										<span class="post-comment"><i class="fa fa-eye"></i><a href="#"> <?= $br['dilihat']; ?></a></span>
 									</div>
 									<h2 class="entry-title">
 										<a href="<?= route_to('pages.detail.berita',$br['slug']); ?>"><?= $br['judul']; ?></a>

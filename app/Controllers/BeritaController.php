@@ -43,6 +43,10 @@ class BeritaController extends BaseController
 			'kategori' =>$kategori,
 			'beritaTerbaru' =>$beritaTerbaru,
 		];
+		$this->beritaModel->save([
+			'id'=>$berita['id'],
+			'dilihat'=>$berita['dilihat']+1
+		]);
 		return view('pages/berita/v_detail_berita',$data);
 	}
 }
