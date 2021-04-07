@@ -12,7 +12,7 @@
 
                         <div class="collapse navbar-collapse navbar-responsive-collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="https://bpbd.kaltimprov.go.id/">Beranda</a></li>
+                                <li><a href="<?= route_to('pages.beranda'); ?>">Beranda</a></li>
 
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profil <i

@@ -1,91 +1,105 @@
 <?= $this->extend('pages/layout/v_template'); ?>
 
+
+<?= $this->section('css'); ?>
+<style>
+	.call-to-action-box .action-style-box{
+		background: #252525;
+	}
+</style>
+<?= $this->endSection(); ?>
 <?= $this->section('content'); ?>
 <!-- Carousel -->
 <div id="main-slide" class="carousel slide" data-ride="carousel">
 
-<!-- Indicators -->
-<ol class="carousel-indicators visible-lg visible-md">
-	<li data-target="#main-slide" data-slide-to="0" class="active"></li>
-	<li data-target="#main-slide" data-slide-to="1"></li>
-	<li data-target="#main-slide" data-slide-to="2"></li>
-</ol>
-<!--/ Indicators end-->
+	<!-- Indicators -->
+	<ol class="carousel-indicators visible-lg visible-md">
+		<li data-target="#main-slide" data-slide-to="0" class="active"></li>
+		<li data-target="#main-slide" data-slide-to="1"></li>
+		<li data-target="#main-slide" data-slide-to="2"></li>
+	</ol>
+	<!--/ Indicators end-->
 
-<!-- Carousel inner -->
-<div class="carousel-inner">
-
-	<div class="item active" style="background-image:url(pages_assets/images/slider-main/bg1.jpg)">
-		<div class="slider-content">
-			<div class="col-md-12 text-center">
-				<h2 class="slide-title animated4">17 Years of excellence in</h2>
-				<h3 class="slide-sub-title animated5">Construction Industry</h3>
-				<p>
-					<a href="services.html" class="slider btn btn-primary">Our Services</a>
-					<a href="contact.html" class="slider btn btn-primary border">Contact Now</a>
-				</p>
+	<!-- Carousel inner -->
+	<div class="carousel-inner">
+		<?php $i = 0; ?>
+		<?php foreach($beritaTerbaru as $bt): ?>	
+			<div class="item <?= $i++ === 0? 'active': ''; ?>" style="background-image:url(uploads/<?= $bt['sampul']; ?>)" >
+				<div class="slider-content text-left">
+					<div class="col-md-12">
+						<h2 class="slide-title-box animated2">Berita</h2>
+						<h3 class="slide-title animated3"><?= implode(' ', array_slice(explode(' ', $bt['judul']), 0, 10)).'...'; ?></h3>
+						<p class="animated3">
+							<a href="services.html" class="slider btn btn-primary border">Baca berita</a>
+						</p>
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>
-	<!--/ Carousel item 1 end -->
+			<!--/ Carousel item 2 end -->
+		<?php endforeach; ?>
 
-	<div class="item" style="background-image:url(pages_assets/images/slider-main/bg2.jpg)">
-		<div class="slider-content text-left">
-			<div class="col-md-12">
-				<h2 class="slide-title-box animated2">World Class Service</h2>
-				<h3 class="slide-title animated3">When Service Matters</h3>
-				<h3 class="slide-sub-title animated3">Your Choice is Simple</h3>
-				<p class="animated3">
-					<a href="services.html" class="slider btn btn-primary border">Our Services</a>
-				</p>
-			</div>
-		</div>
-	</div>
-	<!--/ Carousel item 2 end -->
+	</div><!-- Carousel inner end-->
 
-	<div class="item" style="background-image:url(pages_assets/images/slider-main/bg3.jpg)">
-		<div class="slider-content text-right">
-			<div class="col-md-12">
-				<h2 class="slide-title animated6">Meet Our Engineers</h2>
-				<h3 class="slide-sub-title animated7">We believe sustainability</h3>
-				<p class="slider-description lead animated7">We will deal with your failure that determines how you
-					achieve success.</p>
-				<p>
-					<a href="contact.html" class="slider btn btn-primary">Get Free Quote</a>
-					<a href="about.html" class="slider btn btn-primary border">Learn More</a>
-				</p>
-			</div>
-		</div>
-	</div>
-	<!--/ Carousel item 3 end -->
-
-</div><!-- Carousel inner end-->
-
-<!-- Controllers -->
-<a class="left carousel-control" href="#main-slide" data-slide="prev">
-	<span><i class="fa fa-angle-left"></i></span>
-</a>
-<a class="right carousel-control" href="#main-slide" data-slide="next">
-	<span><i class="fa fa-angle-right"></i></span>
-</a>
+	<!-- Controllers -->
+	<a class="left carousel-control" href="#main-slide" data-slide="prev">
+		<span><i class="fa fa-angle-left"></i></span>
+	</a>
+	<a class="right carousel-control" href="#main-slide" data-slide="next">
+		<span><i class="fa fa-angle-right"></i></span>
+	</a>
 </div>
 <!--/ Carousel end -->
 
 <section class="call-to-action-box no-padding">
 <div class="container">
 	<div class="action-style-box">
-		<div class="row">
-			<div class="col-md-10">
-				<div class="call-to-action-text">
-					<h3 class="action-title">We understand your needs on construction</h3>
+	<div class="row text-center">
+		<h2 class="action-title">Kasus Coronavirus di Kalimantan Timur</h2>
+	</div>
+	<div class="row">
+		<div class="facts-wrapper">
+			<div class="col-sm-3 ts-facts">
+				<div class="ts-facts-img">
+					<img src="<?= base_url('pages_assets/images/icon-image/fact1.png'); ?>" alt="" />
+				</div>
+				<div class="ts-facts-content">
+					<h2 class="ts-facts-num"><span class="counterUp" data-count="1789">0</span></h2>
+					<h3 class="ts-facts-title">Total Projects</h3>
 				</div>
 			</div><!-- Col end -->
-			<div class="col-md-2">
-				<div class="call-to-action-btn">
-					<a class="btn btn-dark" href="#">Request Quote</a>
+
+			<div class="col-sm-3 ts-facts">
+				<div class="ts-facts-img">
+					<img src="<?= base_url('pages_assets/images/icon-image/fact2.png'); ?>" alt="" />
 				</div>
-			</div><!-- col end -->
-		</div><!-- row end -->
+				<div class="ts-facts-content">
+					<h2 class="ts-facts-num"><span class="counterUp" data-count="647">0</span></h2>
+					<h3 class="ts-facts-title">Staff Members</h3>
+				</div>
+			</div><!-- Col end -->
+
+			<div class="col-sm-3 ts-facts">
+				<div class="ts-facts-img">
+					<img src="<?= base_url('pages_assets/images/icon-image/fact3.png'); ?>" alt="" />
+				</div>
+				<div class="ts-facts-content">
+					<h2 class="ts-facts-num"><span class="counterUp" data-count="4000">0</span></h2>
+					<h3 class="ts-facts-title">Hours of Work</h3>
+				</div>
+			</div><!-- Col end -->
+
+			<div class="col-sm-3 ts-facts">
+				<div class="ts-facts-img">
+					<img src="<?= base_url('pages_assets/images/icon-image/fact4.png'); ?>" alt="" />
+				</div>
+				<div class="ts-facts-content">
+					<h2 class="ts-facts-num"><span class="counterUp" data-count="44">0</span></h2>
+					<h3 class="ts-facts-title">Countries Experience</h3>
+				</div>
+			</div><!-- Col end -->
+
+		</div> <!-- Facts end -->
+	</div>
 	</div><!-- Action style box -->
 </div><!-- Container end -->
 </section><!-- Action end -->
