@@ -100,11 +100,7 @@
                           <div class="custom-control custom-radio">
                             <input class="custom-control-input" type="radio" id="draf"  name="status" value="1">
                             <label for="draf" class="custom-control-label">Draf</label>
-                        </div>                          
-                          <span class="invalid-feedback" role="alert">
-                              <strong><?= $validation->getError('deskripsi'); ?></strong>
-                          </span>
-                          
+                        </div>     
                         </div>
                       </div>
                   </div>

@@ -65,6 +65,16 @@ $routes->group('admin', function($routes)
 		$routes->get('berita/draft/(:segment)', 'Admin\BeritaController::draft/$1', ['as' => 'berita.draft']);
 		$routes->get('berita/(:segment)', 'Admin\BeritaController::detail/$1', ['as' => 'berita.detail']);
 		$routes->get('berita/edit/(:segment)', 'Admin\BeritaController::edit/$1', ['as' => 'berita.edit']);
+		// Video Route
+		$routes->get('video', 'Admin\VideoController::index', ['as' => 'video.index']);
+		$routes->post('video', 'Admin\VideoController::store', ['as' => 'video.store']);
+		$routes->delete('video', 'Admin\VideoController::delete', ['as' => 'video.delete']);
+		$routes->post('video/update', 'Admin\VideoController::update', ['as' => 'video.update']);
+		$routes->get('video/create', 'Admin\VideoController::create', ['as' => 'video.create']);
+		$routes->get('video/publish/(:segment)', 'Admin\VideoController::publish/$1', ['as' => 'video.publish']);
+		$routes->get('video/draft/(:segment)', 'Admin\VideoController::draft/$1', ['as' => 'video.draft']);
+		$routes->get('video/(:segment)', 'Admin\VideoController::detail/$1', ['as' => 'video.detail']);
+		$routes->get('video/edit/(:segment)', 'Admin\VideoController::edit/$1', ['as' => 'video.edit']);
 	});
 });
 

@@ -44,7 +44,15 @@
             <a href="<?= route_to('berita.index'); ?>" class="nav-link" id="nav-berita">
               <i class="nav-icon fas fa-newspaper"></i>
               <p>
-                berita
+                Berita
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= route_to('video.index'); ?>" class="nav-link" id="nav-video">
+              <i class="nav-icon fas fa-video"></i>
+              <p>
+                Video
               </p>
             </a>
           </li>
