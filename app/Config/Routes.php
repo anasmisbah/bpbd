@@ -35,6 +35,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'HomeController::index', ['as' => 'pages.beranda']);
 $routes->get('/berita','BeritaController::index', ['as' => 'pages.list.berita']);
 $routes->get('/berita/(:segment)','BeritaController::detail/$1', ['as' => 'pages.detail.berita']);
+$routes->get('/video/(:segment)','VideoController::detail/$1', ['as' => 'pages.detail.video']);
 
 // Admin Route
 $routes->group('admin', function($routes)

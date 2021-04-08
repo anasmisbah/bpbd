@@ -13,6 +13,13 @@
   .card-title a:hover{
     color: #ffb600;
   }
+  .ts-service-info {
+    margin-left: 0px;
+  }
+  hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 </style>
 <?= $this->endSection(); ?>
 <?= $this->section('content'); ?>
@@ -250,10 +257,28 @@
       </div> <!--/  end col berita -->
       <div class="col-lg-4">
         <div class="sidebar sidebar-right">
-        <div class="widget">
-            <h3 class="widget-title">Prakiraan cuaca</h3>
-            <a class="weatherwidget-io" href="https://forecast7.com/en/0d54116d42/east-kalimantan/" data-label_1="KALIMANTAN TIMUR" data-label_2="WEATHER" data-theme="pure" >CUACA KALIMANTAN TIMUR</a>
-          </div>
+            <div class="widget">
+              <h3 class="widget-title">Prakiraan cuaca</h3>
+              <a class="weatherwidget-io" href="https://forecast7.com/en/0d54116d42/east-kalimantan/" data-label_1="KALIMANTAN TIMUR" data-label_2="WEATHER" data-theme="pure" >CUACA KALIMANTAN TIMUR</a>
+            </div>
+            <div class="widget">
+              <h3 class="widget-title">Video BPBD</h3>
+                <?php foreach($videoTerbaru as $vt): ?>
+                  <div class="ts-service-box">
+                      <div class="ts-service-image-wrapper">
+                        <iframe class="embed-responsive-item" src="<?= $vt['url']; ?>"  allowfullscreen></iframe>
+                      </div>
+                      <div class="d-flex">
+                        <div class="ts-service-info">
+                            <h3 class="service-box-title"><a href="<?= route_to('pages.detail.video',$vt['slug']); ?>"><?= $vt['judul']; ?></a></h3>
+                            <p class="tgl-publish" data-date="<?= $vt['published_at']; ?>"><i class="far fa-calendar"></i>&nbsp;</p>
+                            <a class="learn-more d-inline-block" href="<?= route_to('pages.detail.video',$vt['slug']); ?>" aria-label="service-details"><i class="fa fa-caret-right"></i>Lihat Video</a>
+                        </div>
+                      </div>
+                  </div><!-- Service1 end -->
+                  <hr>
+                <?php endforeach; ?>
+            </div>
         </div>
       </div>
     </div>
