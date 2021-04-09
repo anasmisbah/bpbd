@@ -4,25 +4,25 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\BeritaModel;
-use App\Models\ProfilModel;
+use App\Models\BencanaModel;
 
-class ProfilController extends BaseController
+class BencanaController extends BaseController
 {
 	protected $beritaModel;
-	protected $profilModel;
+	protected $bencanaModel;
 	public function __construct()
 	{
 		$this->beritaModel = new BeritaModel(); 
-		$this->profilModel = new ProfilModel(); 
+		$this->bencanaModel = new BencanaModel(); 
 	}
 	public function detail($slug)
 	{
 		$beritaTerbaru = $this->beritaModel->getLatestBerita();
-		$profil = $this->profilModel->getDataProfil($slug);
+		$bencana = $this->bencanaModel->getDataBencana($slug);
 		$data = [
-			'profil' =>$profil,
+			'bencana' =>$bencana,
 			'beritaTerbaru' =>$beritaTerbaru,
 		];
-		return view('pages/profil/v_detail_profil',$data);
+		return view('pages/bencana/v_detail_bencana',$data);
 	}
 }

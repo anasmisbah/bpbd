@@ -35,7 +35,7 @@
                     </div>
                   </li>
                   <li class="header-get-a-quote">
-                    <a class="btn btn-primary" href="contact.html">Tanggap Tangkas Tangguh</a>
+                    <a class="btn btn-primary" href="#">Tanggap Tangkas Tangguh</a>
                   </li>
                 </ul><!-- Ul end -->
             </div><!-- header right end -->
@@ -88,9 +88,9 @@
                       <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pengetahuan Bencana <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Definisi Bencana</a></li>
-                            <li><a href="#">Potensi Ancaman Bencana</a></li>
-                            <li><a href="#">Sistem Penanggulangan Bencana</a></li>
+                            <li><a href="<?= route_to('pages.detail.bencana','definisi-bencana'); ?>">Definisi Bencana</a></li>
+                            <li><a href="<?= route_to('pages.detail.bencana','potensi-ancaman-bencana'); ?>">Potensi Ancaman Bencana</a></li>
+                            <li><a href="<?= route_to('pages.detail.bencana','sistem-penanggulangan-bencana'); ?>">Sistem Penanggulangan Bencana</a></li>
                           </ul>
                       </li>
                       <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>

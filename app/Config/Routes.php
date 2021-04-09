@@ -37,6 +37,7 @@ $routes->get('/berita','BeritaController::index', ['as' => 'pages.list.berita'])
 $routes->get('/berita/(:segment)','BeritaController::detail/$1', ['as' => 'pages.detail.berita']);
 $routes->get('/video/(:segment)','VideoController::detail/$1', ['as' => 'pages.detail.video']);
 $routes->get('/profil/(:segment)','ProfilController::detail/$1', ['as' => 'pages.detail.profil']);
+$routes->get('/pengetahuan-bencana/(:segment)','BencanaController::detail/$1', ['as' => 'pages.detail.bencana']);
 
 // Admin Route
 $routes->group('admin', function($routes)

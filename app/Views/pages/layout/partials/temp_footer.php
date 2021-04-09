@@ -32,10 +32,10 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
             <h3 class="widget-title">Profil</h3>
             <ul class="list-arrow">
-              <li><a href="#">Sejarah BPBD Kaltim</a></li>
-              <li><a href="#">Visi & Misi BPBD Kaltim</a></li>
-              <li><a href="#">Tugas & Fungsi</a></li>
-              <li><a href="#">Struktur Organisasi</a></li>
+                <li><a href="<?= route_to('pages.detail.profil','sejarah-bpbd-provinsi-kaltim'); ?>">Sejarah BPBD Kaltim</a></li>
+                <li><a href="<?= route_to('pages.detail.profil','visi-dan-misi-bpbd-provinsi-kaltim'); ?>">Visi & Misi BPBD Kaltim</a></li>
+                <li><a href="<?= route_to('pages.detail.profil','tugas-dan-fungsi-bpbd-provinsi-kaltim'); ?>">Tugas & Fungsi</a></li>
+                <li><a href="<?= route_to('pages.detail.profil','struktur-organisasi-bpbd-provinsi-kaltim'); ?>">Struktur Organisasi</a></li>
             </ul>
           </div><!-- Col end -->
         </div><!-- Row end -->
