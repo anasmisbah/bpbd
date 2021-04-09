@@ -79,9 +79,13 @@ $routes->group('admin', function($routes)
 		// Profil Route
 		$routes->post('profil', 'Admin\ProfilController::store', ['as' => 'profil.store']);
 		$routes->post('profil/update', 'Admin\ProfilController::update', ['as' => 'profil.update']);
-		$routes->get('profil/create', 'Admin\ProfilController::create', ['as' => 'profil.create']);
 		$routes->get('profil/(:segment)', 'Admin\ProfilController::detail/$1', ['as' => 'profil.detail']);
 		$routes->get('profil/edit/(:segment)', 'Admin\ProfilController::edit/$1', ['as' => 'profil.edit']);
+		// bencana Route
+		$routes->post('bencana', 'Admin\BencanaController::store', ['as' => 'bencana.store']);
+		$routes->post('bencana/update', 'Admin\BencanaController::update', ['as' => 'bencana.update']);
+		$routes->get('bencana/(:segment)', 'Admin\BencanaController::detail/$1', ['as' => 'bencana.detail']);
+		$routes->get('bencana/edit/(:segment)', 'Admin\BencanaController::edit/$1', ['as' => 'bencana.edit']);
 	});
 });
 

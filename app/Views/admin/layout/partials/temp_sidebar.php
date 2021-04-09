@@ -91,6 +91,35 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item"  id="list-bencana">
+            <a href="#" class="nav-link" id="nav-bencana">
+              <i class="nav-icon fas fa-bookmark"></i>
+              <p style="font-size:0.95em">
+                Pengetahuan Bencana
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= route_to('bencana.detail',1); ?>" class="nav-link" id="subnav-bencana-1">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Definisi Bencana</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= route_to('bencana.detail',2); ?>" class="nav-link" id="subnav-bencana-2">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p style="font-size:0.95em">Sistem Penanggulangan Bencana</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= route_to('bencana.detail',3); ?>" class="nav-link" id="subnav-bencana-3">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Potensi Ancaman Bencana</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
