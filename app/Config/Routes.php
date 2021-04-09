@@ -85,6 +85,10 @@ $routes->group('admin', function($routes)
 	});
 });
 
+// uploads image
+$routes->post('image/upload', 'Admin\UploadController::uploadImage', ['as' => 'image.upload']);
+$routes->post('image/delete', 'Admin\UploadController::deleteImage', ['as' => 'image.delete']);
+
 
 
 /*

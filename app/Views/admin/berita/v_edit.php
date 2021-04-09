@@ -138,8 +138,50 @@
     }).val( <?= json_encode($kategoriId); ?>).trigger('change')
     $('#deskripsi').summernote({
       height: 400,
+      callbacks: {
+        onImageUpload: function(image) {
+          // upload image to server and create imgNode...
+          // console.log('on image upload');
+          // $summernote.summernote('insertNode', imgNode);
+          // console.log(image[0]);
+          uploadImage(image[0]);
+        },
+        onMediaDelete : function(target) {
+            deleteImage(target[0].src);
+        }
+      }
     })
+    function uploadImage(image) {
+        var data = new FormData();
+        data.append("image", image);
+        $.ajax({
+            url: "<?= route_to('image.upload'); ?>",
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: data,
+            type: "POST",
+            success: function(url) {
+                $('#deskripsi').summernote("insertImage", url.gambar);
+                // console.log("success",url);
+            },
+            error: function(data) {
+                // console.log("error ",data);
+            }
+        });
+    }
 
+    function deleteImage(src) {
+        $.ajax({
+            data: {src : src},
+            type: "POST",
+            url: "<?= route_to('image.delete'); ?>",
+            cache: false,
+            success: function(response) {
+                // console.log(response);
+            }
+        });
+    }
     //menampilkan foto setiap ada perubahan pada modal tambah
     $('#sampul').on('change', function() {
         readURL(this);
