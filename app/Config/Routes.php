@@ -47,6 +47,7 @@ $routes->group('admin', function($routes)
 	$routes->post('login', 'Admin\AuthController::login',['as' => 'login.process']);
 	// temporary logout before
 	$routes->post('logout', 'Admin\AuthController::logout',['as' => 'logout.process']);
+	$routes->get('', 'HomeController::admin');
 	$routes->group( '',['filter' => 'auth'], function($routes)
 	{		
 		$routes->get('dashboard', 'Admin\DashboardController::dashboard',['as' => 'admin.dashboard']);

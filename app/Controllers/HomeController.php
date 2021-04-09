@@ -26,4 +26,8 @@ class HomeController extends BaseController
 		// dd($data);
 		return view('pages/v_home',$data);
 	}
+	public function admin()
+	{
+		return redirect()->route('admin.dashboard');
+	}
 }

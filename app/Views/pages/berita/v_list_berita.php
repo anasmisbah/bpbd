@@ -87,30 +87,6 @@
 
           </div><!-- Recent post end -->
 
-
-
-          <div class="widget">
-            <h3 class="widget-title">Categories</h3>
-            <ul class="arrow nav nav-tabs">
-              <li><a href="#">Construction</a></li>
-              <li><a href="#">Commercial</a></li>
-              <li><a href="#">Building</a></li>
-              <li><a href="#">Safety</a></li>
-              <li><a href="#">Structure</a></li>
-            </ul>
-          </div><!-- Categories end -->
-
-          <div class="widget">
-            <h3 class="widget-title">Archives </h3>
-            <ul class="arrow nav nav-tabs">
-              <li><a href="#">Feburay 2016</a></li>
-              <li><a href="#">January 2016</a></li>
-              <li><a href="#">December 2015</a></li>
-              <li><a href="#">November 2015</a></li>
-              <li><a href="#">October 2015</a></li>
-            </ul>
-          </div><!-- Archives end -->
-
           <div class="widget widget-tags">
             <h3 class="widget-title">Kategori berita</h3>
 
