@@ -56,6 +56,41 @@
               </p>
             </a>
           </li>
+          <li class="nav-item"  id="list-profil">
+            <a href="#" class="nav-link" id="nav-profil">
+              <i class="nav-icon fas fa-building"></i>
+              <p>
+                Profil
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= route_to('profil.detail',1); ?>" class="nav-link" id="subnav-profil-1">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sejarah BPBD</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= route_to('profil.detail',2); ?>" class="nav-link" id="subnav-profil-2">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Visi dan Misi BPBD</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= route_to('profil.detail',3); ?>" class="nav-link" id="subnav-profil-3">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tugas dan Fungsi BPBD</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= route_to('profil.detail',4); ?>" class="nav-link" id="subnav-profil-4">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Struktur Organisasi</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

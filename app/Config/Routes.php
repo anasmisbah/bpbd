@@ -76,6 +76,12 @@ $routes->group('admin', function($routes)
 		$routes->get('video/draft/(:segment)', 'Admin\VideoController::draft/$1', ['as' => 'video.draft']);
 		$routes->get('video/(:segment)', 'Admin\VideoController::detail/$1', ['as' => 'video.detail']);
 		$routes->get('video/edit/(:segment)', 'Admin\VideoController::edit/$1', ['as' => 'video.edit']);
+		// Profil Route
+		$routes->post('profil', 'Admin\ProfilController::store', ['as' => 'profil.store']);
+		$routes->post('profil/update', 'Admin\ProfilController::update', ['as' => 'profil.update']);
+		$routes->get('profil/create', 'Admin\ProfilController::create', ['as' => 'profil.create']);
+		$routes->get('profil/(:segment)', 'Admin\ProfilController::detail/$1', ['as' => 'profil.detail']);
+		$routes->get('profil/edit/(:segment)', 'Admin\ProfilController::edit/$1', ['as' => 'profil.edit']);
 	});
 });
 

@@ -20,9 +20,19 @@ $(function () {
   if (pathArray[1] !== 'index.php') {
     let navId = `#nav-${pathArray[2]}`
     $(navId).addClass('active')
+    if (pathArray[2] === 'profil') {
+      $('#list-profil').addClass('menu-open')
+      subNavId=`#subnav-${pathArray[2]}-${pathArray[3]}`
+      $(subNavId).addClass('active')
+    }
   } else {
     let navId = `#nav-${pathArray[3]}`
     $(navId).addClass('active')
+    if (pathArray[3] === 'profil') {
+      $('#list-profil').addClass('menu-open')
+      subNavId=`#subnav-${pathArray[3]}-${pathArray[4]}`
+      $(subNavId).addClass('active')
+    }
   }
 })
 </script>
