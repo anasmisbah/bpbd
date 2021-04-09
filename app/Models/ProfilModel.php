@@ -11,4 +11,10 @@ class ProfilModel extends Model
 	// Dates
 	protected $useTimestamps        = true;
 	protected $allowedFields = ['judul','deskripsi','slug'];
+
+	
+	public function getDataProfil($slug)
+	{
+		return $this->select('profil.id,profil.judul,profil.deskripsi,profil.slug')->where('slug',$slug)->first();
+	}
 }

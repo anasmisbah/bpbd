@@ -60,10 +60,10 @@
                       <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profil <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Sejarah BPBD Kaltim</a></li>
-                            <li><a href="#">Visi & Misi BPBD Kaltim</a></li>
-                            <li><a href="#">Tugas & Fungsi</a></li>
-                            <li><a href="#">Struktur Organisasi</a></li>
+                            <li><a href="<?= route_to('pages.detail.profil','sejarah-bpbd-provinsi-kaltim'); ?>">Sejarah BPBD Kaltim</a></li>
+                            <li><a href="<?= route_to('pages.detail.profil','visi-dan-misi-bpbd-provinsi-kaltim'); ?>">Visi & Misi BPBD Kaltim</a></li>
+                            <li><a href="<?= route_to('pages.detail.profil','tugas-dan-fungsi-bpbd-provinsi-kaltim'); ?>">Tugas & Fungsi</a></li>
+                            <li><a href="<?= route_to('pages.detail.profil','struktur-organisasi-bpbd-provinsi-kaltim'); ?>">Struktur Organisasi</a></li>
                           </ul>
                       </li>
                       <li class="nav-item dropdown">
