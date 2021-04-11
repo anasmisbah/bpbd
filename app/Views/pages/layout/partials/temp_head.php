@@ -3,7 +3,7 @@
   <!-- Basic Page Needs
 ================================================== -->
   <meta charset="utf-8">
-  <title>Constra - Construction Html5 Template</title>
+  <title>BPBD - KALTIM</title>
 
   <!-- Mobile Specific Metas
 ================================================== -->

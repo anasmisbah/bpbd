@@ -25,21 +25,9 @@
 <?= $this->section('content'); ?>
 <div class="banner-carousel banner-carousel-1 mb-0">
   
-  <?php foreach($beritaTerbaru as $bt): ?>
-  <div class="banner-carousel-item" style="background-image:url(uploads/<?= $bt['sampul']; ?>)">
-    <div class="slider-content text-left">
-        <div class="container h-100">
-          <div class="row align-items-center h-100">
-              <div class="col-md-12">
-                <h2 class="slide-title-box" data-animation-in="slideInDown">Berita</h2>
-                <h3 class="slide-title" data-animation-in="fadeIn"><?= $bt['judul']; ?></h3>
-                <p data-animation-in="slideInRight">
-                    <a href="services.html" class="slider btn btn-primary border">Baca selengkapnya</a>
-                </p>
-              </div>
-          </div>
-        </div>
-    </div>
+  <?php foreach($banner as $bn): ?>
+  <div class="banner-carousel-item" style="background-image:url(uploads/<?= $bn['gambar']; ?>)">
+    
   </div>
   <?php endforeach; ?>
 </div>
@@ -62,57 +50,38 @@
     </div><!-- Action style box -->
   </div><!-- Container end -->
 </section><!-- Action end -->
-
-
-
 <section id="news" class="news">
   <div class="container">
+    <div class="row text-center">
+        <div class="col-12">
+          <h2 class="section-title">Badan Penanggulangan Bencana Daerah Provinsi Kalimantan Timur</h2>
+          <h3 class="section-sub-title">Berita Terbaru</h3>
+        </div>
+    </div>
+    <!--/ Title row end -->
+
     <div class="row">
-      <div class="col-lg-8 mb-5 mb-lg-0">
-        <?php foreach($beritaTerbaru as $bt2): ?>
-          <div class="card mb-3">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img class="card-img" src="<?= base_url('uploads/'.$bt2['sampul']); ?>" alt="<?= $bt2['sampul']; ?>">
+    <?php foreach($beritaTerbaru as $itemBt): ?>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="latest-post">
+              <div class="latest-post-media">
+                <a href="<?= route_to('pages.detail.berita',$itemBt['slug']); ?>" class="latest-post-img">
+                    <img loading="lazy" class="img-fluid" src="<?= base_url('uploads/'.$itemBt['sampul']); ?>" alt="img">
+                </a>
               </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title"><a href="<?= route_to('pages.detail.berita',$bt2['slug']); ?>"><?= $bt2['judul']; ?></a></h5>
-                  <p class="card-text"><?= implode(' ', array_slice(explode(' ', $bt2['deskripsi']), 0, 15)).'... </p>'; ?></p>
-                  <p class="card-text"><small class="text-muted tgl-publish" data-date="<?= $bt2['published_at']; ?>"><i class="far fa-calendar"></i>&nbsp;</small></p>
-                  <a href="<?= route_to('pages.detail.berita',$bt2['slug']); ?>" class="btn btn-primary">Baca Selengkapnya</a>
+              <div class="post-body">
+                <h4 class="post-title">
+                    <a href="<?= route_to('pages.detail.berita',$itemBt['slug']); ?>" class="d-inline-block"><?= $itemBt['judul']; ?></a>
+                </h4>
+                <div class="latest-post-meta">
+                    <span class="post-item-date tgl-publish" data-date="<?= $itemBt['published_at']; ?>">
+                      <i class="fa fa-clock-o"></i>
+                    </span>
                 </div>
               </div>
-            </div>
-          </div>
+          </div><!-- Latest post end -->
+        </div><!-- 1st post col end -->
         <?php endforeach; ?>
-      </div> <!--/  end col berita -->
-      <div class="col-lg-4">
-        <div class="sidebar sidebar-right">
-            <div class="widget">
-              <h3 class="widget-title">Prakiraan cuaca</h3>
-              <a class="weatherwidget-io" href="https://forecast7.com/en/0d54116d42/east-kalimantan/" data-label_1="KALIMANTAN TIMUR" data-label_2="WEATHER" data-theme="pure" >CUACA KALIMANTAN TIMUR</a>
-            </div>
-            <div class="widget">
-              <h3 class="widget-title">Video BPBD</h3>
-                <?php foreach($videoTerbaru as $vt): ?>
-                  <div class="ts-service-box">
-                      <div class="ts-service-image-wrapper">
-                        <iframe class="embed-responsive-item" src="<?= $vt['url']; ?>"  allowfullscreen></iframe>
-                      </div>
-                      <div class="d-flex">
-                        <div class="ts-service-info">
-                            <h3 class="service-box-title"><a href="<?= route_to('pages.detail.video',$vt['slug']); ?>"><?= $vt['judul']; ?></a></h3>
-                            <p class="tgl-publish" data-date="<?= $vt['published_at']; ?>"><i class="far fa-calendar"></i>&nbsp;</p>
-                            <a class="learn-more d-inline-block" href="<?= route_to('pages.detail.video',$vt['slug']); ?>" aria-label="service-details"><i class="fa fa-caret-right"></i>Lihat Video</a>
-                        </div>
-                      </div>
-                  </div><!-- Service1 end -->
-                  <hr>
-                <?php endforeach; ?>
-            </div>
-        </div>
-      </div>
     </div>
     <!--/ Content row end -->
 
@@ -124,6 +93,167 @@
   <!--/ Container end -->
 </section>
 <!--/ News end -->
+<section id="news" class="news">
+  <div class="container">
+    <div class="row text-center">
+        <div class="col-12">
+          <h3 class="section-sub-title">Video BPBD Terbaru</h3>
+        </div>
+    </div>
+    <!--/ Title row end -->
+
+    <div class="row">
+    <?php foreach($videoTerbaru as $itemVt): ?>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="latest-post">
+              <div class="latest-post-media">
+                <a href="<?= route_to('pages.detail.video',$itemVt['slug']); ?>" class="latest-post-img">
+                <iframe class="embed-responsive-item" src="<?= $itemVt['url']; ?>"  allowfullscreen></iframe>
+                </a>
+              </div>
+              <div class="post-body">
+                <h4 class="post-title">
+                    <a href="<?= route_to('pages.detail.video',$itemVt['slug']); ?>" class="d-inline-block"><?= $itemVt['judul']; ?></a>
+                </h4>
+                <div class="latest-post-meta">
+                    <span class="post-item-date tgl-publish" data-date="<?= $itemVt['published_at']; ?>">
+                      <i class="fa fa-clock-o"></i>
+                    </span>
+                </div>
+              </div>
+          </div><!-- Latest post end -->
+        </div><!-- 1st post col end -->
+        <?php endforeach; ?>
+    </div>
+    <!--/ Content row end -->
+
+  </div>
+  <!--/ Container end -->
+</section>
+<!--/ News end -->
+<section id="facts" class="facts-area dark-bg">
+  <div class="container">
+    <div class="row text-center">
+        <div class="col-12">
+          <h3 class="section-sub-title">Kasus Corona Virus Kaltim</h3>
+        </div>
+    </div>
+    <div class="facts-wrapper">
+
+        <div class="row">
+          <div class="col-md-3 col-sm-6 ts-facts">
+              <div class="ts-facts-img">
+                <img width="100px" loading="lazy" src="<?= base_url('pages_assets/images/icon-image/icon_positif.png'); ?>" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num" id="daerah_positif"></h2>
+                <h3 class="ts-facts-title">Total Positif</h3>
+              </div>
+          </div><!-- Col end -->
+          <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-md-0">
+              <div class="ts-facts-img">
+                <img width="100px" loading="lazy" src="<?= base_url('pages_assets/images/icon-image/icon_sakit.png'); ?>" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num" id="daerah_dirawat"></h2>
+                <h3 class="ts-facts-title">Total Dirawat</h3>
+              </div>
+          </div><!-- Col end -->
+          <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-sm-0">
+              <div class="ts-facts-img">
+                <img width="100px" loading="lazy" src="<?= base_url('pages_assets/images/icon-image/icon_sembuh.png'); ?>" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num" id="daerah_sembuh"></h2>
+                <h3 class="ts-facts-title">Total Sembuh</h3>
+              </div>
+          </div><!-- Col end -->
+
+          <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-md-0">
+              <div class="ts-facts-img">
+                <img width="100px" loading="lazy" src="<?= base_url('pages_assets/images/icon-image/icon_meninggal.png'); ?>" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num" id="daerah_meninggal"></h2>
+                <h3 class="ts-facts-title">Total Meninggal</h3>
+              </div>
+          </div><!-- Col end -->
+        </div> <!-- Facts end -->
+    </div>
+    <!--/ Content row end -->
+  </div>
+  <!--/ Container end -->
+</section><!-- Facts end -->
+<section id="facts" class="facts-area">
+  <div class="container">
+    <div class="row text-center">
+        <div class="col-12">
+          <h3 class="section-sub-title">Kasus Corona Virus Indonesia</h3>
+        </div>
+    </div>
+    <div class="facts-wrapper">
+
+        <div class="row">
+          <div class="col-md-3 col-sm-6 ts-facts">
+              <div class="ts-facts-img">
+                <img width="100px" loading="lazy" src="<?= base_url('pages_assets/images/icon-image/icon_positif.png'); ?>" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num" style="color: #000;" id="indonesia_positif"></h2>
+                <h3 class="ts-facts-title">Total Positif</h3>
+              </div>
+          </div><!-- Col end -->
+          <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-md-0">
+              <div class="ts-facts-img">
+                <img width="100px" loading="lazy" src="<?= base_url('pages_assets/images/icon-image/icon_sakit.png'); ?>" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num" style="color: #000;" id="indonesia_dirawat"></h2>
+                <h3 class="ts-facts-title">Total Dirawat</h3>
+              </div>
+          </div><!-- Col end -->
+          <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-sm-0">
+              <div class="ts-facts-img">
+                <img width="100px" loading="lazy" src="<?= base_url('pages_assets/images/icon-image/icon_sembuh.png'); ?>" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num" style="color: #000;" id="indonesia_sembuh"></h2>
+                <h3 class="ts-facts-title">Total Sembuh</h3>
+              </div>
+          </div><!-- Col end -->
+
+          <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-md-0">
+              <div class="ts-facts-img">
+                <img width="100px" loading="lazy" src="<?= base_url('pages_assets/images/icon-image/icon_meninggal.png'); ?>" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num" style="color: #000;" id="indonesia_meninggal"></h2>
+                <h3 class="ts-facts-title">Total Meninggal</h3>
+              </div>
+          </div><!-- Col end -->
+        </div> <!-- Facts end -->
+    </div>
+    <!--/ Content row end -->
+  </div>
+  <!--/ Container end -->
+</section><!-- Facts end -->
+<section class="no-padding" style="background: #FFCA3A">
+  <div class="container" style="padding-top:20px;padding-bottom:20px">
+  <div class="row text-center" >
+        <div class="col-12">
+          <h3 class=" text-white" style="font-weight: 900;font-size: 36px;line-height: 46px;text-transform: uppercase;">Prakiraan Cuaca</h3>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col">
+    <a class="weatherwidget-io" href="https://forecast7.com/en/0d54116d42/east-kalimantan/" data-label_1="KALIMANTAN TIMUR" data-label_2="WEATHER" data-theme="orange" >KALIMANTAN TIMUR WEATHER</a>    </div>
+    <script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+    </div><!-- Content row end -->
+  </div>
+  <!--/ Container end -->
+</section>
 <?= $this->endSection(); ?>
 <?= $this->section('js'); ?>
 <script>
@@ -132,10 +262,42 @@ $(function () {
   publishDate.each(function(index){
 	  $(this).append(moment($(this).data('date')).format('dddd, d MMMM YYYY H:mm')+' WITA')
   })
+
+  $.ajax({
+      url: "https://covid19.kaltimprov.go.id/api/kasus",
+      type: "GET",
+      success: function(data) {
+          dataDaerah = data.find((item)=> item.KabKota === "Kalimantan Timur")
+          // console.log(dataDaerah);
+          $('#daerah_positif').append(`<span class="counterUp" data-count="${dataDaerah.Confirmed}">0</span>`)
+          $('#daerah_sembuh').append(`<span class="counterUp" data-count="${dataDaerah.Sembuh}">0</span>`)
+          $('#daerah_meninggal').append(`<span class="counterUp" data-count="${dataDaerah.Meninggal}">0</span>`)
+          $('#daerah_dirawat').append(`<span class="counterUp" data-count="${dataDaerah.Dirawat}">0</span>`)
+      },
+      error: function(data) {
+          // console.log("error ",data);
+      }
+  });
+  $.ajax({
+      url: "https://covid19.mathdro.id/api/countries/Indonesia/confirmed",
+      type: "GET",
+      success: function(data) {
+          dataIndonesia = data[0]
+          // $('#indonesia_positif').append(`<span class="counterUp" data-count="${dataIndonesia.positif}">0</span>`)
+          // $('#indonesia_sembuh').append(`<span class="counterUp" data-count="${dataIndonesia.sembuh}">0</span>`)
+          // $('#indonesia_meninggal').append(`<span class="counterUp" data-count="${dataIndonesia.meninggal}">0</span>`)
+          // $('#indonesia_dirawat').append(`<span class="counterUp" data-count="${dataIndonesia.dirawat}">0</span>`)
+
+          $('#indonesia_positif').append(`<span class="counterUp" data-count="${dataIndonesia.confirmed}">0</span>`)
+          $('#indonesia_sembuh').append(`<span class="counterUp" data-count="${dataIndonesia.recovered}">0</span>`)
+          $('#indonesia_meninggal').append(`<span class="counterUp" data-count="${dataIndonesia.deaths}">0</span>`)
+          $('#indonesia_dirawat').append(`<span class="counterUp" data-count="${dataIndonesia.active}">0</span>`)
+      },
+      error: function(data) {
+          // console.log("error ",data);
+      }
+  });
 })
-</script>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
 <?= $this->endSection(); ?>
 

@@ -89,6 +89,14 @@ $routes->group('admin', function($routes)
 		$routes->post('bencana/update', 'Admin\BencanaController::update', ['as' => 'bencana.update']);
 		$routes->get('bencana/(:segment)', 'Admin\BencanaController::detail/$1', ['as' => 'bencana.detail']);
 		$routes->get('bencana/edit/(:segment)', 'Admin\BencanaController::edit/$1', ['as' => 'bencana.edit']);
+		// Banner Route
+		$routes->get('banner', 'Admin\BannerController::index', ['as' => 'banner.index']);
+		$routes->post('banner', 'Admin\BannerController::store', ['as' => 'banner.store']);
+		$routes->delete('banner', 'Admin\BannerController::delete', ['as' => 'banner.delete']);
+		$routes->post('banner/update', 'Admin\BannerController::update', ['as' => 'banner.update']);
+		$routes->get('banner/create', 'Admin\BannerController::create', ['as' => 'banner.create']);
+		$routes->get('banner/(:segment)', 'Admin\BannerController::detail/$1', ['as' => 'banner.detail']);
+		$routes->get('banner/edit/(:segment)', 'Admin\BannerController::edit/$1', ['as' => 'banner.edit']);
 	});
 });
 

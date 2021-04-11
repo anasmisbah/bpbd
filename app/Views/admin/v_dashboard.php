@@ -30,14 +30,14 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3><?= $totalBerita; ?></h3>
 
                 <p>Berita</p>
               </div>
               <div class="icon">
                 <i class="ion ion-ios-list"></i>
               </div>
-              <a href="#" class="small-box-footer">Selengkapnya<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?= route_to('berita.index'); ?>" class="small-box-footer">Selengkapnya<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -45,14 +45,14 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53</h3>
+                <h3><?= $totalVideo; ?></h3>
 
                 <p>Video</p>
               </div>
               <div class="icon">
                 <i class="ion ion-ios-recording"></i>
               </div>
-              <a href="#" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?= route_to('video.index'); ?>" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -60,9 +60,9 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3><?= $totalUser; ?></h3>
 
-                <p>User Registrations</p>
+                <p>Pengguna</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -75,14 +75,14 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3><?= $totalKategori; ?></h3>
 
-                <p>Unique Visitors</p>
+                <p>Kategori</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+                <i class="ion ion-ios-pricetag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?= route_to('kategori.index'); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

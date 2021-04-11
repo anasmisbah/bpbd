@@ -9,13 +9,13 @@
 <?= $this->endSection(); ?>
 <?= $this->section('content-header'); ?>
     <div class="col-sm-6">
-        <h1 class="m-0">Kategori</h1>
+        <h1 class="m-0">Berita</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Beranda</a></li>
             <li class="breadcrumb-item"><a href="#">Kategori</a></li>
-            <li class="breadcrumb-item active">Tambah</li>
+            <li class="breadcrumb-item active">Ubah</li>
         </ol>
     </div><!-- /.col -->
 <?= $this->endSection(); ?>
@@ -26,7 +26,7 @@
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <div class="card-header">
-                  <h3 class="card-title">Menambah Berita</h3>
+                  <h3 class="card-title">Mengubah Berita</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->

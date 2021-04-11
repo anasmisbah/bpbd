@@ -10,12 +10,12 @@
 <?= $this->endSection(); ?>
 <?= $this->section('content-header'); ?>
     <div class="col-sm-6">
-        <h1 class="m-0">Berita</h1>
+        <h1 class="m-0">Banner</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Beranda</a></li>
-            <li class="breadcrumb-item active">Berita</li>
+            <li class="breadcrumb-item active">Banner</li>
         </ol>
     </div><!-- /.col -->
 <?= $this->endSection(); ?>
@@ -23,11 +23,11 @@
 <?= $this->section('content'); ?>
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Data Berita</h3>
+        <h3 class="card-title">Data Banner</h3>
         <div class="card-tools">
             <ul class="nav nav-pills ml-auto">
             <li class="nav-item">
-                <a class="nav-link active" href="<?= route_to('berita.create'); ?>"><i class="fas fa-plus"></i></a>
+                <a class="nav-link active" href="<?= route_to('banner.create'); ?>"><i class="fas fa-plus"></i></a>
             </li>
             </ul>
         </div>
@@ -38,34 +38,24 @@
             <thead>
             <tr>
             <th>No</th>
-            <th>Judul</th>
-            <th>Penulis</th>
-            <th>status</th>
+            <th>Gambar</th>
             <th>Aksi</th>
             </tr>
             </thead>
             <tbody>
             <?php $i = 1; ?>
-            <?php foreach($berita as $item): ?>
+            <?php foreach($banner as $item): ?>
             <tr>
                 <td><?= $i++; ?></td>
-                <td><?= implode(' ', array_slice(explode(' ', $item['judul']), 0, 12)).'...'; ?></td>
-                <td><?= $item['penulis']; ?></td>
+                <td><img class="img-thumbnail" width="100px" src="<?= base_url('uploads/'.$item['gambar']); ?>" alt=""></td>
                 <td>
-                    <?php if($item['status'] == 0): ?>
-                        <span class="badge badge-pill badge-success">Terbit</span>
-                    <?php elseif($item['status'] == 1): ?>
-                        <span class="badge badge-pill badge-secondary">Draf</span>
-                    <?php endif; ?>
-                </td>
-                <td>
-                    <a href="<?= route_to('berita.edit',$item['id']); ?>" class="btn btn-warning btn-sm">
+                    <a href="<?= route_to('banner.edit',$item['id']); ?>" class="btn btn-warning btn-sm">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a href="javascript:;" data-action="<?= route_to('berita.delete'); ?>" data-item_id="<?= $item['id']; ?>" class="btn btn-sm btn-danger btn-delete">
+                    <a href="javascript:;" data-action="<?= route_to('banner.delete'); ?>" data-item_id="<?= $item['id']; ?>" class="btn btn-sm btn-danger btn-delete">
                         <i class="fas fa-trash"></i>
                     </a>
-                    <a href="<?= route_to('berita.detail',$item['id']); ?>" class="btn btn-info btn-sm">
+                    <a href="<?= route_to('banner.detail',$item['id']); ?>" class="btn btn-info btn-sm">
                         <i class="fas fa-eye"></i>
                     </a>
                 </td>

@@ -20,7 +20,7 @@
           </div><!-- Col end -->
 
           <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-            <h3 class="widget-title">Alamat</h3>
+            <h3 class="widget-title">Alamat & Jam Pelayanan</h3>
             <div class="working-hours">
               Jl. MT. Haryono No.46, Air Putih, Kec. Samarinda Ulu, Kota Samarinda, Kalimantan Timur 75124
               <br><br> Senin - Kamis: <span class="text-right">07:30 - 16:00 </span>
