@@ -58,9 +58,17 @@
           </li>
           <li class="nav-item">
             <a href="<?= route_to('banner.index'); ?>" class="nav-link" id="nav-banner">
-              <i class="nav-icon fas fa-images"></i>
+              <i class="nav-icon fas fa-image"></i>
               <p>
                 Banner
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= route_to('gallery.index'); ?>" class="nav-link" id="nav-gallery">
+              <i class="nav-icon fas fa-images"></i>
+              <p>
+                Gallery
               </p>
             </a>
           </li>

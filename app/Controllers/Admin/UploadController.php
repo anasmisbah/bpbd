@@ -41,4 +41,37 @@ class UploadController extends BaseController
 			return $this->response->setJSON($data);
         }
     }
+
+	
+	public function uploadImageDZ()
+	{
+		$gambar = $this->request->getFile('file');
+		// dd($gambar);
+		// apakah tidak ada gambar yg diupoload
+		if ($gambar->getError() == 4) {
+			return false;
+		}else{
+			// generate nama file sampul
+			$namaGambar = 'gambar/'.$gambar->getRandomName();
+			// pindahkan file ke folder sampul
+			$gambar->move('uploads',$namaGambar);
+		}
+		$data = [
+			'gambar'=>$namaGambar
+		];
+		// $data = [
+		// 	'gambar'=>$gambar->getName()
+		// ];
+		return $this->response->setJSON($data);
+	}
+	function deleteImageDZ(){
+        $src = $this->request->getVar('src');
+        if(unlink('uploads/'.$src))
+        {
+			$data = [
+				'status'=>'File Delete Successfully'
+			];
+			return $this->response->setJSON($data);
+        }
+    }
 }

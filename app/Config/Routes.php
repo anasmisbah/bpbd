@@ -97,12 +97,25 @@ $routes->group('admin', function($routes)
 		$routes->get('banner/create', 'Admin\BannerController::create', ['as' => 'banner.create']);
 		$routes->get('banner/(:segment)', 'Admin\BannerController::detail/$1', ['as' => 'banner.detail']);
 		$routes->get('banner/edit/(:segment)', 'Admin\BannerController::edit/$1', ['as' => 'banner.edit']);
+		// Gallery Route
+		$routes->get('gallery', 'Admin\GalleryController::index', ['as' => 'gallery.index']);
+		$routes->post('gallery', 'Admin\GalleryController::store', ['as' => 'gallery.store']);
+		$routes->delete('gallery', 'Admin\GalleryController::delete', ['as' => 'gallery.post.delete']);
+		$routes->post('gallery/update', 'Admin\GalleryController::update', ['as' => 'gallery.update']);
+		$routes->get('gallery/create', 'Admin\GalleryController::create', ['as' => 'gallery.create']);
+		$routes->get('gallery/publish/(:segment)', 'Admin\GalleryController::publish/$1', ['as' => 'gallery.publish']);
+		$routes->get('gallery/draft/(:segment)', 'Admin\GalleryController::draft/$1', ['as' => 'gallery.draft']);
+		$routes->get('gallery/(:segment)', 'Admin\GalleryController::detail/$1', ['as' => 'gallery.detail']);
+		$routes->get('gallery/edit/(:segment)', 'Admin\GalleryController::edit/$1', ['as' => 'gallery.edit']);
+		$routes->delete('gallery/photo/delete', 'Admin\GalleryController::deletePhotoGallery', ['as' => 'gallery.photo.delete']);
 	});
 });
 
 // uploads image
 $routes->post('image/upload', 'Admin\UploadController::uploadImage', ['as' => 'image.upload']);
 $routes->post('image/delete', 'Admin\UploadController::deleteImage', ['as' => 'image.delete']);
+$routes->post('gallery/image/upload', 'Admin\UploadController::uploadImageDZ', ['as' => 'gallery.upload']);
+$routes->post('gallery/image/delete', 'Admin\UploadController::deleteImageDZ', ['as' => 'gallery.delete']);
 
 
 
