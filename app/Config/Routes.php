@@ -38,6 +38,7 @@ $routes->get('/berita/(:segment)','BeritaController::detail/$1', ['as' => 'pages
 $routes->get('/video/(:segment)','VideoController::detail/$1', ['as' => 'pages.detail.video']);
 $routes->get('/profil/(:segment)','ProfilController::detail/$1', ['as' => 'pages.detail.profil']);
 $routes->get('/pengetahuan-bencana/(:segment)','BencanaController::detail/$1', ['as' => 'pages.detail.bencana']);
+$routes->get('/kontak','KontakController::detail', ['as' => 'pages.detail.kontak']);
 
 // Admin Route
 $routes->group('admin', function($routes)
@@ -119,6 +120,11 @@ $routes->group('admin', function($routes)
 		$routes->get('buku/(:segment)', 'Admin\BukuController::detail/$1', ['as' => 'buku.detail']);
 		$routes->get('buku/edit/(:segment)', 'Admin\BukuController::edit/$1', ['as' => 'buku.edit']);
 		$routes->get('buku/download/(:segment)', 'Admin\BukuController::download/$1', ['as' => 'buku.download']);
+		// kontak Route
+		$routes->post('kontak', 'Admin\KontakController::store', ['as' => 'kontak.store']);
+		$routes->post('kontak/update', 'Admin\KontakController::update', ['as' => 'kontak.update']);
+		$routes->get('kontak', 'Admin\KontakController::detail', ['as' => 'kontak.detail']);
+		$routes->get('kontak/edit', 'Admin\KontakController::edit', ['as' => 'kontak.edit']);
 	});
 });
 

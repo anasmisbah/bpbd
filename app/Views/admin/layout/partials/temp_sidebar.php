@@ -80,6 +80,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?= route_to('kontak.detail'); ?>" class="nav-link" id="nav-kontak">
+              <i class="nav-icon fas fa-id-card"></i>
+              <p>
+                Kontak
+              </p>
+            </a>
+          </li>
           <li class="nav-item"  id="list-profil">
             <a href="#" class="nav-link" id="nav-profil">
               <i class="nav-icon fas fa-building"></i>

@@ -93,7 +93,7 @@
                             <li><a href="<?= route_to('pages.detail.bencana','sistem-penanggulangan-bencana'); ?>">Sistem Penanggulangan Bencana</a></li>
                           </ul>
                       </li>
-                      <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?= route_to('pages.detail.kontak'); ?>">Kontak</a></li>
                     </ul>
                 </div>
               </nav>
