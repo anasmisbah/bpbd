@@ -1,3 +1,8 @@
+<?php 
+use App\Models\KontakModel;
+$this->kontakModel = new KontakModel(); 
+$tempKontak = $this->kontakModel->first();
+?>
 <footer id="footer" class="footer bg-overlay">
     <div class="footer-main">
       <div class="container">
@@ -8,13 +13,13 @@
             <p>BPBD Provinsi Kalimantan Timur Merupakan Lembaga Teknis Yang Mempunyai Tugas Untuk Melakukan Koordinasi Dan Penyelenggaraan Serta Pelayanan Administrasi Di Bidang Penanggulangan Bencana.</p>
             <div class="footer-social">
               <ul>
-                <li><a href="https://facebook.com/themefisher" aria-label="Facebook"><i
+                <li><a href="<?= $tempKontak['facebook']; ?>" aria-label="Facebook"><i
                       class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <li><a href="<?= $tempKontak['twitter']; ?>" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 </li>
-                <li><a href="https://instagram.com/themefisher" aria-label="Instagram"><i
+                <li><a href="<?= $tempKontak['instagram']; ?>" aria-label="Instagram"><i
                       class="fab fa-instagram"></i></a></li>
-                <li><a href="https://github.com/themefisher" aria-label="Github"><i class="fab fa-github"></i></a></li>
+                <li><a href="<?= $tempKontak['youtube']; ?>" aria-label="Github"><i class="fab fa-youtube"></i></a></li>
               </ul>
             </div><!-- Footer social end -->
           </div><!-- Col end -->

@@ -13,12 +13,11 @@
         <div class="row">
           <div class="col-lg-12">
               <div class="banner-heading">
-                <h1 class="banner-title">Contact</h1>
+                <h1 class="banner-title">Kontak</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center">
-                      <li class="breadcrumb-item"><a href="#">Home</a></li>
-                      <li class="breadcrumb-item"><a href="#">Company</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                      <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Kontak</li>
                     </ol>
                 </nav>
               </div>
@@ -33,8 +32,8 @@
 
     <div class="row text-center">
       <div class="col-12">
-        <h2 class="section-title">Reaching our Office</h2>
-        <h3 class="section-sub-title">Find Our Location</h3>
+        <h2 class="section-title">BADAN PENANGGULANGAN BENCANA DAERAH PROVINSI KALIMANTAN TIMUR</h2>
+        <h3 class="section-sub-title">Kontak</h3>
       </div>
     </div>
     <!--/ Title row end -->
@@ -46,8 +45,8 @@
             <i class="fas fa-map-marker-alt mr-0"></i>
           </span>
           <div class="ts-service-box-content">
-            <h4>Visit Our Office</h4>
-            <p>9051 Constra Incorporate, USA</p>
+            <h4>Alamat</h4>
+            <p><?= $kontak['alamat']; ?></p>
           </div>
         </div>
       </div><!-- Col 1 end -->
@@ -58,8 +57,8 @@
             <i class="fa fa-envelope mr-0"></i>
           </span>
           <div class="ts-service-box-content">
-            <h4>Email Us</h4>
-            <p>office@Constra.com</p>
+            <h4>Email</h4>
+            <p><?= $kontak['email']; ?></p>
           </div>
         </div>
       </div><!-- Col 2 end -->
@@ -70,8 +69,8 @@
             <i class="fa fa-phone-square mr-0"></i>
           </span>
           <div class="ts-service-box-content">
-            <h4>Call Us</h4>
-            <p>(+9) 847-291-4353</p>
+            <h4>Nomor Telepon</h4>
+            <p><?= $kontak['no_telepon']; ?></p>
           </div>
         </div>
       </div><!-- Col 3 end -->
