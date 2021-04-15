@@ -9,12 +9,12 @@
 <?= $this->endSection(); ?>
 <?= $this->section('content-header'); ?>
     <div class="col-sm-6">
-        <h1 class="m-0">Berita</h1>
+        <h1 class="m-0">Buku</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Beranda</a></li>
-            <li class="breadcrumb-item"><a href="#">Berita</a></li>
+            <li class="breadcrumb-item"><a href="#">Buku</a></li>
             <li class="breadcrumb-item active">Ubah</li>
         </ol>
     </div><!-- /.col -->
@@ -26,20 +26,21 @@
             <!-- Horizontal Form -->
             <div class="card card-info">
                 <div class="card-header">
-                  <h3 class="card-title">Mengubah Berita</h3>
+                  <h3 class="card-title">Mengubah Buku</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal" action="<?= route_to('berita.update'); ?>" method="POST" enctype="multipart/form-data">
+                <form class="form-horizontal" action="<?= route_to('buku.update'); ?>" method="POST" enctype="multipart/form-data">
                   <?= csrf_field(); ?>
-                  <input type="hidden" name="id" value="<?= $berita['id']; ?>">
-                  <input type="hidden" name="slug" value="<?= $berita['slug']; ?>">
-                  <input type="hidden" name="sampulLama" value="<?= $berita['sampul']; ?>">
+                  <input type="hidden" name="id" value="<?= $buku['id']; ?>">
+                  <input type="hidden" name="slug" value="<?= $buku['slug']; ?>">
+                  <input type="hidden" name="sampulLama" value="<?= $buku['sampul']; ?>">
+                  <input type="hidden" name="bukuLama" value="<?= $buku['buku']; ?>">
                   <div class="card-body">
                     <div class="form-group row">
                             <label for="judul" class="col-sm-2 col-form-label">Judul</label>
                             <div class="col-sm-6 col-lg-6 col-md-6">
-                                <input autofocus value="<?= old('judul')?old('judul'):$berita['judul']; ?>" type="text" class="form-control <?= ($validation->hasError('judul'))? 'is-invalid':'' ?>" id="judul" name="judul" placeholder="Judul Berita">
+                                <input autofocus value="<?= old('judul')?old('judul'):$buku['judul']; ?>" type="text" class="form-control <?= ($validation->hasError('judul'))? 'is-invalid':'' ?>" id="judul" name="judul" placeholder="Judul buku">
                                 <span class="invalid-feedback" role="alert">
                                     <strong><?= $validation->getError('judul'); ?></strong>
                                 </span>
@@ -48,11 +49,11 @@
                     <div class="form-group row">
                         <label for="sampul" class="col-sm-2 col-form-label">Gambar /  Sampul</label>
                         <div class="col-sm-6 col-lg-6 col-md-6">
-                            <img class="img-thumbnail mb-2" id="image_con" width="250px" src="<?= base_url('uploads/'.$berita['sampul']); ?>" alt="">
+                            <img class="img-thumbnail mb-2" id="image_con" width="250px" src="<?= base_url('uploads/'.$buku['sampul']); ?>" alt="">
                             <div class="input-group <?= ($validation->hasError('sampul'))? 'is-invalid':'' ?>">
                               <div class="custom-file">
                                 <input type="file" class="custom-file-input <?= ($validation->hasError('sampul'))? 'is-invalid':'' ?>" id="sampul" name="sampul">
-                                <label class="custom-file-label" for="sampul">Pilih Gambar</label>
+                                <label class="custom-file-label" id="label-sampul" for="sampul">Pilih Gambar</label>
                               </div>
                             </div>
                               <span class="invalid-feedback" role="alert">
@@ -60,33 +61,45 @@
                               </span>
                         </div>
                       </div>
+                      <div class="form-group row">
+                        <label for="buku" class="col-sm-2 col-form-label">Buku</label>
+                        <div class="col-sm-6 col-lg-6 col-md-6">
+                            <div class="input-group <?= ($validation->hasError('buku'))? 'is-invalid':'' ?>">
+                              <div class="custom-file">
+                                <input type="file" class="custom-file-input <?= ($validation->hasError('buku'))? 'is-invalid':'' ?>" id="buku" name="buku">
+                                <label class="custom-file-label" id="label-buku" for="buku">Pilih buku</label>
+                              </div>
+                              <div class="input-group-append">
+                                <a class="btn btn-outline-secondary" target="_BLANK" href="<?= route_to('buku.download',$buku['id']); ?>" id="inputGroupFileAddon04">Download</a>
+                              </div>
+                            </div>
+                              <span class="invalid-feedback" role="alert">
+                                <strong><?= $validation->getError('buku'); ?></strong>
+                              </span>
+                        </div>
+                      </div>
                     <div class="form-group row">
                             <label for="penulis" class="col-sm-2 col-form-label">Penulis</label>
                             <div class="col-sm-6 col-lg-6 col-md-6">
-                                <input value="<?= old('penulis')?old('penulis'):$berita['penulis']; ?>" type="text" class="form-control <?= ($validation->hasError('penulis'))? 'is-invalid':'' ?>" id="penulis" name="penulis" placeholder="penulis Berita">
+                                <input value="<?= old('penulis')?old('penulis'):$buku['penulis']; ?>" type="text" class="form-control <?= ($validation->hasError('penulis'))? 'is-invalid':'' ?>" id="penulis" name="penulis" placeholder="penulis buku">
                                 <span class="invalid-feedback" role="alert">
                                     <strong><?= $validation->getError('penulis'); ?></strong>
                                 </span>
                             </div>
                     </div>
-                      <div class="form-group row">
-                        <label for="select-category" class="col-sm-2 col-form-label">Kategori</label>
-                        <div class="col-sm-6 col-lg-6 col-md-6">
-                          <select class="select2 <?= ($validation->hasError('kategori'))? 'is-invalid':'' ?>" id="select-category" multiple="multiple" name="kategori[]" data-placeholder="Pilih kategori berita" style="width: 100%;">
-                            <?php foreach($kategori as $item): ?>
-                                <option value="<?= $item['id']; ?>" ><?= $item['nama']; ?></option>
-                            <?php endforeach; ?>
-                          </select>
-                            <span class="text-sm text-danger" role="alert">
-                                <strong><?= $validation->getError('kategori'); ?></strong>
-                            </span>
-                            
-                        </div>
-                      </div>
+                    <div class="form-group row">
+                            <label for="penerbit" class="col-sm-2 col-form-label">Penerbit</label>
+                            <div class="col-sm-6 col-lg-6 col-md-6">
+                                <input value="<?= old('penerbit')?old('penerbit'):$buku['penerbit']; ?>" type="text" class="form-control <?= ($validation->hasError('penerbit'))? 'is-invalid':'' ?>" id="penerbit" name="penerbit" placeholder="penerbit buku">
+                                <span class="invalid-feedback" role="alert">
+                                    <strong><?= $validation->getError('penerbit'); ?></strong>
+                                </span>
+                            </div>
+                    </div>
                       <div class="form-group row">
                         <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
-                        <div class="col-sm-12 col-lg-10 col-md-10">
-                          <textarea id="deskripsi" class="form-control <?= ($validation->hasError('deskripsi'))? 'is-invalid':'' ?>" id="deskripsi" name="deskripsi"><?= old('deskripsi')?old('deskripsi'):$berita['deskripsi']; ?></textarea>
+                        <div class="col-sm-6 col-lg-6 col-md-6">
+                          <textarea id="deskripsi" class="form-control <?= ($validation->hasError('deskripsi'))? 'is-invalid':'' ?>" id="deskripsi" name="deskripsi"><?= old('deskripsi')?old('deskripsi'):$buku['deskripsi']; ?></textarea>
                           <span class="invalid-feedback" role="alert">
                               <strong><?= $validation->getError('deskripsi'); ?></strong>
                           </span>
@@ -97,11 +110,11 @@
                         <label for="deskripsi" class="col-sm-2 col-form-label">&nbsp;</label>
                         <div class="col-sm-12 col-lg-10 col-md-10">
                           <div class="custom-control custom-radio">
-                            <input class="custom-control-input" type="radio" id="terbit" name="status" value="0" <?= $berita['status'] == 0?'checked':''; ?>>
+                            <input class="custom-control-input" type="radio" id="terbit" name="status" value="0" <?= $buku['status'] == 0?'checked':''; ?>>
                             <label for="terbit" class="custom-control-label">Terbitkan</label>
                           </div>
                           <div class="custom-control custom-radio">
-                            <input class="custom-control-input" type="radio" id="draf"  name="status" value="1" <?= $berita['status'] == 1?'checked':''; ?>>
+                            <input class="custom-control-input" type="radio" id="draf"  name="status" value="1" <?= $buku['status'] == 1?'checked':''; ?>>
                             <label for="draf" class="custom-control-label">Draf</label>
                         </div>                          
                           <span class="invalid-feedback" role="alert">
@@ -115,7 +128,7 @@
                   <!-- /.card-body -->
                   <div class="card-footer">
                     <button type="submit" class="btn btn-info">Simpan</button>
-                    <a href="<?= route_to('berita.index'); ?>" class="btn btn-default">Kembali</a>
+                    <a href="<?= route_to('buku.index'); ?>" class="btn btn-default">Kembali</a>
                   </div>
                   <!-- /.card-footer -->
                 </form>
@@ -126,62 +139,8 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('js'); ?>
-<!-- Select2 -->
-<script src="<?= base_url('admin_assets/plugins/select2/js/select2.full.min.js'); ?>"></script>
-<!-- Summernote -->
-<script src="<?= base_url('admin_assets/plugins/summernote/summernote-bs4.min.js'); ?>"></script>
 <script>
   $(function () {
-    //Initialize Select2 Elements
-    $('#select-category').select2({
-      theme: 'bootstrap4'
-    }).val( <?= json_encode($kategoriId); ?>).trigger('change')
-    $('#deskripsi').summernote({
-      height: 400,
-      callbacks: {
-        onImageUpload: function(image) {
-          // upload image to server and create imgNode...
-          // console.log('on image upload');
-          // $summernote.summernote('insertNode', imgNode);
-          // console.log(image[0]);
-          uploadImage(image[0]);
-        },
-        onMediaDelete : function(target) {
-            deleteImage(target[0].src);
-        }
-      }
-    })
-    function uploadImage(image) {
-        var data = new FormData();
-        data.append("image", image);
-        $.ajax({
-            url: "<?= route_to('image.upload'); ?>",
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: data,
-            type: "POST",
-            success: function(url) {
-                $('#deskripsi').summernote("insertImage", url.gambar);
-                // console.log("success",url);
-            },
-            error: function(data) {
-                // console.log("error ",data);
-            }
-        });
-    }
-
-    function deleteImage(src) {
-        $.ajax({
-            data: {src : src},
-            type: "POST",
-            url: "<?= route_to('image.delete'); ?>",
-            cache: false,
-            success: function(response) {
-                // console.log(response);
-            }
-        });
-    }
     //menampilkan foto setiap ada perubahan pada modal tambah
     $('#sampul').on('change', function() {
         readURL(this);
@@ -189,13 +148,16 @@
     function readURL(input) {
       if (input.files && input.files[0]) {
           var reader = new FileReader();
-          $('.custom-file-label').html(input.files[0].name)
+          $('#label-sampul').html(input.files[0].name)
           reader.onload = function (e) {
               $('#image_con').attr('src', e.target.result);
           };
           reader.readAsDataURL(input.files[0]);
       }
     }
+    $('#buku').on('change', function() {
+      $('#label-buku').html(this.files[0].name)
+    });
   });
 </script>
 <?= $this->endSection(); ?>

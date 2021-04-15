@@ -108,6 +108,17 @@ $routes->group('admin', function($routes)
 		$routes->get('gallery/(:segment)', 'Admin\GalleryController::detail/$1', ['as' => 'gallery.detail']);
 		$routes->get('gallery/edit/(:segment)', 'Admin\GalleryController::edit/$1', ['as' => 'gallery.edit']);
 		$routes->delete('gallery/photo/delete', 'Admin\GalleryController::deletePhotoGallery', ['as' => 'gallery.photo.delete']);
+		// Buku Route
+		$routes->get('buku', 'Admin\BukuController::index', ['as' => 'buku.index']);
+		$routes->post('buku', 'Admin\BukuController::store', ['as' => 'buku.store']);
+		$routes->delete('buku', 'Admin\BukuController::delete', ['as' => 'buku.delete']);
+		$routes->post('buku/update', 'Admin\BukuController::update', ['as' => 'buku.update']);
+		$routes->get('buku/create', 'Admin\BukuController::create', ['as' => 'buku.create']);
+		$routes->get('buku/publish/(:segment)', 'Admin\BukuController::publish/$1', ['as' => 'buku.publish']);
+		$routes->get('buku/draft/(:segment)', 'Admin\BukuController::draft/$1', ['as' => 'buku.draft']);
+		$routes->get('buku/(:segment)', 'Admin\BukuController::detail/$1', ['as' => 'buku.detail']);
+		$routes->get('buku/edit/(:segment)', 'Admin\BukuController::edit/$1', ['as' => 'buku.edit']);
+		$routes->get('buku/download/(:segment)', 'Admin\BukuController::download/$1', ['as' => 'buku.download']);
 	});
 });
 

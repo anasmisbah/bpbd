@@ -72,6 +72,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?= route_to('buku.index'); ?>" class="nav-link" id="nav-buku">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Buku
+              </p>
+            </a>
+          </li>
           <li class="nav-item"  id="list-profil">
             <a href="#" class="nav-link" id="nav-profil">
               <i class="nav-icon fas fa-building"></i>
