@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\BeritaModel;
 use App\Models\KategoriModel;
-use App\Models\KategoriBeritaModel;
+use App\Models\KategoriberitaModel;
 
 class BeritaController extends BaseController
 {
@@ -16,7 +16,7 @@ class BeritaController extends BaseController
 	{
 		$this->beritaModel = new BeritaModel(); 
 		$this->kategoriModel = new KategoriModel(); 
-		$this->kategoriBeritaModel = new kategoriBeritaModel(); 
+		$this->kategoriBeritaModel = new KategoriberitaModel(); 
 	}
 	public function index()
 	{

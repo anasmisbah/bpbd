@@ -5,7 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\BeritaModel;
 use App\Models\KategoriModel;
-use App\Models\KategoriBeritaModel;
+use App\Models\KategoriberitaModel;
 use CodeIgniter\I18n\Time;
 
 class BeritaController extends BaseController
@@ -17,7 +17,7 @@ class BeritaController extends BaseController
 	{
 		$this->beritaModel = new BeritaModel(); 
 		$this->kategoriModel = new KategoriModel(); 
-		$this->kategoriBeritaModel = new kategoriBeritaModel(); 
+		$this->kategoriBeritaModel = new kategoriberitaModel(); 
 	}
 	public function index()
 	{
