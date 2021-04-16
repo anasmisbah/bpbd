@@ -22,4 +22,9 @@ class GalleryModel extends Model
 		return $this->select('gallery.id,gallery.slug,gallery.judul,gallery.published_at,gallery.dilihat,users.nama')
 		->join('users', 'users.id = gallery.user_id')->where('slug',$slug)->first();
 	}
+
+	public function getLatestGallery()
+	{
+		return $this->select('gallery.id,gallery.slug,gallery.judul,gallery.published_at,gallery.dilihat')->where('status',0)->orderBy('published_at','DESC')->findAll(6);
+	}
 }
