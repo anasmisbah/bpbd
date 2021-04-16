@@ -81,6 +81,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="<?= route_to('produkhukum.index'); ?>" class="nav-link" id="nav-produk-hukum">
+              <i class="nav-icon fas fa-gavel"></i>
+              <p>
+                Produk Hukum
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="<?= route_to('kontak.detail'); ?>" class="nav-link" id="nav-kontak">
               <i class="nav-icon fas fa-id-card"></i>
               <p>

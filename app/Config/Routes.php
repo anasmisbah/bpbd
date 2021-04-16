@@ -138,6 +138,14 @@ $routes->group('admin', function($routes)
 		$routes->post('kontak/update', 'Admin\KontakController::update', ['as' => 'kontak.update']);
 		$routes->get('kontak', 'Admin\KontakController::detail', ['as' => 'kontak.detail']);
 		$routes->get('kontak/edit', 'Admin\KontakController::edit', ['as' => 'kontak.edit']);
+		// Kategori Route
+		$routes->get('produk-hukum', 'Admin\ProdukhukumController::index', ['as' => 'produkhukum.index']);
+		$routes->post('produk-hukum', 'Admin\ProdukhukumController::store', ['as' => 'produkhukum.store']);
+		$routes->delete('produk-hukum', 'Admin\ProdukhukumController::delete', ['as' => 'produkhukum.delete']);
+		$routes->put('produk-hukum', 'Admin\ProdukhukumController::update', ['as' => 'produkhukum.update']);
+		$routes->get('produk-hukum/create', 'Admin\ProdukhukumController::create', ['as' => 'produkhukum.create']);
+		$routes->get('produk-hukum/(:segment)', 'Admin\ProdukhukumController::detail/$1', ['as' => 'produkhukum.detail']);
+		$routes->get('produk-hukum/edit/(:segment)', 'Admin\ProdukhukumController::edit/$1', ['as' => 'produkhukum.edit']);
 	});
 });
 
