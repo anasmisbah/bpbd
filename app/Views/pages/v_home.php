@@ -86,7 +86,7 @@
     <!--/ Content row end -->
 
     <div class="general-btn text-center mt-4">
-        <a class="btn btn-primary" href="news-left-sidebar.html">Berita Terbaru Lainnya</a>
+        <a class="btn btn-primary" href="<?= route_to('pages.list.berita'); ?>">Berita Terbaru Lainnya</a>
     </div>
 
   </div>
@@ -126,7 +126,9 @@
         <?php endforeach; ?>
     </div>
     <!--/ Content row end -->
-
+    <div class="general-btn text-center mt-4">
+        <a class="btn btn-primary" href="<?= route_to('pages.list.video'); ?>">Video Terbaru Lainnya</a>
+    </div>
   </div>
   <!--/ Container end -->
 </section>

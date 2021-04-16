@@ -37,6 +37,7 @@ $routes->get('/', 'HomeController::index', ['as' => 'pages.beranda']);
 $routes->get('/berita','BeritaController::index', ['as' => 'pages.list.berita']);
 $routes->get('/berita/(:segment)','BeritaController::detail/$1', ['as' => 'pages.detail.berita']);
 // route video
+$routes->get('/video','VideoController::index', ['as' => 'pages.list.video']);
 $routes->get('/video/(:segment)','VideoController::detail/$1', ['as' => 'pages.detail.video']);
 // route profile
 $routes->get('/profil/(:segment)','ProfilController::detail/$1', ['as' => 'pages.detail.profil']);

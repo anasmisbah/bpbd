@@ -1,3 +1,8 @@
+<?php 
+use App\Models\KontakModel;
+$this->kontakModel = new KontakModel(); 
+$tempKontak = $this->kontakModel->first();
+?>
 <div class="bg-white">
     <div class="container">
       <div class="logo-area">
@@ -14,7 +19,7 @@
                     <div class="info-box">
                       <div class="info-box-content">
                           <p class="info-box-title">No.Telepon</p>
-                          <p class="info-box-subtitle">(0541) 741040</p>
+                          <p class="info-box-subtitle"><?= $tempKontak['no_telepon']; ?></p>
                       </div>
                     </div>
                   </li>
@@ -22,14 +27,14 @@
                     <div class="info-box">
                       <div class="info-box-content">
                           <p class="info-box-title">Alamat email</p>
-                          <p class="info-box-subtitle">bpbd@kaltimprov.go.id</p>
+                          <p class="info-box-subtitle"><?= $tempKontak['email']; ?></p>
                       </div>
                     </div>
                   </li>
                   <li class="last">
                     <div class="info-box last">
                       <div class="info-box-content">
-                          <p class="info-box-title">Global Certificate</p>
+                          <p class="info-box-title">Lorem</p>
                           <p class="info-box-subtitle">ISO 9001:2017</p>
                       </div>
                     </div>
@@ -82,7 +87,7 @@
                           <li class="dropdown-submenu">
                                 <a href="#!" class="dropdown-toggle" data-toggle="dropdown">Publikasi</a>
                                 <ul class="dropdown-menu">
-                                  <li><a href="#!">Video</a></li>
+                                  <li><a href="<?= route_to('pages.list.video'); ?>">Video</a></li>
                                   <li><a href="<?= route_to('pages.list.gallery'); ?>">Galeri Foto</a></li>
                                 </ul>
                             </li>
