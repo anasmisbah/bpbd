@@ -28,7 +28,7 @@
           </li>
           <li>
             <p class="project-link">
-              <a class="btn btn-primary" target="_blank" href="<?= route_to('pages.download.buku',$buku['slug']); ?>"><i class="far fa-download"></i> Download</a>
+              <a class="btn btn-primary" target="_blank" href="<?= route_to('pages.download.buku',$buku['slug']); ?>"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
             </p>
           </li>
         </ul>

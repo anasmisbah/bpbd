@@ -15,4 +15,11 @@ class PhotogalleryModel extends Model
 	{
 		return $this->select('photo_gallery.id,photo_gallery.gambar')->join('gallery', 'gallery.id = photo_gallery.gallery_id')->where('gallery_id',$id)->findAll();
 	}
+	public function listPhotoGallery($data)
+	{
+		foreach ($data as $i => $d) {
+			$data[$i]['gambar'] = 	$this->select('photo_gallery.id,photo_gallery.gambar')->where('gallery_id',$d['id'])->findAll();
+		}
+		return $data;
+	}
 }

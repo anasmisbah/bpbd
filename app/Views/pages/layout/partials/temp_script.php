@@ -22,4 +22,7 @@
 	<!-- Template custom -->
 	<script src="<?= base_url('pages_assets/js/script.js'); ?>"></script>
 	 <script src="<?= base_url('admin_assets/plugins/moment/moment-with-locales.min.js'); ?>"></script>
+	 <script>
+	 moment.locale('id')
+	 </script>
 	 <?= $this->renderSection('js'); ?>

@@ -52,9 +52,8 @@ $tempKontak = $this->kontakModel->first();
         <div class="row align-items-center">
           <div class="col-md-6">
             <div class="copyright-info">
-              <span>Copyright &copy; <script>
-                  document.write(new Date().getFullYear())
-                </script>, Badan Penanggulangan Bencana Daerah PROVINSI KALIMANTAN TIMUR</span>
+              <span>Copyright &copy; 
+                  2021, Badan Penanggulangan Bencana Daerah PROVINSI KALIMANTAN TIMUR</span>
             </div>
           </div>
         </div><!-- Row end -->

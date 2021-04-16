@@ -48,6 +48,9 @@ $routes->get('/kontak','KontakController::detail', ['as' => 'pages.detail.kontak
 $routes->get('/buku','BukuController::index', ['as' => 'pages.list.buku']);
 $routes->get('/buku/(:segment)','BukuController::detail/$1', ['as' => 'pages.detail.buku']);
 $routes->get('/buku/download/(:segment)','BukuController::download/$1', ['as' => 'pages.download.buku']);
+// route buku
+$routes->get('/galeri','GalleryController::index', ['as' => 'pages.list.gallery']);
+$routes->get('/galeri/(:segment)','GalleryController::detail/$1', ['as' => 'pages.detail.gallery']);
 
 // Admin Route
 $routes->group('admin', function($routes)

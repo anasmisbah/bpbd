@@ -79,7 +79,13 @@
                       <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Informasi Publik <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Publikasi</a></li>
+                          <li class="dropdown-submenu">
+                                <a href="#!" class="dropdown-toggle" data-toggle="dropdown">Publikasi</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#!">Video</a></li>
+                                  <li><a href="<?= route_to('pages.list.gallery'); ?>">Galeri Foto</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">Kerjasama</a></li>
                             <li><a href="<?= route_to('pages.list.buku'); ?>">Buku</a></li>
                             <li><a href="#">Produk Hukum</a></li>

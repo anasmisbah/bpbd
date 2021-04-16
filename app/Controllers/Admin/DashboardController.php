@@ -32,6 +32,6 @@ class DashboardController extends BaseController
 			'totalKategori'=>$totalKategori,
 			'totalUser'=>$totalUser,
 		];
-		return view('admin\v_dashboard',$data);
+		return view('admin/v_dashboard',$data);
 	}
 }
