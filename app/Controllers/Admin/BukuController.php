@@ -65,7 +65,7 @@ class BukuController extends BaseController
 				]
 			],
 			'buku'=>[
-				'rules'=> 'uploaded[buku]|max_size[buku,5000]',
+				'rules'=> 'uploaded[buku]|max_size[buku,40000]',
 				'errors'=>[
 					'uploaded'=>'Buku tidak boleh kosong',
 					'max_size' =>'Ukuran Buku terlalu besar',

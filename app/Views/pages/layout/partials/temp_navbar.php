@@ -81,7 +81,7 @@
                           <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Publikasi</a></li>
                             <li><a href="#">Kerjasama</a></li>
-                            <li><a href="#">Buku</a></li>
+                            <li><a href="<?= route_to('pages.list.buku'); ?>">Buku</a></li>
                             <li><a href="#">Produk Hukum</a></li>
                           </ul>
                       </li>

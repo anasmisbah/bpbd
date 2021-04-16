@@ -40,7 +40,6 @@
             <th>No</th>
             <th>Judul</th>
             <th>Penulis</th>
-            <th>Penerbit</th>
             <th>status</th>
             <th>Aksi</th>
             </tr>
@@ -52,7 +51,6 @@
                 <td><?= $i++; ?></td>
                 <td><?= implode(' ', array_slice(explode(' ', $item['judul']), 0, 12)).'...'; ?></td>
                 <td><?= $item['penulis']; ?></td>
-                <td><?= $item['penerbit']; ?></td>
                 <td>
                     <?php if($item['status'] == 0): ?>
                         <span class="badge badge-pill badge-success">Terbit</span>

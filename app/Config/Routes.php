@@ -33,12 +33,21 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'HomeController::index', ['as' => 'pages.beranda']);
+// route berita
 $routes->get('/berita','BeritaController::index', ['as' => 'pages.list.berita']);
 $routes->get('/berita/(:segment)','BeritaController::detail/$1', ['as' => 'pages.detail.berita']);
+// route video
 $routes->get('/video/(:segment)','VideoController::detail/$1', ['as' => 'pages.detail.video']);
+// route profile
 $routes->get('/profil/(:segment)','ProfilController::detail/$1', ['as' => 'pages.detail.profil']);
+// route pengetahuan bencana
 $routes->get('/pengetahuan-bencana/(:segment)','BencanaController::detail/$1', ['as' => 'pages.detail.bencana']);
+// route kontak
 $routes->get('/kontak','KontakController::detail', ['as' => 'pages.detail.kontak']);
+// route buku
+$routes->get('/buku','BukuController::index', ['as' => 'pages.list.buku']);
+$routes->get('/buku/(:segment)','BukuController::detail/$1', ['as' => 'pages.detail.buku']);
+$routes->get('/buku/download/(:segment)','BukuController::download/$1', ['as' => 'pages.download.buku']);
 
 // Admin Route
 $routes->group('admin', function($routes)
