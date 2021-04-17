@@ -146,6 +146,17 @@ $routes->group('admin', function($routes)
 		$routes->get('produk-hukum/create', 'Admin\ProdukhukumController::create', ['as' => 'produkhukum.create']);
 		$routes->get('produk-hukum/(:segment)', 'Admin\ProdukhukumController::detail/$1', ['as' => 'produkhukum.detail']);
 		$routes->get('produk-hukum/edit/(:segment)', 'Admin\ProdukhukumController::edit/$1', ['as' => 'produkhukum.edit']);
+		// Buku Route
+		$routes->get('file-hukum/(:segment)', 'Admin\FilehukumController::index/$1', ['as' => 'filehukum.index']);
+		$routes->post('file-hukum', 'Admin\FilehukumController::store', ['as' => 'filehukum.store']);
+		$routes->delete('file-hukum', 'Admin\FilehukumController::delete', ['as' => 'filehukum.delete']);
+		$routes->post('file-hukum/update', 'Admin\FilehukumController::update', ['as' => 'filehukum.update']);
+		$routes->get('file-hukum/create/(:segment)', 'Admin\FilehukumController::create/$1', ['as' => 'filehukum.create']);
+		$routes->get('file-hukum/publish/(:segment)', 'Admin\FilehukumController::publish/$1', ['as' => 'filehukum.publish']);
+		$routes->get('file-hukum/draft/(:segment)', 'Admin\FilehukumController::draft/$1', ['as' => 'filehukum.draft']);
+		$routes->get('file-hukum/detail/(:segment)', 'Admin\FilehukumController::detail/$1', ['as' => 'filehukum.detail']);
+		$routes->get('file-hukum/edit/(:segment)', 'Admin\FilehukumController::edit/$1', ['as' => 'filehukum.edit']);
+		$routes->get('file-hukum/download/(:segment)', 'Admin\FilehukumController::download/$1', ['as' => 'filehukum.download']);
 	});
 });
 
