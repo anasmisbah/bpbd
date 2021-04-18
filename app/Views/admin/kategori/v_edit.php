@@ -8,8 +8,8 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Beranda</a></li>
-            <li class="breadcrumb-item"><a href="#">Kategori</a></li>
+        <li class="breadcrumb-item"><a href="<?= route_to('admin.dashboard'); ?>">Beranda</a></li>
+        <li class="breadcrumb-item"><a href="<?= route_to('kategori.index'); ?>">Kategori</a></li>
             <li class="breadcrumb-item active">Ubah</li>
         </ol>
     </div><!-- /.col -->

@@ -18,7 +18,7 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item active"><a href="#">Beranda</a></li>
+            <li class="breadcrumb-item active"><a href="<?= route_to('admin.dashboard'); ?>">Beranda</a></li>
         </ol>
     </div><!-- /.col -->
 <?= $this->endSection(); ?>

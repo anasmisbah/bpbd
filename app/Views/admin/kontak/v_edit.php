@@ -8,8 +8,8 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Beranda</a></li>
-            <li class="breadcrumb-item"><a href="#">Kontak</a></li>
+        <li class="breadcrumb-item"><a href="<?= route_to('admin.dashboard'); ?>">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="<?= route_to('kontak.detail'); ?>">Kontak</a></li>
             <li class="breadcrumb-item active">Ubah</li>
         </ol>
     </div><!-- /.col -->
@@ -98,7 +98,7 @@
                   <!-- /.card-body -->
                   <div class="card-footer">
                     <button type="submit" class="btn btn-info">Simpan</button>
-                    <a href="<?= route_to('kontak.detail',$kontak['id']); ?>" class="btn btn-default">Kembali</a>
+                    <a href="<?= route_to('kontak.detail'); ?>" class="btn btn-default">Kembali</a>
                   </div>
                   <!-- /.card-footer -->
                 </form>

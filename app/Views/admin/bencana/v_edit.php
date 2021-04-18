@@ -10,8 +10,8 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Beranda</a></li>
-            <li class="breadcrumb-item"><a href="#">Pengetahuan Bencana</a></li>
+            <li class="breadcrumb-item"><a href="<?= route_to('admin.dashboard'); ?>">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="<?= route_to('bencana.detail',$bencana['id']); ?>">Pengetahuan Bencana</a></li>
             <li class="breadcrumb-item active">Ubah</li>
         </ol>
     </div><!-- /.col -->
