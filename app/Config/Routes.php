@@ -52,6 +52,11 @@ $routes->get('/buku/download/(:segment)','BukuController::download/$1', ['as' =>
 // route buku
 $routes->get('/galeri','GalleryController::index', ['as' => 'pages.list.gallery']);
 $routes->get('/galeri/(:segment)','GalleryController::detail/$1', ['as' => 'pages.detail.gallery']);
+// route buku
+$routes->get('/produk-hukum','ProdukhukumController::index', ['as' => 'pages.list.produkhukum']);
+$routes->get('/produk-hukum/(:segment)','ProdukhukumController::detail/$1', ['as' => 'pages.detail.produkhukum']);
+$routes->get('/produk-hukum/download/(:segment)','ProdukhukumController::download/$1', ['as' => 'pages.download.produkhukum']);
+$routes->get('/file-produk-hukum/(:segment)','ProdukhukumController::detailFileHukum/$1', ['as' => 'pages.detail.filehukum']);
 
 // Admin Route
 $routes->group('admin', function($routes)

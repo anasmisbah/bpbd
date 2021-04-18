@@ -1,7 +1,10 @@
 <?php 
 use App\Models\KontakModel;
+use App\Models\ProdukhukumModel;
 $this->kontakModel = new KontakModel(); 
+$this->produkhukumModel = new ProdukhukumModel(); 
 $tempKontak = $this->kontakModel->first();
+$tempProdukhukum = $this->produkhukumModel->findAll();
 ?>
 <div class="bg-white">
     <div class="container">
@@ -93,7 +96,14 @@ $tempKontak = $this->kontakModel->first();
                             </li>
                             <li><a href="#">Kerjasama</a></li>
                             <li><a href="<?= route_to('pages.list.buku'); ?>">Buku</a></li>
-                            <li><a href="#">Produk Hukum</a></li>
+                            <li class="dropdown-submenu">
+                                <a href="#!" class="dropdown-toggle" data-toggle="dropdown">Produk Hukum</a>
+                                <ul class="dropdown-menu">
+                                  <?php foreach($tempProdukhukum as $ph): ?>
+                                    <li><a href="<?= route_to('pages.detail.produkhukum',$ph['slug']); ?>"><?= $ph['nama']; ?></a></li>
+                                  <?php endforeach; ?>
+                                </ul>
+                            </li>
                           </ul>
                       </li>
                       <li class="nav-item dropdown">
