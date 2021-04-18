@@ -50,6 +50,10 @@ class ProdukhukumController extends BaseController
 		if (empty($filehukum)) {
 			throw new \CodeIgniter\Exceptions\PageNotFoundException('filehukum '.$id.' tidak ditemukan');
 		}
+		$this->filehukumModel->save([
+			'id'=>$filehukum['id'],
+			'dilihat'=>$filehukum['dilihat']+1
+		]);
 		$path = 'uploads/'.$filehukum['file'];
 		$file = new File($path);
 		return $this->response->download($path, null)->setFileName($filehukum['judul'].'.'.$file->guessExtension());

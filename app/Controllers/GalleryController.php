@@ -34,6 +34,10 @@ class GalleryController extends BaseController
 		$data = [
 			'gallery' =>$gallery,
 		];
+		$this->galleryModel->save([
+			'id'=>$gallery['id'],
+			'dilihat'=>$gallery['dilihat']+1
+		]);
 		return view('pages/gallery/v_detail_gallery',$data);
 	}
 }

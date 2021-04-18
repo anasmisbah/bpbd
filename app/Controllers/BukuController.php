@@ -28,6 +28,10 @@ class BukuController extends BaseController
 		$data = [
 			'buku' =>$buku,
 		];
+		$this->bukuModel->save([
+			'id'=>$buku['id'],
+			'dilihat'=>$buku['dilihat']+1
+		]);
 		return view('pages/buku/v_detail_buku',$data);
 	}
 
