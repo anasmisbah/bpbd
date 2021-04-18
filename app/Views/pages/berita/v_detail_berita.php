@@ -97,7 +97,7 @@
 <script>
 $(function () {
   let publishDate = $('#tgl-publish')
-  publishDate.append(moment(publishDate.data('date')).format('dddd, d MMMM YYYY H:mm')+' WITA')
+  publishDate.append(moment(publishDate.data('date')).format('dddd, D MMMM YYYY H:mm')+' WITA')
 })
 </script>
 <?= $this->endSection(); ?>

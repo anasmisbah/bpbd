@@ -99,10 +99,10 @@ $(function () {
   let publishDate = '<?= $video['published_at']; ?>'
   let createdAtDate = '<?= $video['created_at']; ?>'
   let updatedAtDate = '<?= $video['updated_at']; ?>'
-  $('#keterangan-tanggal').html(`<strong>Dibuat pada: </strong> ${moment(createdAtDate).format('dddd, d MMMM YYYY H:mm')} WITA
-/ <strong>Diubah pada: </strong>${moment(updatedAtDate).format('dddd, d MMMM YYYY H:mm')} WITA`)
+  $('#keterangan-tanggal').html(`<strong>Dibuat pada: </strong> ${moment(createdAtDate).format('dddd, D MMMM YYYY H:mm')} WITA
+/ <strong>Diubah pada: </strong>${moment(updatedAtDate).format('dddd, D MMMM YYYY H:mm')} WITA`)
   if (publishDate) {
-    $('#tgl-publish').html(moment(publishDate).format('dddd, d MMMM YYYY H:mm')+' WITA')
+    $('#tgl-publish').html(moment(publishDate).format('dddd, D MMMM YYYY H:mm')+' WITA')
   }
   $('.foto').magnificPopup({
       type:'image'

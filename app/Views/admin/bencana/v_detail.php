@@ -62,8 +62,8 @@
 $(function () {
   let createdAtDate = '<?= $bencana['created_at']; ?>'
   let updatedAtDate = '<?= $bencana['updated_at']; ?>'
-  $('#keterangan-tanggal').html(`<strong>Dibuat pada: </strong> ${moment(createdAtDate).format('dddd, d MMMM YYYY H:mm')} WITA
-/ <strong>Diubah pada: </strong>${moment(updatedAtDate).format('dddd, d MMMM YYYY H:mm')} WITA`)
+  $('#keterangan-tanggal').html(`<strong>Dibuat pada: </strong> ${moment(createdAtDate).format('dddd, D MMMM YYYY H:mm')} WITA
+/ <strong>Diubah pada: </strong>${moment(updatedAtDate).format('dddd, D MMMM YYYY H:mm')} WITA`)
 
   const status = '<?= session()->getFlashdata('pesan'); ?>'
 

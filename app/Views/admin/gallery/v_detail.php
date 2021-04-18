@@ -63,7 +63,7 @@
               </tr>
               <?php if($gallery['status'] == 0): ?>  
                 <tr>
-                  <td style="width:10%">Tanggal Terbit</td>
+                  <td style="width:15%">Tanggal Terbit</td>
                   <td id="tgl-publish"></td>
                 </tr>
               <?php endif; ?>
@@ -95,10 +95,10 @@ $(function () {
   let publishDate = '<?= $gallery['published_at']; ?>'
   let createdAtDate = '<?= $gallery['created_at']; ?>'
   let updatedAtDate = '<?= $gallery['updated_at']; ?>'
-  $('#keterangan-tanggal').html(`<strong>Dibuat pada: </strong> ${moment(createdAtDate).format('dddd, d MMMM YYYY H:mm')} WITA
-/ <strong>Diubah pada: </strong>${moment(updatedAtDate).format('dddd, d MMMM YYYY H:mm')} WITA`)
+  $('#keterangan-tanggal').html(`<strong>Dibuat pada: </strong> ${moment(createdAtDate).format('dddd, D MMMM YYYY H:mm')} WITA
+/ <strong>Diubah pada: </strong>${moment(updatedAtDate).format('dddd, D MMMM YYYY H:mm')} WITA`)
   if (publishDate) {
-    $('#tgl-publish').html(moment(publishDate).format('dddd, d MMMM YYYY H:mm')+' WITA')
+    $('#tgl-publish').html(moment(publishDate).format('dddd, D MMMM YYYY H:mm')+' WITA')
   }
   $('.foto').magnificPopup({
       type:'image'

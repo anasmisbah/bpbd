@@ -37,8 +37,8 @@ $tempProdukhukum = $this->produkhukumModel->findAll();
                   <li class="last">
                     <div class="info-box last">
                       <div class="info-box-content">
-                          <p class="info-box-title">Lorem</p>
-                          <p class="info-box-subtitle">ISO 9001:2017</p>
+                          <p class="info-box-title">Daerah</p>
+                          <p class="info-box-subtitle">Kalimantan Timur</p>
                       </div>
                     </div>
                   </li>

@@ -20,7 +20,7 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  .img-fluid {
+  .img-berita {
       height: 240px;
       object-fit: cover;
   }
@@ -378,7 +378,7 @@
           <div class="latest-post">
               <div class="latest-post-media">
                 <a href="<?= route_to('pages.detail.berita',$itemBt['slug']); ?>" class="latest-post-img">
-                    <img loading="lazy" class="img-fluid" src="<?= base_url('uploads/'.$itemBt['sampul']); ?>" alt="img">
+                    <img loading="lazy" class="img-fluid img-berita" src="<?= base_url('uploads/'.$itemBt['sampul']); ?>" alt="img">
                 </a>
               </div>
               <div class="post-body">
@@ -419,9 +419,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="latest-post">
               <div class="latest-post-media">
-                <a href="<?= route_to('pages.detail.video',$itemVt['slug']); ?>" class="latest-post-img">
-                <iframe class="embed-responsive-item" src="<?= $itemVt['url']; ?>"  allowfullscreen></iframe>
-                </a>
+                <iframe width="100%" height="100%" class="embed-responsive-item" src="<?= $itemVt['url']; ?>"  allowfullscreen></iframe>
               </div>
               <div class="post-body">
                 <h4 class="post-title">
@@ -468,7 +466,7 @@
   <div class="container">
   <div class="row text-center">
       <div class="col-lg-12">
-        <h2 class="section-title">Galeri Kegiatan BPBD Kalimantan Timur</h2>
+        <h2 class="section-title">Galeri Kegiatan BPBD Provinsi Kalimantan Timur</h2>
         <h3 class="section-sub-title">Galeri BPBD</h3>
       </div>
     </div>
@@ -480,7 +478,7 @@
             <div class="col-lg-4 col-md-6 shuffle-item" >
               <div class="project-img-container">
                 <a class="gallery-popup" href="<?= base_url('uploads/'.$gt['gambar'][0]['gambar']); ?>">
-                  <img class="img-fluid" src="<?= base_url('uploads/'.$gt['gambar'][0]['gambar']); ?>" alt="project-image">
+                  <img class="img-fluid img-berita" src="<?= base_url('uploads/'.$gt['gambar'][0]['gambar']); ?>" alt="project-image">
                   <span class="gallery-icon"><i class="fa fa-plus"></i></span>
                 </a>
                 <div class="project-item-info">
@@ -500,13 +498,64 @@
 
   </div><!-- Conatiner end -->
 </section><!-- Main container end -->
+<section id="main-container" class="main-container">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-12">
+        <h2 class="section-title">Sosial Media BPBD Provinsi Kalimantan Timur</h2>
+        <h3 class="section-sub-title">Sosial Media</h3>
+      </div>
+    </div>
+    <!--/ Title row end -->
+
+    <div class="row">
+
+      <div class="col-lg-4 col-md-6">
+        <div class="ts-pricing-box">
+          <div class="ts-pricing-header">
+            <h2 class="ts-pricing-name">Ikuti Kami Di Facebook</h2>
+          </div><!-- Pricing header -->
+          <div class="ts-pricing-features">
+            <div class="fb-page" data-href="https://web.facebook.com/BPBD-Kaltim-104711564554260" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://web.facebook.com/BPBD-Kaltim-104711564554260" class="fb-xfbml-parse-ignore"><a href="https://web.facebook.com/BPBD-Kaltim-104711564554260">BPBD Kaltim</a></blockquote></div>
+          </div><!-- Features end -->
+        </div><!-- Plan 1 end -->
+      </div><!-- Col end -->
+
+      <div class="col-lg-4 col-md-6">
+        <div class="ts-pricing-box ts-pricing-featured">
+          <div class="ts-pricing-header">
+            <h2 class="ts-pricing-name">Ikuti Kami Di Twitter</h2>
+          </div><!-- Pricing header -->
+          <div class="ts-pricing-features">
+          <a class="twitter-timeline" data-height="500" href="https://twitter.com/bpbdkaltim?ref_src=twsrc%5Etfw">Tweets by bpbdkaltim</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div><!-- Plan 2 end -->
+      </div><!-- Col end -->
+
+      <div class="col-lg-4 col-md-6">
+        <div class="ts-pricing-box">
+          <div class="ts-pricing-header">
+            <h2 class="ts-pricing-name">Ikuti Kami Di instagram</h2>
+          </div><!-- Pricing header -->
+          <div class="ts-pricing-features">
+          </div><!-- Features end -->
+        </div><!-- Plan 3 end -->
+      </div><!-- Col end -->
+
+    </div>
+    <!--/ Content row end -->
+
+  </div><!-- Conatiner end -->
+</section><!-- Main container end -->
+<div id="fb-root"></div>
 <?= $this->endSection(); ?>
 <?= $this->section('js'); ?>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v10.0" nonce="2koYxy6w"></script>
 <script>
 $(function () {
   let publishDate = $('.tgl-publish')
   publishDate.each(function(index){
-	  $(this).append(moment($(this).data('date')).format('dddd, d MMMM YYYY H:mm')+' WITA')
+	  $(this).append(moment($(this).data('date')).format('dddd, D MMMM YYYY H:mm')+' WITA')
   })
 
   $.ajax({

@@ -109,7 +109,7 @@ $(function () {
 
     let publishDate = $('.tgl-publish')
     publishDate.each(function(index){
-        $(this).append(moment($(this).data('date')).format('dddd, d MMMM YYYY H:mm')+' WITA')
+        $(this).append(moment($(this).data('date')).format('dddd, D MMMM YYYY H:mm')+' WITA')
     })
     const status = '<?= session()->getFlashdata('pesan'); ?>'
 

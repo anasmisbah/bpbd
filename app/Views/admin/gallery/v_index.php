@@ -39,7 +39,6 @@
             <tr>
             <th>No</th>
             <th>Judul</th>
-            <th>Tanngal Terbit</th>
             <th>Aksi</th>
             </tr>
             </thead>
@@ -49,7 +48,6 @@
             <tr>
                 <td><?= $i++; ?></td>
                 <td><?= $item['judul']; ?></td>
-                <td><?= $item['published_at']; ?></td>
                 <td>
                     <a href="<?= route_to('gallery.edit',$item['id']); ?>" class="btn btn-warning btn-sm">
                         <i class="fas fa-edit"></i>
@@ -97,7 +95,6 @@ $(function () {
         "autoWidth": false,
         "responsive": true,
     });
-
 
     const status = '<?= session()->getFlashdata('pesan'); ?>'
 
