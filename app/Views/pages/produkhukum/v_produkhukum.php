@@ -111,7 +111,7 @@ img.testimonial-thumb {
 $(function () {
   let publishDate = $('.tgl-publish')
   publishDate.each(function(index){
-	  $(this).append(moment($(this).data('date')).format('dddd, d MMMM YYYY H:mm')+' WITA')
+	  $(this).append(moment($(this).data('date')).format('dddd, D MMMM YYYY H:mm')+' WITA')
   })
   var pathArray = window.location.pathname.split('/');
   if (pathArray[1] !== 'index.php') {

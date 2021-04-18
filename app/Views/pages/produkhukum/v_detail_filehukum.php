@@ -38,7 +38,7 @@
 $(function () {
     PDFObject.embed("<?= base_url('uploads/'.$filehukum['file']); ?>", "#my-container");
   let publishDate = $('#tgl-publish')
-  publishDate.append(moment(publishDate.data('date')).format('dddd, d MMMM YYYY H:mm')+' WITA')
+  publishDate.append(moment(publishDate.data('date')).format('dddd, D MMMM YYYY H:mm')+' WITA')
 })
 </script>
 <?= $this->endSection(); ?>
