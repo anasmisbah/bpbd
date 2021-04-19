@@ -20,7 +20,7 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
-                       src="<?= base_url('admin_assets/dist/img/avatar_user.png'); ?>"
+                       src="<?= base_url('uploads/'.session()->get('avatar')); ?>"
                        alt="User profile picture">
                 </div>
 

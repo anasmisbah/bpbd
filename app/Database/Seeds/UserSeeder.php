@@ -14,6 +14,7 @@ class UserSeeder extends Seeder
 				'nama' => 'admin',
 				'email'    => 'admin@mail.com',
 				'password'=> password_hash('123123', PASSWORD_DEFAULT),
+				'avatar'    => 'avatar/default.png',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],	
@@ -21,6 +22,7 @@ class UserSeeder extends Seeder
 				'nama' => 'admin2',
 				'email'    => 'admin2@mail.com',
 				'password'=> password_hash('123123', PASSWORD_DEFAULT),
+				'avatar'    => 'avatar/default.png',
 				'created_at'=>new Time('now'),
 				'updated_at'=>new Time('now')
 			],	

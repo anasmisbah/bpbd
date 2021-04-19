@@ -11,10 +11,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="<?= base_url('admin_assets/dist/img/avatar_user.png'); ?>" class="img-circle elevation-2" alt="User Image">
+          <img src="<?= base_url('uploads/'.session()->get('avatar')); ?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?= session()->get('nama'); ?></a>
+          <a href="<?= route_to('pengguna.profile'); ?>" class="d-block"><?= session()->get('nama'); ?></a>
         </div>
       </div>
 
@@ -159,6 +159,14 @@
                 </a>
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a href="<?= route_to('user.index'); ?>" class="nav-link" id="nav-user">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Pengguna
+              </p>
+            </a>
           </li>
         </ul>
       </nav>

@@ -70,6 +70,9 @@ $routes->group('admin', function($routes)
 	$routes->group( '',['filter' => 'auth'], function($routes)
 	{		
 		$routes->get('dashboard', 'Admin\DashboardController::dashboard',['as' => 'admin.dashboard']);
+		// profile pengguna login
+		$routes->get('pengguna/profile', 'Admin\UserController::profile', ['as' => 'pengguna.profile']);
+		$routes->get('pengguna/profile/edit', 'Admin\UserController::profileEdit', ['as' => 'pengguna.profile.edit']);
 		// Kategori Route
 		$routes->get('kategori', 'Admin\KategoriController::index', ['as' => 'kategori.index']);
 		$routes->post('kategori', 'Admin\KategoriController::store', ['as' => 'kategori.store']);
@@ -162,6 +165,14 @@ $routes->group('admin', function($routes)
 		$routes->get('file-hukum/detail/(:segment)', 'Admin\FilehukumController::detail/$1', ['as' => 'filehukum.detail']);
 		$routes->get('file-hukum/edit/(:segment)', 'Admin\FilehukumController::edit/$1', ['as' => 'filehukum.edit']);
 		$routes->get('file-hukum/download/(:segment)', 'Admin\FilehukumController::download/$1', ['as' => 'filehukum.download']);
+		// User Route
+		$routes->get('user', 'Admin\UserController::index', ['as' => 'user.index']);
+		$routes->post('user', 'Admin\UserController::store', ['as' => 'user.store']);
+		$routes->delete('user', 'Admin\UserController::delete', ['as' => 'user.delete']);
+		$routes->post('user/update', 'Admin\UserController::update', ['as' => 'user.update']);
+		$routes->get('user/create', 'Admin\UserController::create', ['as' => 'user.create']);
+		$routes->get('user/(:segment)', 'Admin\UserController::detail/$1', ['as' => 'user.detail']);
+		$routes->get('user/edit/(:segment)', 'Admin\UserController::edit/$1', ['as' => 'user.edit']);
 	});
 });
 

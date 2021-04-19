@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\UserModel;
+use CodeIgniter\I18n\Time;
 
 class AuthController extends BaseController
 {
@@ -32,9 +33,15 @@ class AuthController extends BaseController
                     'id'       => $data['id'],
                     'nama'     => $data['nama'],
                     'email'    => $data['email'],
+                    'avatar'   => $data['avatar'],
+                    'last_login'=>$data['last_login'], 
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);
+                $model->save([
+                    'id'=>$data['id'],
+                    'last_login'=> new Time('now')
+                ]);
                 return redirect()->route('admin.dashboard');
             }else{
                 $session->setFlashdata('msg', 'Wrong Password');
