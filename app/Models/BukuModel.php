@@ -22,4 +22,10 @@ class BukuModel extends Model
 		return $this->select('buku.id,buku.judul,buku.published_at,buku.sampul,buku.deskripsi,buku.slug,buku.penulis,buku.dilihat,users.nama,buku.penerbit,buku.buku')
 		->join('users', 'users.id = buku.user_id')->where('slug',$slug)->first();
 	}
+
+	public function getLatestBuku()
+	{
+		return $this->select('buku.id,buku.slug,buku.judul,buku.published_at,buku.sampul,buku.deskripsi,buku.dilihat,buku.penerbit')
+		->where('status',0)->orderBy('buku.published_at','DESC')->findAll(3);
+	}
 }

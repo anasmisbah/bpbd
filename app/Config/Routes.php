@@ -170,6 +170,7 @@ $routes->post('image/upload', 'Admin\UploadController::uploadImage', ['as' => 'i
 $routes->post('image/delete', 'Admin\UploadController::deleteImage', ['as' => 'image.delete']);
 $routes->post('gallery/image/upload', 'Admin\UploadController::uploadImageDZ', ['as' => 'gallery.upload']);
 $routes->post('gallery/image/delete', 'Admin\UploadController::deleteImageDZ', ['as' => 'gallery.delete']);
+$routes->get('data/chart', 'Admin\DashboardController::dataChart', ['as' => 'data.chart']);
 
 
 
