@@ -111,124 +111,26 @@
                 <!-- /.card-body -->
               </div>
             <!-- /.card -->
-            <div class="row">
-              <div class="col-md-6">
-                <!-- DIRECT CHAT -->
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Buku Terbaru</h3>
+                <div class="card-header">
+                  <h3 class="card-title">Chart Data</h3>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <ul class="products-list product-list-in-card pl-2 pr-2">
-                <?php foreach($bukuTerbaru as $bt): ?>
-                    <li class="item">
-                      <div class="product-img">
-                        <img src="<?= base_url('uploads/'.$bt['sampul']); ?>" alt="Product Image" class="img-size-50">
-                      </div>
-                      <div class="product-info">
-                        <a href="<?= route_to('berita.detail',$bt['id']); ?>" class="product-title"><?= implode(' ', array_slice(explode(' ', $bt['judul']), 0, 5)).'...'; ?>
-                        <span class="product-description">
-                        <?= implode(' ', array_slice(explode(' ', $bt['deskripsi']), 0, 5)).'...'; ?>
-                        </span>
-                      </div>
-                    </li>
-                    <!-- /.item -->
-                <?php endforeach; ?>
-                </ul>
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer text-center">
-                <a href="<?= route_to('berita.index'); ?>" class="uppercase">Berita terbaru lainnya</a>
-              </div>
-              <!-- /.card-footer -->
-            </div>
-                <!--/.direct-chat -->
-              </div>
-              <!-- /.col -->
-
-              <div class="col-md-6">
-                <!-- USERS LIST -->
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Latest Members</h3>
-
-                    <div class="card-tools">
-                      <span class="badge badge-danger">8 New Members</span>
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool" data-card-widget="remove">
-                        <i class="fas fa-times"></i>
-                      </button>
-                    </div>
+                <div class="card-body">
+                  <div class="chart">
+                    <canvas id="lineChart2" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                   </div>
-                  <!-- /.card-header -->
-                  <div class="card-body p-0">
-                    <ul class="users-list clearfix">
-                      <li>
-                        <img src="dist/img/user1-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Alexander Pierce</a>
-                        <span class="users-list-date">Today</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Norman</a>
-                        <span class="users-list-date">Yesterday</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Jane</a>
-                        <span class="users-list-date">12 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user6-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">John</a>
-                        <span class="users-list-date">12 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Alexander</a>
-                        <span class="users-list-date">13 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user5-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Sarah</a>
-                        <span class="users-list-date">14 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user4-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Nora</a>
-                        <span class="users-list-date">15 Jan</span>
-                      </li>
-                      <li>
-                        <img src="dist/img/user3-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Nadia</a>
-                        <span class="users-list-date">15 Jan</span>
-                      </li>
-                    </ul>
-                    <!-- /.users-list -->
-                  </div>
-                  <!-- /.card-body -->
-                  <div class="card-footer text-center">
-                    <a href="javascript:">View All Users</a>
-                  </div>
-                  <!-- /.card-footer -->
                 </div>
-                <!--/.card -->
+                <!-- /.card-body -->
               </div>
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
             <!-- PIE CHART -->
             <div class="card">
               <div class="card-header">
@@ -295,46 +197,150 @@
             </div>
             <!-- /.info-box -->
             <!-- PRODUCT LIST -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Berita Terbaru</h3>
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Berita Terbaru</h3>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
                 </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                  <ul class="products-list product-list-in-card pl-2 pr-2">
+                  <?php foreach($beritaTerbaru as $bt): ?>
+                      <li class="item">
+                        <div class="product-img">
+                          <img src="<?= base_url('uploads/'.$bt['sampul']); ?>" alt="Product Image" class="img-size-50">
+                        </div>
+                        <div class="product-info">
+                          <a href="<?= route_to('berita.detail',$bt['id']); ?>" class="product-title"><?= implode(' ', array_slice(explode(' ', $bt['judul']), 0, 5)).'...'; ?>
+                          <span class="product-description">
+                          <?= implode(' ', array_slice(explode(' ', $bt['deskripsi']), 0, 5)).'...'; ?>
+                          </span>
+                        </div>
+                      </li>
+                      <!-- /.item -->
+                  <?php endforeach; ?>
+                  </ul>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer text-center">
+                  <a href="<?= route_to('berita.index'); ?>" class="uppercase">Berita terbaru lainnya</a>
+                </div>
+                <!-- /.card-footer -->
               </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <ul class="products-list product-list-in-card pl-2 pr-2">
-                <?php foreach($beritaTerbaru as $bt): ?>
-                    <li class="item">
-                      <div class="product-img">
-                        <img src="<?= base_url('uploads/'.$bt['sampul']); ?>" alt="Product Image" class="img-size-50">
-                      </div>
-                      <div class="product-info">
-                        <a href="<?= route_to('berita.detail',$bt['id']); ?>" class="product-title"><?= implode(' ', array_slice(explode(' ', $bt['judul']), 0, 5)).'...'; ?>
-                        <span class="product-description">
-                        <?= implode(' ', array_slice(explode(' ', $bt['deskripsi']), 0, 5)).'...'; ?>
-                        </span>
-                      </div>
-                    </li>
-                    <!-- /.item -->
-                <?php endforeach; ?>
-                </ul>
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer text-center">
-                <a href="<?= route_to('berita.index'); ?>" class="uppercase">Berita terbaru lainnya</a>
-              </div>
-              <!-- /.card-footer -->
-            </div>
             <!-- /.card -->
-          </div>
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Latest Members</h3>
+
+                  <div class="card-tools">
+                    <span class="badge badge-danger">8 New Members</span>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                  <ul class="users-list clearfix">
+                    <li>
+                      <img src="dist/img/user1-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Alexander Pierce</a>
+                      <span class="users-list-date">Today</span>
+                    </li>
+                    <li>
+                      <img src="dist/img/user8-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Norman</a>
+                      <span class="users-list-date">Yesterday</span>
+                    </li>
+                    <li>
+                      <img src="dist/img/user7-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Jane</a>
+                      <span class="users-list-date">12 Jan</span>
+                    </li>
+                    <li>
+                      <img src="dist/img/user6-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">John</a>
+                      <span class="users-list-date">12 Jan</span>
+                    </li>
+                    <li>
+                      <img src="dist/img/user2-160x160.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Alexander</a>
+                      <span class="users-list-date">13 Jan</span>
+                    </li>
+                    <li>
+                      <img src="dist/img/user5-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Sarah</a>
+                      <span class="users-list-date">14 Jan</span>
+                    </li>
+                    <li>
+                      <img src="dist/img/user4-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Nora</a>
+                      <span class="users-list-date">15 Jan</span>
+                    </li>
+                    <li>
+                      <img src="dist/img/user3-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Nadia</a>
+                      <span class="users-list-date">15 Jan</span>
+                    </li>
+                  </ul>
+                  <!-- /.users-list -->
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer text-center">
+                  <a href="javascript:">View All Users</a>
+                </div>
+                <!-- /.card-footer -->
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Buku Terbaru</h3>
+
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                  <ul class="products-list product-list-in-card pl-2 pr-2">
+                  <?php foreach($bukuTerbaru as $bt): ?>
+                      <li class="item">
+                        <div class="product-img">
+                          <img src="<?= base_url('uploads/'.$bt['sampul']); ?>" alt="Product Image" class="img-size-50">
+                        </div>
+                        <div class="product-info">
+                          <a href="<?= route_to('berita.detail',$bt['id']); ?>" class="product-title"><?= implode(' ', array_slice(explode(' ', $bt['judul']), 0, 5)).'...'; ?>
+                          <span class="product-description">
+                          <?= implode(' ', array_slice(explode(' ', $bt['deskripsi']), 0, 5)).'...'; ?>
+                          </span>
+                        </div>
+                      </li>
+                      <!-- /.item -->
+                  <?php endforeach; ?>
+                  </ul>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer text-center">
+                  <a href="<?= route_to('buku.index'); ?>" class="uppercase">Buku terbaru lainnya</a>
+                </div>
+                <!-- /.card-footer -->
+              </div>
+            </div>
           <!-- /.col -->
         </div>
 
@@ -362,6 +368,7 @@
 
 const pieChartCanvasKategori = $('#pieChartKategori').get(0).getContext('2d')
 const lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+const lineChartTwoCanvas = $('#lineChart2').get(0).getContext('2d')
 const urlData = "<?= route_to('data.chart'); ?>"
 const setBg = () => {
   const randomColor = Math.floor(Math.random()*16777215).toString(16);
@@ -422,6 +429,26 @@ $.ajax({
     var lineChart = new Chart(lineChartCanvas, {
       type: 'line',
       data: lineChartData,
+      options: lineChartOptions
+    })
+    let datasetLineChartTwo = data.dataChartLineTwo.dataset.map(function (data){
+      let color = setBg()
+      return {
+          label               : data.label,
+          borderColor         : color,
+          backgroundColor     : `${color}00`,
+          pointRadius         : false,
+          data                : data.data
+        };
+    });
+    var lineChartDataTwo = {
+      labels  : data.dataChartLineTwo.labels,
+      datasets: datasetLineChartTwo
+    }
+
+    var lineChart = new Chart(lineChartTwoCanvas, {
+      type: 'line',
+      data: lineChartDataTwo,
       options: lineChartOptions
     })
 

@@ -95,10 +95,27 @@ class DashboardController extends BaseController
             $dataChartLine['dataset'][2]['data'][] = $totalMonth;
         }
 
+		$dataChartLineTwo = [];
+		$dataChartLineTwo['labels']=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+		// dd($dateNow->getYear());
+		// get Data year file produk hukum
+		$dataChartLineTwo['dataset'][0]['label'][]= 'File produk hukum';
+        for ($i=0; $i < count($dataChartLineTwo['labels']); $i++) {
+            $totalMonth = $this->filehukumModel->where('YEAR(published_at)', $dateNow->getYear())->where('month(published_at)', $i+1)->countAllResults();
+            $dataChartLineTwo['dataset'][0]['data'][] = $totalMonth;
+        }
+		// get Data Buku
+		$dataChartLineTwo['dataset'][1]['label'][]= 'Buku';
+        for ($i=0; $i < count($dataChartLineTwo['labels']); $i++) {
+            $totalMonth = $this->bukuModel->where('YEAR(published_at)', $dateNow->getYear())->where('month(published_at)', $i+1)->countAllResults();
+            $dataChartLineTwo['dataset'][1]['data'][] = $totalMonth;
+        }
+
 		$data = [
 			'status'=>'Berhasil',
 			'datakategori'=>$dataChartKategori,
-			'dataChartLine'=>$dataChartLine
+			'dataChartLine'=>$dataChartLine,
+			'dataChartLineTwo'=>$dataChartLineTwo,
 		];
 
 		return $this->response->setJSON($data);
