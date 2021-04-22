@@ -146,7 +146,7 @@ $routes->group('admin', function($routes)
 		$routes->post('kontak/update', 'Admin\KontakController::update', ['as' => 'kontak.update']);
 		$routes->get('kontak', 'Admin\KontakController::detail', ['as' => 'kontak.detail']);
 		$routes->get('kontak/edit', 'Admin\KontakController::edit', ['as' => 'kontak.edit']);
-		// Kategori Route
+		// produk hukum Route
 		$routes->get('produk-hukum', 'Admin\ProdukhukumController::index', ['as' => 'produkhukum.index']);
 		$routes->post('produk-hukum', 'Admin\ProdukhukumController::store', ['as' => 'produkhukum.store']);
 		$routes->delete('produk-hukum', 'Admin\ProdukhukumController::delete', ['as' => 'produkhukum.delete']);
@@ -173,6 +173,19 @@ $routes->group('admin', function($routes)
 		$routes->get('user/create', 'Admin\UserController::create', ['as' => 'user.create']);
 		$routes->get('user/(:segment)', 'Admin\UserController::detail/$1', ['as' => 'user.detail']);
 		$routes->get('user/edit/(:segment)', 'Admin\UserController::edit/$1', ['as' => 'user.edit']);
+		// layanan Route
+		$routes->post('layanan', 'Admin\LayananController::store', ['as' => 'layanan.store']);
+		$routes->post('layanan/update', 'Admin\LayananController::update', ['as' => 'layanan.update']);
+		$routes->get('layanan', 'Admin\LayananController::detail', ['as' => 'layanan.detail']);
+		$routes->get('layanan/edit', 'Admin\LayananController::edit', ['as' => 'layanan.edit']);
+		// item-layanan Route
+		$routes->get('item-layanan', 'Admin\ItemlayananController::index', ['as' => 'itemlayanan.index']);
+		$routes->post('item-layanan', 'Admin\ItemlayananController::store', ['as' => 'itemlayanan.store']);
+		$routes->delete('item-layanan', 'Admin\ItemlayananController::delete', ['as' => 'itemlayanan.delete']);
+		$routes->post('item-layanan/update', 'Admin\ItemlayananController::update', ['as' => 'itemlayanan.update']);
+		$routes->get('item-layanan/create', 'Admin\ItemlayananController::create', ['as' => 'itemlayanan.create']);
+		$routes->get('item-layanan/(:segment)', 'Admin\ItemlayananController::detail/$1', ['as' => 'itemlayanan.detail']);
+		$routes->get('item-layanan/edit/(:segment)', 'Admin\ItemlayananController::edit/$1', ['as' => 'itemlayanan.edit']);
 	});
 });
 

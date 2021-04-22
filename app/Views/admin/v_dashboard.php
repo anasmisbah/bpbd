@@ -160,8 +160,8 @@
               <span class="info-box-icon"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Administrator</span>
-                <span class="info-box-number">5,200</span>
+                <span class="info-box-text">Pengguna</span>
+                <span class="info-box-number"><?= $totalUser; ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>

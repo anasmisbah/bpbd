@@ -9,5 +9,5 @@ class KontakModel extends Model
 	protected $table                = 'kontak';
 	// Dates
 	protected $useTimestamps        = true;
-	protected $allowedFields = ['email','alamt','no_telepon','facebook','youtube','twitter','instagram'];
+	protected $allowedFields = ['email','alamat','no_telepon','facebook','youtube','twitter','instagram'];
 }

@@ -98,6 +98,29 @@
           </li>
           <li class="nav-item"  id="list-profil">
             <a href="#" class="nav-link" id="nav-profil">
+              <i class="nav-icon fas fa-pager"></i>
+              <p>
+                Halaman Utama
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= route_to('profil.detail',1); ?>" class="nav-link" id="subnav-profil-1">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tentang Kami</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= route_to('layanan.detail',2); ?>" class="nav-link" id="subnav-profil-2">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pelayanan</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item"  id="list-profil">
+            <a href="#" class="nav-link" id="nav-profil">
               <i class="nav-icon fas fa-building"></i>
               <p>
                 Profil
