@@ -199,6 +199,14 @@ $routes->group('admin', function($routes)
 		$routes->get('kelebihan-kami/create', 'Admin\KelebihankamiController::create', ['as' => 'kelebihankami.create']);
 		$routes->get('kelebihan-kami/(:segment)', 'Admin\KelebihankamiController::detail/$1', ['as' => 'kelebihankami.detail']);
 		$routes->get('kelebihan-kami/edit/(:segment)', 'Admin\KelebihankamiController::edit/$1', ['as' => 'kelebihankami.edit']);
+		// nilai kami Route
+		$routes->get('nilai-kami', 'Admin\NilaikamiController::index', ['as' => 'nilaikami.index']);
+		$routes->post('nilai-kami', 'Admin\NilaikamiController::store', ['as' => 'nilaikami.store']);
+		$routes->delete('nilai-kami', 'Admin\NilaikamiController::delete', ['as' => 'nilaikami.delete']);
+		$routes->put('nilai-kami', 'Admin\NilaikamiController::update', ['as' => 'nilaikami.update']);
+		$routes->get('nilai-kami/create', 'Admin\NilaikamiController::create', ['as' => 'nilaikami.create']);
+		$routes->get('nilai-kami/(:segment)', 'Admin\NilaikamiController::detail/$1', ['as' => 'nilaikami.detail']);
+		$routes->get('nilai-kami/edit/(:segment)', 'Admin\NilaikamiController::edit/$1', ['as' => 'nilaikami.edit']);
 	});
 });
 

@@ -23,6 +23,9 @@
         <div class="card-tools">
           <ul class="nav nav-pills ml-auto">
             <li class="nav-item">
+                <a class="nav-link btn-info active mr-1" href="<?= route_to('nilaikami.index'); ?>"><i class="fas fa-list"></i></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link btn-primary active mr-1" href="<?= route_to('kelebihankami.index'); ?>"><i class="fas fa-list"></i></a>
             </li>
             <li class="nav-item">
