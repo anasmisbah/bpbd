@@ -186,6 +186,19 @@ $routes->group('admin', function($routes)
 		$routes->get('item-layanan/create', 'Admin\ItemlayananController::create', ['as' => 'itemlayanan.create']);
 		$routes->get('item-layanan/(:segment)', 'Admin\ItemlayananController::detail/$1', ['as' => 'itemlayanan.detail']);
 		$routes->get('item-layanan/edit/(:segment)', 'Admin\ItemlayananController::edit/$1', ['as' => 'itemlayanan.edit']);
+		// layanan Route
+		$routes->post('tentang-kami', 'Admin\TentangkamiController::store', ['as' => 'tentangkami.store']);
+		$routes->post('tentang-kami/update', 'Admin\TentangkamiController::update', ['as' => 'tentangkami.update']);
+		$routes->get('tentang-kami', 'Admin\TentangkamiController::detail', ['as' => 'tentangkami.detail']);
+		$routes->get('tentang-kami/edit', 'Admin\TentangkamiController::edit', ['as' => 'tentangkami.edit']);
+		// kelebihan kami Route
+		$routes->get('kelebihan-kami', 'Admin\KelebihankamiController::index', ['as' => 'kelebihankami.index']);
+		$routes->post('kelebihan-kami', 'Admin\KelebihankamiController::store', ['as' => 'kelebihankami.store']);
+		$routes->delete('kelebihan-kami', 'Admin\KelebihankamiController::delete', ['as' => 'kelebihankami.delete']);
+		$routes->put('kelebihan-kami', 'Admin\KelebihankamiController::update', ['as' => 'kelebihankami.update']);
+		$routes->get('kelebihan-kami/create', 'Admin\KelebihankamiController::create', ['as' => 'kelebihankami.create']);
+		$routes->get('kelebihan-kami/(:segment)', 'Admin\KelebihankamiController::detail/$1', ['as' => 'kelebihankami.detail']);
+		$routes->get('kelebihan-kami/edit/(:segment)', 'Admin\KelebihankamiController::edit/$1', ['as' => 'kelebihankami.edit']);
 	});
 });
 

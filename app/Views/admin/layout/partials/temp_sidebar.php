@@ -106,13 +106,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= route_to('profil.detail',1); ?>" class="nav-link" id="subnav-profil-1">
+                <a href="<?= route_to('tentangkami.detail',1); ?>" class="nav-link" id="subnav-tentang-kami">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tentang Kami</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= route_to('layanan.detail',2); ?>" class="nav-link" id="subnav-profil-2">
+                <a href="<?= route_to('layanan.detail',2); ?>" class="nav-link" id="subnav-layanan">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pelayanan</p>
                 </a>
