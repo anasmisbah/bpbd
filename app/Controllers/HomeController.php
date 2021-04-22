@@ -8,6 +8,11 @@ use App\Models\VideoModel;
 use App\Models\BannerModel;
 use App\Models\GalleryModel;
 use App\Models\PhotogalleryModel;
+use App\Models\LayananModel;
+use App\Models\ItemlayananModel;
+use App\Models\TentangkamiModel;
+use App\Models\KelebihankamiModel;
+use App\Models\NilaikamiModel;
 
 class HomeController extends BaseController
 {
@@ -16,13 +21,24 @@ class HomeController extends BaseController
 	protected $bannerModel;
 	protected $galleryModel;
 	protected $photogalleryModel;
+	protected $layananModel;
+	protected $itemlayananModel;
+	protected $tentangkamiModel;
+	protected $kelebihankamiModel;
+	protected $nilaikamiModel;
+
 	public function __construct()
 	{
 		$this->beritaModel = new BeritaModel(); 
 		$this->videoModel = new VideoModel(); 
 		$this->bannerModel = new BannerModel(); 
 		$this->galleryModel = new GalleryModel(); 
-		$this->photogalleryModel = new PhotogalleryModel(); 
+		$this->photogalleryModel = new PhotogalleryModel();
+		$this->layananModel = new LayananModel();  
+		$this->itemlayananModel = new ItemlayananModel(); 
+		$this->tentangkamiModel = new TentangkamiModel(); 
+		$this->kelebihankamiModel = new KelebihankamiModel(); 
+		$this->nilaikamiModel = new NilaikamiModel(); 
 	}
 	public function index()
 	{
@@ -31,11 +47,27 @@ class HomeController extends BaseController
 		$galleryData = $this->galleryModel->getLatestGallery();
 		$galleryTerbaru = $this->photogalleryModel->listPhotoGallery($galleryData);
 		$banner = $this->bannerModel->findAll();
+
+		$layanan = $this->layananModel->first();
+		$itemlayanan = array_chunk($this->itemlayananModel->findAll(),$this->itemlayananModel->countAll()/2);
+
+		$tentangkami = $this->tentangkamiModel->first();
+		$kelebihankami = array_chunk($this->kelebihankamiModel->findAll(),2);
+		$titlenilaikami = $this->nilaikamiModel->first();
+		$itemnilaikami = $this->nilaikamiModel->where('id >=',2)->findAll();
+
+
 		$data = [
 			'beritaTerbaru' =>$beritaTerbaru,
 			'videoTerbaru' =>$videoTerbaru,
 			'galleryTerbaru' =>$galleryTerbaru,
 			'banner' =>$banner,
+			'layanan' =>$layanan,
+			'itemlayanan' =>$itemlayanan,
+			'tentangkami' =>$tentangkami,
+			'kelebihankami' =>$kelebihankami,
+			'titlenilaikami' =>$titlenilaikami,
+			'itemnilaikami' =>$itemnilaikami,
 		];
 		// dd($data);
 		return view('pages/v_home',$data);
