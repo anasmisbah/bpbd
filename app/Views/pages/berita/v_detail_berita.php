@@ -35,7 +35,7 @@
             <div class="tags-area d-flex align-items-center justify-content-between">
               <div class="post-tags">
                   <?php foreach($berita['kategori'] as $ktgr): ?>
-                     <a href="#"><?= $ktgr['nama']; ?></a>
+                     <a href="<?= route_to('pages.detail.kategori',$ktgr['slug']); ?>"><?= $ktgr['nama']; ?></a>
                   <?php endforeach; ?>
               </div>
               <div class="share-items">
@@ -79,7 +79,7 @@
 
             <ul class="list-unstyled">
                <?php foreach($kategori as $kt): ?>
-                  <li><a href="#"><?= $kt['nama']; ?></a></li>
+                  <li><a href="<?= route_to('pages.detail.kategori',$kt['slug']); ?>"><?= $kt['nama']; ?></a></li>
                <?php endforeach; ?>
             </ul>
           </div><!-- Tags end -->

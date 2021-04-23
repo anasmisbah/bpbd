@@ -14,7 +14,7 @@ class KategoriberitaModel extends Model
 	
 	public function getKategoriBerita($id)
 	{
-		return $this->select('kategori_berita.kategori_id,kategori.nama')->join('kategori', 'kategori.id = kategori_berita.kategori_id')->where('berita_id',$id)->findAll();
+		return $this->select('kategori_berita.kategori_id,kategori.nama,kategori.slug')->join('kategori', 'kategori.id = kategori_berita.kategori_id')->where('berita_id',$id)->findAll();
 	}
 
 	public function syncKategoriBerita($dataKategori,$berita_id)
