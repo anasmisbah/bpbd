@@ -49,4 +49,19 @@ class BeritaController extends BaseController
 		]);
 		return view('pages/berita/v_detail_berita',$data);
 	}
+
+	public function search()
+	{
+		$beritaTerbaru = $this->beritaModel->getLatestBerita();
+		$kategori = $this->kategoriModel->findAll();
+		$berita = $this->beritaModel->searchBerita($this->request->getVar('keyword'));
+		$data = [
+			'berita' =>$berita,
+			'kategori' =>$kategori,
+			'beritaTerbaru' =>$beritaTerbaru,
+		];
+		return view('pages/berita/v_search_berita',$data);
+	}
+
+	
 }

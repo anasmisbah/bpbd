@@ -24,5 +24,15 @@
 	 <script src="<?= base_url('admin_assets/plugins/moment/moment-with-locales.min.js'); ?>"></script>
 	 <script>
 	 moment.locale('id')
+
+	 $( "#search-field" ).keypress(function( event ) {
+		if ( event.which == 13 ) {
+			event.preventDefault();
+			let form = $('#form-search')
+			let inputItemId = $('#keyword')
+			inputItemId.val($(this).val())
+			form.submit()
+		}
+	});
 	 </script>
 	 <?= $this->renderSection('js'); ?>

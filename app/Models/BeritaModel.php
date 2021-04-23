@@ -28,4 +28,9 @@ class BeritaModel extends Model
 		return $this->select('berita.id,berita.judul,berita.published_at,berita.sampul,berita.deskripsi,berita.slug,berita.penulis,berita.dilihat,users.nama')
 		->join('users', 'users.id = berita.user_id')->where('slug',$slug)->first();
 	}
+	public function searchBerita($keyword)
+	{
+		return $this->select('berita.id,berita.slug,berita.judul,berita.published_at,berita.sampul,berita.deskripsi,berita.dilihat,users.nama')
+		->join('users', 'users.id = berita.user_id')->where('status',0)->like('berita.judul',$keyword)->orderBy('berita.published_at','DESC')->findAll();
+	}
 }

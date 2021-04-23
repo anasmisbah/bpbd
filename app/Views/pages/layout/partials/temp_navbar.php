@@ -137,3 +137,7 @@ $tempProdukhukum = $this->produkhukumModel->findAll();
     <!--/ Container end -->
 
   </div>
+  <form class="d-inline" id="form-search" style="display: none" action="<?= route_to('pages.search.berita'); ?>" method="POST">
+        <?= csrf_field(); ?>
+        <input type="hidden" name="keyword" id="keyword">
+  </form>
