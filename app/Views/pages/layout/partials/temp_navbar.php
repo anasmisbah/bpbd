@@ -11,7 +11,7 @@ $tempProdukhukum = $this->produkhukumModel->findAll();
       <div class="logo-area">
           <div class="row align-items-center">
             <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
-                <a class="d-block" href="index.html">
+                <a class="d-block" href="<?= route_to('pages.beranda'); ?>">
                   <img loading="lazy" src="<?= base_url('pages_assets/images/logo_app_bg.png'); ?>" width="200" alt="Constra">
                 </a>
             </div><!-- logo end -->

@@ -22,4 +22,9 @@ class KategoriberitaModel extends Model
 		$this->where('berita_id',$berita_id)->delete();
 		$this->insertBatch($dataKategori);
 	}
+
+	public function getListBeritaByKategori($id)
+	{
+		return $this->select('berita.id,berita.slug,berita.judul,berita.published_at,berita.sampul,berita.deskripsi,berita.dilihat,users.nama')->join('berita', 'kategori_berita.berita_id = berita.id')->where('kategori_id',$id)->join('users', 'users.id = berita.user_id')->where('status',0)->orderBy('berita.published_at','DESC')->paginate(5,'berita');;
+	}
 }

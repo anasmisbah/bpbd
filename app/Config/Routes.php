@@ -36,6 +36,8 @@ $routes->get('/', 'HomeController::index', ['as' => 'pages.beranda']);
 // route berita
 $routes->get('/berita','BeritaController::index', ['as' => 'pages.list.berita']);
 $routes->get('/berita/(:segment)','BeritaController::detail/$1', ['as' => 'pages.detail.berita']);
+// route kategori
+$routes->get('/kategori/(:segment)','KategoriController::detail/$1', ['as' => 'pages.detail.kategori']);
 // route video
 $routes->get('/video','VideoController::index', ['as' => 'pages.list.video']);
 $routes->get('/video/(:segment)','VideoController::detail/$1', ['as' => 'pages.detail.video']);
