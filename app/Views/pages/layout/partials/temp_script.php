@@ -35,7 +35,17 @@
 		}
 	});
     $(document).ready(function(){
-      $(".preloader").fadeOut('slow');
+		$(".preloader").fadeOut('slow');
+
+		var pathArray = window.location.pathname.split('/');
+		console.log(pathArray);
+		if (pathArray[1] !== "") {
+			let navId = `#nav-${pathArray[1]}`
+			$(navId).addClass('active')
+		}else{
+			let navId = `#nav-beranda`
+			$(navId).addClass('active')
+		}
     })
 	 </script>
 	 <?= $this->renderSection('js'); ?>

@@ -64,8 +64,8 @@ $tempProdukhukum = $this->produkhukumModel->findAll();
                 
                 <div id="navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav mr-auto">
-                      <li class="nav-item active"><a class="nav-link" href="<?= route_to('pages.beranda'); ?>">Beranda</a></li>
-                      <li class="nav-item dropdown">
+                      <li class="nav-item" id="nav-beranda"><a class="nav-link" href="<?= route_to('pages.beranda'); ?>">Beranda</a></li>
+                      <li class="nav-item dropdown" id="nav-profil">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profil <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
                             <li><a href="<?= route_to('pages.detail.profil','sejarah-bpbd-provinsi-kaltim'); ?>">Sejarah BPBD Kaltim</a></li>
@@ -83,7 +83,7 @@ $tempProdukhukum = $this->produkhukumModel->findAll();
                             <li><a target='_BLANK' href='http://tv.bnpb.go.id/'>BNPB TV </a></li>
                           </ul>
                       </li>
-                      <li class="nav-item"><a class="nav-link" href="<?= route_to('pages.list.berita'); ?>">Berita</a></li>
+                      <li class="nav-item" id="nav-berita"><a class="nav-link" href="<?= route_to('pages.list.berita'); ?>">Berita</a></li>
                       <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Informasi Publik <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
@@ -106,7 +106,7 @@ $tempProdukhukum = $this->produkhukumModel->findAll();
                             </li>
                           </ul>
                       </li>
-                      <li class="nav-item dropdown">
+                      <li class="nav-item dropdown" id="nav-pengetahuan-bencana">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pengetahuan Bencana <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
                             <li><a href="<?= route_to('pages.detail.bencana','definisi-bencana'); ?>">Definisi Bencana</a></li>
@@ -114,7 +114,7 @@ $tempProdukhukum = $this->produkhukumModel->findAll();
                             <li><a href="<?= route_to('pages.detail.bencana','sistem-penanggulangan-bencana'); ?>">Sistem Penanggulangan Bencana</a></li>
                           </ul>
                       </li>
-                      <li class="nav-item"><a class="nav-link" href="<?= route_to('pages.detail.kontak'); ?>">Kontak</a></li>
+                      <li class="nav-item" id="nav-kontak"><a class="nav-link" href="<?= route_to('pages.detail.kontak'); ?>">Kontak</a></li>
                     </ul>
                 </div>
               </nav>
