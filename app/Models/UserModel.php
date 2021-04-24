@@ -10,4 +10,9 @@ class UserModel extends Model
 	// Dates
 	protected $useTimestamps        = true;
 	protected $allowedFields = ['nama','email','password','avatar','last_login'];
+
+	public function latestUserLogin()
+	{
+		return $this->select()->orderBy('last_login','DESC')->findAll(8);
+	}
 }

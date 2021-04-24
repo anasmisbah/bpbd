@@ -47,6 +47,8 @@ class DashboardController extends BaseController
 		$beritaTerbaru = $this->beritaModel->getLatestBerita();
 		$bukuTerbaru = $this->bukuModel->getLatestBuku();
 
+		$users = $this->userModel->latestUserLogin();
+
 		$data = [
 			'totalBerita'=>$totalBerita,
 			'totalVideo'=>$totalVideo,
@@ -58,6 +60,7 @@ class DashboardController extends BaseController
 			'beritaTerbaru'=>$beritaTerbaru,
 			'bukuTerbaru'=>$bukuTerbaru,
 			'totalGallery'=>$totalGallery,
+			'users'=>$users,
 		];
 		return view('admin/v_dashboard',$data);
 	}

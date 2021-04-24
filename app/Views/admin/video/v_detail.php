@@ -32,7 +32,7 @@
               </li>
             <?php endif; ?>
             <li class="nav-item">
-                <a class="nav-link btn-primary active mr-1" href="<?= route_to('video.edit',$video['id']); ?>"><i class="fas fa-eye"></i></a>
+                <a target="_blank" class="nav-link btn-primary active mr-1" href="<?= route_to('pages.detail.video',$video['slug']); ?>"><i class="fas fa-eye"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link btn-warning active mr-1" href="<?= route_to('video.edit',$video['id']); ?>"><i class="fas fa-edit"></i></a>

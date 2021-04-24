@@ -32,7 +32,7 @@
               </li>
             <?php endif; ?>
             <li class="nav-item">
-                <a class="nav-link btn-primary active mr-1" href="<?= route_to('gallery.edit',$gallery['id']); ?>"><i class="fas fa-eye"></i></a>
+                <a target="_blank" class="nav-link btn-primary active mr-1" href="<?= route_to('pages.detail.gallery',$gallery['slug']); ?>"><i class="fas fa-eye"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link btn-warning active mr-1" href="<?= route_to('gallery.edit',$gallery['id']); ?>"><i class="fas fa-edit"></i></a>

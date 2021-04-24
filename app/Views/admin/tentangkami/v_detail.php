@@ -23,10 +23,10 @@
         <div class="card-tools">
           <ul class="nav nav-pills ml-auto">
             <li class="nav-item">
-                <a class="nav-link btn-info active mr-1" href="<?= route_to('nilaikami.index'); ?>"><i class="fas fa-list"></i></a>
+                <a class="nav-link btn-info active mr-1"  href="<?= route_to('nilaikami.index'); ?>" data-toggle="tooltip" data-placement="top" title="Nilai Kami"><i class="fas fa-list"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn-primary active mr-1" href="<?= route_to('kelebihankami.index'); ?>"><i class="fas fa-list"></i></a>
+                <a class="nav-link btn-primary active mr-1" href="<?= route_to('kelebihankami.index'); ?>" data-toggle="tooltip" data-placement="top" title="Kelebihan Kami"><i class="fas fa-list"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link btn-warning active mr-1" href="<?= route_to('tentangkami.edit'); ?>"><i class="fas fa-edit"></i></a>
@@ -65,12 +65,15 @@
 <?= $this->endSection(); ?>
 <?= $this->section('js'); ?>
 <script src="<?= base_url('admin_assets/plugins/sweetalert2/sweetalert2.min.js'); ?>"></script>
+<script src="<?= base_url('admin_assets/plugins/popper/popper.min.js'); ?>"></script>
 <script>
 $(function () {
   let createdAtDate = '<?= $tentangkami['created_at']; ?>'
   let updatedAtDate = '<?= $tentangkami['updated_at']; ?>'
   $('#keterangan-tanggal').html(`<strong>Dibuat pada: </strong> ${moment(createdAtDate).format('dddd, D MMMM YYYY H:mm')} WITA
 / <strong>Diubah pada: </strong>${moment(updatedAtDate).format('dddd, D MMMM YYYY H:mm')} WITA`)
+
+  $('[data-toggle="tooltip"]').tooltip()
 
   const status = '<?= session()->getFlashdata('pesan'); ?>'
 

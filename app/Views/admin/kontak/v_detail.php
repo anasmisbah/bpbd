@@ -23,7 +23,7 @@
         <div class="card-tools">
           <ul class="nav nav-pills ml-auto">
             <li class="nav-item">
-                <a class="nav-link btn-primary active mr-1" href="<?= route_to('kontak.detail'); ?>"><i class="fas fa-eye"></i></a>
+                <a target="_blank" class="nav-link btn-primary active mr-1" href="<?= route_to('pages.detail.kontak'); ?>"><i class="fas fa-eye"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link btn-warning active mr-1" href="<?= route_to('kontak.edit'); ?>"><i class="fas fa-edit"></i></a>

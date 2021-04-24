@@ -23,9 +23,6 @@
         <div class="card-tools">
           <ul class="nav nav-pills ml-auto">
             <li class="nav-item">
-                <a class="nav-link btn-primary active mr-1" href="<?= route_to('banner.edit',$banner['id']); ?>"><i class="fas fa-eye"></i></a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link btn-warning active mr-1" href="<?= route_to('banner.edit',$banner['id']); ?>"><i class="fas fa-edit"></i></a>
             </li>
             <li class="nav-item">

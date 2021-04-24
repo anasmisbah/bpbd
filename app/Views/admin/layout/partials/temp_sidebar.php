@@ -96,8 +96,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item"  id="list-profil">
-            <a href="#" class="nav-link" id="nav-profil">
+          <li class="nav-item"  id="list-tentang-kami">
+            <a href="#" class="nav-link" id="nav-tentang-kami">
               <i class="nav-icon fas fa-pager"></i>
               <p>
                 Halaman Utama

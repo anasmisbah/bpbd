@@ -238,10 +238,9 @@
             <!-- /.card -->
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Latest Members</h3>
+                  <h3 class="card-title">Pengguna Terakhir</h3>
 
                   <div class="card-tools">
-                    <span class="badge badge-danger">8 New Members</span>
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                       <i class="fas fa-minus"></i>
                     </button>
@@ -253,52 +252,20 @@
                 <!-- /.card-header -->
                 <div class="card-body p-0">
                   <ul class="users-list clearfix">
-                    <li>
-                      <img src="dist/img/user1-128x128.jpg" alt="User Image">
-                      <a class="users-list-name" href="#">Alexander Pierce</a>
-                      <span class="users-list-date">Today</span>
-                    </li>
-                    <li>
-                      <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                      <a class="users-list-name" href="#">Norman</a>
-                      <span class="users-list-date">Yesterday</span>
-                    </li>
-                    <li>
-                      <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                      <a class="users-list-name" href="#">Jane</a>
-                      <span class="users-list-date">12 Jan</span>
-                    </li>
-                    <li>
-                      <img src="dist/img/user6-128x128.jpg" alt="User Image">
-                      <a class="users-list-name" href="#">John</a>
-                      <span class="users-list-date">12 Jan</span>
-                    </li>
-                    <li>
-                      <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                      <a class="users-list-name" href="#">Alexander</a>
-                      <span class="users-list-date">13 Jan</span>
-                    </li>
-                    <li>
-                      <img src="dist/img/user5-128x128.jpg" alt="User Image">
-                      <a class="users-list-name" href="#">Sarah</a>
-                      <span class="users-list-date">14 Jan</span>
-                    </li>
-                    <li>
-                      <img src="dist/img/user4-128x128.jpg" alt="User Image">
-                      <a class="users-list-name" href="#">Nora</a>
-                      <span class="users-list-date">15 Jan</span>
-                    </li>
-                    <li>
-                      <img src="dist/img/user3-128x128.jpg" alt="User Image">
-                      <a class="users-list-name" href="#">Nadia</a>
-                      <span class="users-list-date">15 Jan</span>
-                    </li>
+                    <?php foreach($users as $user): ?>
+                      <li>
+                        <img src="<?= base_url('uploads/'.$user['avatar']); ?>" alt="User Image">
+                        <a class="users-list-name" href="#"><?= $user['nama']; ?></a>
+                        <span class="users-list-date last-date" data-date="<?= $user['last_login']; ?>"></span>
+                      </li>
+                    <?php endforeach; ?>
+
                   </ul>
                   <!-- /.users-list -->
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer text-center">
-                  <a href="javascript:">View All Users</a>
+                  <a href="<?= route_to('user.index'); ?>">Lihat semua pengguna</a>
                 </div>
                 <!-- /.card-footer -->
               </div>
@@ -365,7 +332,7 @@
 <script src="<?= base_url('admin_assets/plugins/summernote/summernote-bs4.min.js'); ?>"></script>
 
 <script>
-
+moment.locale('id')
 const pieChartCanvasKategori = $('#pieChartKategori').get(0).getContext('2d')
 const lineChartCanvas = $('#lineChart').get(0).getContext('2d')
 const lineChartTwoCanvas = $('#lineChart2').get(0).getContext('2d')
@@ -454,7 +421,14 @@ $.ajax({
 
   }
 })
-    
+
+let lastLoginDate = $('.last-date')
+
+lastLoginDate.each(function(index){
+  if ($(this).data('date')) {
+    $(this).append(moment($(this).data('date')).startOf('hour').fromNow())
+  }
+})  
     
     // var barChartData = $.extend(true, {}, areaChartData)
     // var temp0 = areaChartData.datasets[0]
