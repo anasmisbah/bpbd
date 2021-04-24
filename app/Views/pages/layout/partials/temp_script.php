@@ -34,5 +34,8 @@
 			form.submit()
 		}
 	});
+    $(document).ready(function(){
+      $(".preloader").fadeOut('slow');
+    })
 	 </script>
 	 <?= $this->renderSection('js'); ?>

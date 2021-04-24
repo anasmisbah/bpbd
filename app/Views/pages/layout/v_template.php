@@ -7,6 +7,16 @@ $tempKontak = $this->kontakModel->first();
 <html lang="en">
 <?= $this->include('pages/layout/partials/temp_head'); ?>
 <body>
+<div class="preloader">
+      <div class="loading">
+        <div class="row justify-content-center">
+          <img src="<?= base_url('pages_assets/images/logo_app_bg.png'); ?>" >
+        </div>
+        <div class="row justify-content-center mt-5">
+          <img src="<?= base_url('pages_assets/images/loader.gif'); ?>" width="100">
+        </div>
+      </div>
+    </div>
   <div class="body-inner">
 
     <div id="top-bar" class="top-bar">
