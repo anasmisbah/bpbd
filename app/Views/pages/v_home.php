@@ -1,5 +1,12 @@
 <?= $this->extend('pages/layout/v_template'); ?>
 
+<?= $this->section('title-meta'); ?>
+  <title>BPBD - KALTIM</title>
+  <meta name="description" content="BPBD Provinsi Kalimantan Timur Merupakan Lembaga Teknis Yang Mempunyai Tugas Untuk Melakukan Koordinasi Dan Penyelenggaraan Serta Pelayanan Administrasi Di Bidang Penanggulangan Bencana.">
+  <meta name="keywords" content="BPBD Provinsi Kalimantan Timur, BPBD Provinsi Kaltim, BPBD Kaltim, bencana, banjir, kebakaran hutan dan lahan, tanah longsor, gempa bumi, gunung meletus">
+  <link rel="canonical" href="<?= current_url(); ?>" />
+<?= $this->endSection(); ?>
+
 
 <?= $this->section('css'); ?>
 <style>

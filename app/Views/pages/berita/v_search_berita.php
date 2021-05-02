@@ -1,8 +1,17 @@
 <?= $this->extend('pages/layout/v_template'); ?>
+<?= $this->section('title-meta'); ?>
+  <title>Pencarian | BPBD - KALTIM</title>
+  <meta name="description" content="BPBD Provinsi Kalimantan Timur, BPBD Provinsi Kaltim, BPBD Kaltim, bencana, banjir, kebakaran hutan dan lahan, tanah longsor, gempa bumi, gunung meletus">
+  <meta name="keywords" content="BPBD Provinsi Kalimantan Timur, BPBD Provinsi Kaltim, BPBD Kaltim, bencana, banjir, kebakaran hutan dan lahan, tanah longsor, gempa bumi, gunung meletus">
+  <link rel="canonical" href="<?= current_url(); ?>" />
+<?= $this->endSection(); ?>
 <?= $this->section('css'); ?>
 <style>
 .card-overlay {
   background: rgba(0, 0, 0, 0.5);
+}
+.banner-area {
+  background-position: 50% 40%;
 }
 </style>
 <?= $this->endSection(); ?>

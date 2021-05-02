@@ -1,4 +1,12 @@
 <?= $this->extend('pages/layout/v_template'); ?>
+
+<?= $this->section('title-meta'); ?>
+  <title><?= $bencana['judul']; ?> | BPBD - KALTIM</title>
+  <meta name="description" content="<?= strip_tags(implode(' ', array_slice(explode(' ', strip_tags($bencana['deskripsi'])), 0, 20)).'</p>'); ?>">
+  <meta name="keywords" content="BPBD Provinsi Kalimantan Timur, BPBD Provinsi Kaltim, BPBD Kaltim, bencana, banjir, kebakaran hutan dan lahan, tanah longsor, gempa bumi, gunung meletus">
+  <link rel="canonical" href="<?= current_url(); ?>" />
+<?= $this->endSection(); ?>
+
 <?= $this->section('css'); ?>
     <style>
     .post-body {

@@ -3,12 +3,18 @@
   <!-- Basic Page Needs
 ================================================== -->
   <meta charset="utf-8">
-  <title>BPBD - KALTIM</title>
 
+  <?= $this->renderSection('title-meta'); ?>
+  <meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="bpbd.kaltimprov.go.id">
+  <meta name="robots" content="all,index,follow">
+  <meta http-equiv="Content-Language" content="id-ID">
+  <meta NAME="Distribution" CONTENT="Global">
+  <meta NAME="Rating" CONTENT="General">
   <!-- Mobile Specific Metas
 ================================================== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="BPBD Provinsi Kalimantan Timur Merupakan Lembaga Teknis Yang Mempunyai Tugas Untuk Melakukan Koordinasi Dan Penyelenggaraan Serta Pelayanan Administrasi Di Bidang Penanggulangan Bencana.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
   <!-- CSS

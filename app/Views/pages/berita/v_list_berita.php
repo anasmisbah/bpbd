@@ -1,4 +1,10 @@
 <?= $this->extend('pages/layout/v_template'); ?>
+<?= $this->section('title-meta'); ?>
+  <title>Berita | BPBD - KALTIM</title>
+  <meta name="description" content="Berita BPBD Provinsi Kalimantan Timur, BPBD Provinsi Kaltim, BPBD Kaltim, bencana, banjir, kebakaran hutan dan lahan, tanah longsor, gempa bumi, gunung meletus">
+  <meta name="keywords" content="BPBD Provinsi Kalimantan Timur, BPBD Provinsi Kaltim, BPBD Kaltim, bencana, banjir, kebakaran hutan dan lahan, tanah longsor, gempa bumi, gunung meletus">
+  <link rel="canonical" href="<?= current_url(); ?>" />
+<?= $this->endSection(); ?>
 <?= $this->section('css'); ?>
 <style>
 .card-overlay {
