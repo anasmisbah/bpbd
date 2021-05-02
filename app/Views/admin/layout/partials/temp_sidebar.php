@@ -68,7 +68,7 @@
             <a href="<?= route_to('gallery.index'); ?>" class="nav-link" id="nav-gallery">
               <i class="nav-icon fas fa-images"></i>
               <p>
-                Gallery
+                Galeri
               </p>
             </a>
           </li>

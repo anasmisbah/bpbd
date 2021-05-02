@@ -31,6 +31,22 @@
               <a class="btn btn-primary" target="_blank" href="<?= route_to('pages.download.buku',$buku['slug']); ?>"><i class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
             </p>
           </li>
+          <li>
+            <div class="tags-area d-flex align-items-center justify-content-between mt-5">
+            <div class="post-tags">
+                  &nbsp;
+              </div>
+              <div class="share-items">
+                <ul class="post-social-icons list-unstyled">
+                  <li class="social-icons-head">Bagikan:</li>
+                  <li><a target="_blank" href="https://www.facebook.com/sharer.php?u=<?= base_url(route_to('pages.detail.buku',$buku['slug'])); ?>&t=<?= $buku['judul']; ?>"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a target="_blank" href="https://twitter.com/intent/tweet?text=<?= $buku['judul']; ?>&url=<?= base_url(route_to('pages.detail.buku',$buku['slug'])); ?>"><i class="fab fa-twitter"></i></a></li>
+                  <li><a target="_blank" href="https://api.whatsapp.com/send?text=<?= base_url(route_to('pages.detail.buku',$buku['slug'])); ?>"><i class="fab fa-whatsapp"></i></a></li>
+                  <li><a target="_blank" href="https://www.linkedin.com/shareArticle/?mini=true&title=<?= $buku['judul']; ?>&url=<?= base_url(route_to('pages.detail.buku',$buku['slug'])); ?>"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
         </ul>
 
       </div><!-- Content col end -->

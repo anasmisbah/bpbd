@@ -4,6 +4,9 @@
 .card-overlay {
   background: rgba(0, 0, 0, 0.5);
 }
+.banner-area {
+  background-position: 50% 40%;
+}
 </style>
 <?= $this->endSection(); ?>
 <?= $this->section('content'); ?>

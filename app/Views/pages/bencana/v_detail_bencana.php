@@ -31,11 +31,11 @@
               </div>
               <div class="share-items">
                 <ul class="post-social-icons list-unstyled">
-                  <li class="social-icons-head">Share:</li>
-                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                  <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                  <li class="social-icons-head">Bagikan:</li>
+                  <li><a target="_blank" href="https://www.facebook.com/sharer.php?u=<?= base_url(route_to('pages.detail.bencana',$bencana['slug'])); ?>&t=<?= $bencana['judul']; ?>"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a target="_blank" href="https://twitter.com/intent/tweet?text=<?= $bencana['judul']; ?>&url=<?= base_url(route_to('pages.detail.bencana',$bencana['slug'])); ?>"><i class="fab fa-twitter"></i></a></li>
+                  <li><a target="_blank" href="https://api.whatsapp.com/send?text=<?= base_url(route_to('pages.detail.bencana',$bencana['slug'])); ?>"><i class="fab fa-whatsapp"></i></a></li>
+                  <li><a target="_blank" href="https://www.linkedin.com/shareArticle/?mini=true&title=<?= $bencana['judul']; ?>&url=<?= base_url(route_to('pages.detail.bencana',$bencana['slug'])); ?>"><i class="fab fa-linkedin"></i></a></li>
                 </ul>
               </div>
             </div>

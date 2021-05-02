@@ -191,7 +191,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Kerjasama</span>
-                <span class="info-box-number">163,921</span>
+                <span class="info-box-number">0</span>
               </div>
               <!-- /.info-box-content -->
             </div>

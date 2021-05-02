@@ -1,19 +1,19 @@
 <?= $this->extend('pages/layout/v_template'); ?>
 <?= $this->section('css'); ?>
-    <style>
-        .image-book{
-            width: 360px;
-            height: 250px;
-            object-fit: cover;
-        }
-        .img-fluid {
-            height: 240px;
-            object-fit: cover;
-        }
-    </style>
+<style>
+.image-book{
+    width: 360px;
+    height: 250px;
+    object-fit: cover;
+}
+.img-fluid {
+    height: 240px;
+    object-fit: cover;
+}
+</style>
 <?= $this->endSection(); ?>
 <?= $this->section('content'); ?>
-<div id="banner-area" class="banner-area" style="background-image:url(pages_assets/images/banner/banner1.jpg)">
+<div id="banner-area" class="banner-area" style="background-image:url(pages_assets/images/banner/gallery.jpg)">
   <div class="banner-text">
     <div class="container">
         <div class="row">

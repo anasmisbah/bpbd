@@ -38,7 +38,6 @@
 		$(".preloader").fadeOut('slow');
 
 		var pathArray = window.location.pathname.split('/');
-		console.log(pathArray);
 		if (pathArray[1] !== "") {
 			let navId = `#nav-${pathArray[1]}`
 			$(navId).addClass('active')

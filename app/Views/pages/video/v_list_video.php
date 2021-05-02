@@ -1,6 +1,13 @@
 <?= $this->extend('pages/layout/v_template'); ?>
+<?= $this->section('css'); ?>
+<style>
+.banner-area {
+  background-position: 50% 40%;
+}
+</style>
+<?= $this->endSection(); ?>
 <?= $this->section('content'); ?>
-<div id="banner-area" class="banner-area" style="background-image:url(pages_assets/images/banner/banner1.jpg)">
+<div id="banner-area" class="banner-area" style="background-image:url(pages_assets/images/banner/video.jpg)">
   <div class="banner-text">
     <div class="container">
         <div class="row">

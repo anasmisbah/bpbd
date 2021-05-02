@@ -1,12 +1,15 @@
 <?= $this->extend('pages/layout/v_template'); ?>
 <?= $this->section('css'); ?>
-    <style>
-        .image-book{
-            width: 360px;
-            height: 250px;
-            object-fit: cover;
-        }
-    </style>
+<style>
+.image-book{
+    width: 360px;
+    height: 250px;
+    object-fit: cover;
+}
+.banner-area {
+background-position: 50% 40%;
+}
+</style>
 <?= $this->endSection(); ?>
 <?= $this->section('content'); ?>
 <div id="banner-area" class="banner-area" style="background-image:url(pages_assets/images/banner/buku.jpg)">

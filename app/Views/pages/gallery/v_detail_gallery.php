@@ -21,6 +21,20 @@
               <a href="<?= base_url('uploads/'.$gambar['gambar']); ?>"><img loading="lazy"  src="<?= base_url('uploads/'.$gambar['gambar']); ?>" alt="project-image" /></a>
           <?php endforeach; ?>
         </div>
+          <div class="tags-area d-flex align-items-center justify-content-between">
+            <div class="post-tags">
+                &nbsp;
+            </div>
+            <div class="share-items">
+              <ul class="post-social-icons list-unstyled">
+                <li class="social-icons-head">Bagikan:</li>
+                <li><a target="_blank" href="https://www.facebook.com/sharer.php?u=<?= base_url(route_to('pages.detail.gallery',$gallery['slug'])); ?>&t=<?= $gallery['judul']; ?>"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a target="_blank" href="https://twitter.com/intent/tweet?text=<?= $gallery['judul']; ?>&url=<?= base_url(route_to('pages.detail.gallery',$gallery['slug'])); ?>"><i class="fab fa-twitter"></i></a></li>
+                <li><a target="_blank" href="https://api.whatsapp.com/send?text=<?= base_url(route_to('pages.detail.gallery',$gallery['slug'])); ?>"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/shareArticle/?mini=true&title=<?= $gallery['judul']; ?>&url=<?= base_url(route_to('pages.detail.gallery',$gallery['slug'])); ?>"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
       </div>
     </div>
     <!--/ Content row end -->
