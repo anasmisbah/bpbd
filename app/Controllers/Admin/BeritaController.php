@@ -31,13 +31,14 @@ class BeritaController extends BaseController
 	public function detail($id)
 	{
 		$berita = $this->beritaModel->find($id);
+		if (empty($berita)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException('berita '.$id.' tidak ditemukan');
+		}
 		$berita['kategori'] = $this->kategoriBeritaModel->getKategoriBerita($berita['id']);
 		$data = [
 			'berita'=>$berita
 		];
-		if (empty($data['berita'])) {
-			throw new \CodeIgniter\Exceptions\PageNotFoundException('berita '.$id.' tidak ditemukan');
-		}
+		
 		return view('admin/berita/v_detail',$data);
 	}
 
@@ -133,6 +134,9 @@ class BeritaController extends BaseController
 	public function edit($id)
 	{
 		$berita = $this->beritaModel->find($id);
+		if (empty($berita)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException('berita '.$id.' tidak ditemukan');
+		}
 		$kategori = $this->kategoriModel->findAll();
 		$berita['kategori'] = $this->kategoriBeritaModel->getKategoriBerita($id);
 		$kategoriId =[]; 

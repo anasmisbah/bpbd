@@ -21,7 +21,7 @@ $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
-$routes->set404Override();
+$routes->set404Override('App\Controllers\ErrorController::show404');
 $routes->setAutoRoute(true);
 
 /*
@@ -220,6 +220,8 @@ $routes->post('gallery/image/upload', 'Admin\UploadController::uploadImageDZ', [
 $routes->post('gallery/image/delete', 'Admin\UploadController::deleteImageDZ', ['as' => 'gallery.delete']);
 $routes->get('data/chart', 'Admin\DashboardController::dataChart', ['as' => 'data.chart']);
 
+
+$routes->get('/admin/(:any)', 'Admin\DashboardController::default/$1');
 $routes->get('/(:any)', 'HomeController::default/$1');
 
 

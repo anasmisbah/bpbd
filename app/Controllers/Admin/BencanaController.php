@@ -15,6 +15,9 @@ class BencanaController extends BaseController
 	public function detail($id)
 	{
 		$bencana = $this->bencanaModel->find($id);
+		if (empty($bencana)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException('bencana '.$id.' tidak ditemukan');
+		}
 		$data = [
 			'bencana' =>$bencana
 		];
@@ -23,6 +26,9 @@ class BencanaController extends BaseController
 	public function edit($id)
 	{
 		$bencana = $this->bencanaModel->find($id);
+		if (empty($bencana)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException('bencana '.$id.' tidak ditemukan');
+		}
 		$data = [
 			'bencana' =>$bencana,
 			'validation'=>\Config\Services::validation()

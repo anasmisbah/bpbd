@@ -72,26 +72,27 @@ class GalleryController extends BaseController
 	public function edit($id)
 	{
 		$gallery = $this->galleryModel->find($id);
+		if (empty($gallery)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException('gallery '.$id.' tidak ditemukan');
+		}
 		$gallery['photo'] = $this->photogalleryModel->getPhotogallery($id);
 		$data = [
 			'gallery'=>$gallery,
 			'validation'=>\Config\Services::validation(),
 		];
-		if (empty($data['gallery'])) {
-			throw new \CodeIgniter\Exceptions\PageNotFoundException('gallery '.$id.' tidak ditemukan');
-		}
 		return view('admin/gallery/v_edit',$data);
 	}
 	public function detail($id)
 	{
 		$gallery = $this->galleryModel->find($id);
+		if (empty($gallery)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException('gallery '.$id.' tidak ditemukan');
+		}
 		$gallery['photo'] = $this->photogalleryModel->getPhotogallery($id);
 		$data = [
 			'gallery'=>$gallery,
 		];
-		if (empty($data['gallery'])) {
-			throw new \CodeIgniter\Exceptions\PageNotFoundException('gallery '.$id.' tidak ditemukan');
-		}
+		
 		return view('admin/gallery/v_detail',$data);
 	}
 

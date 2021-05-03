@@ -123,4 +123,9 @@ class DashboardController extends BaseController
 
 		return $this->response->setJSON($data);
 	}
+
+	public function default($url)
+	{
+		return redirect()->route('admin.dashboard');
+	}
 }

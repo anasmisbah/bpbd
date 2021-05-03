@@ -15,6 +15,9 @@ class ProfilController extends BaseController
 	public function detail($id)
 	{
 		$profil = $this->profilModel->find($id);
+		if (empty($profil)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException('profil '.$id.' tidak ditemukan');
+		}
 		$data = [
 			'profil' =>$profil
 		];
@@ -23,6 +26,9 @@ class ProfilController extends BaseController
 	public function edit($id)
 	{
 		$profil = $this->profilModel->find($id);
+		if (empty($profil)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException('profil '.$id.' tidak ditemukan');
+		}
 		$data = [
 			'profil' =>$profil,
 			'validation'=>\Config\Services::validation()

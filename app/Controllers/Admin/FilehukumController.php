@@ -34,13 +34,14 @@ class FilehukumController extends BaseController
 	public function detail($id)
 	{
 		$filehukum = $this->filehukumModel->find($id);
+		if (empty($filehukum)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException('file hukum '.$id.' tidak ditemukan');
+		}
 		$filehukum['produkhukum'] = $this->produkhukumModel->find($filehukum['produk_hukum_id']);
 		$data = [
 			'filehukum'=>$filehukum
 		];
-		if (empty($data['filehukum'])) {
-			throw new \CodeIgniter\Exceptions\PageNotFoundException('file hukum '.$id.' tidak ditemukan');
-		}
+		
 		// dd($data); 
 		return view('admin/filehukum/v_detail',$data);
 	}
@@ -115,13 +116,13 @@ class FilehukumController extends BaseController
 	public function edit($id)
 	{
 		$filehukum = $this->filehukumModel->find($id);
+		if (empty($filehukum)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException('file hukum '.$id.' tidak ditemukan');
+		}
 		$data = [
 			'filehukum'=>$filehukum,
 			'validation'=>\Config\Services::validation(),
 		];
-		if (empty($data['filehukum'])) {
-			throw new \CodeIgniter\Exceptions\PageNotFoundException('file hukum '.$id.' tidak ditemukan');
-		}
 		return view('admin/filehukum/v_edit',$data);
 	}
 
