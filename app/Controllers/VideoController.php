@@ -36,6 +36,9 @@ class VideoController extends BaseController
 	{
 		$beritaTerbaru = $this->beritaModel->getLatestBerita();
 		$video = $this->videoModel->getDataVideo($slug);
+		if (empty($video)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException();
+		}
 		$data = [
 			'video' =>$video,
 			'beritaTerbaru' =>$beritaTerbaru,

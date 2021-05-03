@@ -34,6 +34,9 @@ class ProdukhukumController extends BaseController
 	{
 		$semuaProdukHukum = $this->produkhukumModel->findAll();
 		$produkhukum =  $this->produkhukumModel->where('slug',$slug)->first();
+		if (empty($produkhukum)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException();
+		}
 		$filehukum = $this->filehukumModel->where('produk_hukum_id',$produkhukum['id'])->findAll();
 		$data = [
 			'semuaprodukhukum'=>$semuaProdukHukum,
@@ -62,6 +65,9 @@ class ProdukhukumController extends BaseController
 	public function detailFileHukum($slug)
 	{
 		$filehukum = $this->filehukumModel->where('slug',$slug)->first();
+		if (empty($filehukum)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException();
+		}
 		$data = [
 			'filehukum'=>$filehukum,
 		];

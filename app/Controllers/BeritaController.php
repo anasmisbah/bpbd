@@ -36,6 +36,9 @@ class BeritaController extends BaseController
 	{
 		$beritaTerbaru = $this->beritaModel->getLatestBerita();
 		$berita = $this->beritaModel->getDataBerita($slug);
+		if (empty($berita)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException();
+		}
 		$berita['kategori'] = $this->kategoriBeritaModel->getKategoriBerita($berita['id']);
 		$kategori = $this->kategoriModel->findAll();
 		$data = [

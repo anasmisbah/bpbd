@@ -19,6 +19,9 @@ class ProfilController extends BaseController
 	{
 		$beritaTerbaru = $this->beritaModel->getLatestBerita();
 		$profil = $this->profilModel->getDataProfil($slug);
+		if (empty($profil)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException();
+		}
 		$data = [
 			'profil' =>$profil,
 			'beritaTerbaru' =>$beritaTerbaru,

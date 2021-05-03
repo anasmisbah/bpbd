@@ -21,7 +21,7 @@ img.testimonial-thumb {
 </style>
 <?= $this->endSection(); ?>
 <?= $this->section('content'); ?>
-<div id="banner-area" class="banner-area" style="background-image:url('<?= base_url('pages_assets/images/banner/banner1.jpg'); ?>')">
+<div id="banner-area" class="banner-area" style="background-image:url('<?= base_url('pages_assets/images/banner/hukum.png'); ?>')">
   <div class="banner-text">
     <div class="container">
         <div class="row">

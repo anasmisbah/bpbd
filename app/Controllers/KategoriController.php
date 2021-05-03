@@ -27,6 +27,9 @@ class KategoriController extends BaseController
 	{
 		$beritaTerbaru = $this->beritaModel->getLatestBerita();
 		$kategoriDetail = $this->kategoriModel->where('slug',$slug)->first();
+		if (empty($kategoriDetail)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException();
+		}
 		$kategori = $this->kategoriModel->findAll();
 		$berita = $this->kategoriBeritaModel->getListBeritaByKategori($kategoriDetail['id']);
 		$data = [

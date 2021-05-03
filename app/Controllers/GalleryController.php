@@ -30,6 +30,9 @@ class GalleryController extends BaseController
 	public function detail($slug)
 	{
 		$gallery = $this->galleryModel->getDataBuku($slug);
+		if (empty($gallery)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException();
+		}
 		$gallery['gambar'] = $this->photogalleryModel->getPhotoGallery($gallery['id']);
 		$data = [
 			'gallery' =>$gallery,

@@ -25,6 +25,9 @@ class BukuController extends BaseController
 	public function detail($slug)
 	{
 		$buku = $this->bukuModel->getDataBuku($slug);
+		if (empty($buku)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException();
+		}
 		$data = [
 			'buku' =>$buku,
 		];
@@ -38,6 +41,9 @@ class BukuController extends BaseController
 	public function download($slug)
 	{
 		$buku = $this->bukuModel->getDataBuku($slug);
+		if (empty($buku)) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException();
+		}
 		if (empty($buku)) {
 			throw new \CodeIgniter\Exceptions\PageNotFoundException('buku '.$id.' tidak ditemukan');
 		}
