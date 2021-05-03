@@ -76,4 +76,9 @@ class HomeController extends BaseController
 	{
 		return redirect()->route('admin.dashboard');
 	}
+
+	public function default($url)
+	{
+		return redirect()->route('pages.beranda');
+	}
 }

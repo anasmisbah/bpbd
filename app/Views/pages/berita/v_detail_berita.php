@@ -69,11 +69,11 @@
                <?php foreach($beritaTerbaru as $bt): ?>
                   <li class="d-flex align-items-center">
                      <div class="posts-thumb">
-                        <a href="#"><img loading="lazy" alt="img" src="<?= base_url('uploads/'.$bt['sampul']); ?>"></a>
+                        <a href="<?= route_to('pages.detail.berita',$bt['slug']); ?>"><img loading="lazy" alt="img" src="<?= base_url('uploads/'.$bt['sampul']); ?>"></a>
                      </div>
                      <div class="post-info">
                         <h4 class="entry-title">
-                        <a href="#"><?= $bt['judul']; ?></a>
+                        <a href="<?= route_to('pages.detail.berita',$bt['slug']); ?>"><?= $bt['judul']; ?></a>
                         </h4>
                      </div>
                   </li><!-- 1st post end-->

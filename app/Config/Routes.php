@@ -220,6 +220,8 @@ $routes->post('gallery/image/upload', 'Admin\UploadController::uploadImageDZ', [
 $routes->post('gallery/image/delete', 'Admin\UploadController::deleteImageDZ', ['as' => 'gallery.delete']);
 $routes->get('data/chart', 'Admin\DashboardController::dataChart', ['as' => 'data.chart']);
 
+$routes->get('/(:any)', 'HomeController::default/$1');
+
 
 
 /*
