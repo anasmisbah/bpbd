@@ -12,6 +12,7 @@ use App\Models\FilehukumModel;
 use App\Models\KategoriberitaModel;
 use App\Models\GalleryModel;
 use CodeIgniter\I18n\Time;
+use App\Models\VisitorModel;
 class DashboardController extends BaseController
 {
 	protected $beritaModel;
@@ -22,6 +23,8 @@ class DashboardController extends BaseController
 	protected $filehukumModel;
 	protected $kategoriberitaModel;
 	protected $galleryModel;
+
+	protected $visitorModel;
 	public function __construct()
 	{
 		$this->beritaModel = new BeritaModel(); 
@@ -32,6 +35,7 @@ class DashboardController extends BaseController
 		$this->filehukumModel = new FilehukumModel(); 
 		$this->kategoriberitaModel = new KategoriberitaModel(); 
 		$this->galleryModel = new GalleryModel(); 
+		$this->visitorModel = new VisitorModel(); 
 	}
 	public function dashboard()
 	{
@@ -114,11 +118,19 @@ class DashboardController extends BaseController
             $dataChartLineTwo['dataset'][1]['data'][] = $totalMonth;
         }
 
+		$dataChartVisitor = [];
+		$dataChartVisitor['labels']=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+        for ($i=0; $i < count($dataChartVisitor['labels']); $i++) {
+            $totalMonth = $this->visitorModel->where('YEAR(created_at)', $dateNow->getYear())->where('month(created_at)', $i+1)->countAllResults();
+            $dataChartVisitor['data'][] = $totalMonth;
+        }
+
 		$data = [
 			'status'=>'Berhasil',
 			'datakategori'=>$dataChartKategori,
 			'dataChartLine'=>$dataChartLine,
 			'dataChartLineTwo'=>$dataChartLineTwo,
+			'dataChartVisitor'=>$dataChartVisitor,
 		];
 
 		return $this->response->setJSON($data);

@@ -90,6 +90,29 @@
         <div class="row">
           <!-- Left col -->
           <div class="col-md-8">
+              <!-- solid sales graph -->
+              <div class="card bg-gradient-info">
+                <div class="card-header border-0">
+                  <h3 class="card-title">
+                    <i class="fas fa-th mr-1"></i>
+                    Grafik Pengunjung Website
+                  </h3>
+
+                  <div class="card-tools">
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <canvas class="chart" id="visitor-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
               <div class="card">
                 <div class="card-header">
                   <h3 class="card-title">Chart Data</h3>
@@ -264,40 +287,7 @@
                 <!-- /.card-footer -->
               </div>
             <!-- /.card -->
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Pengguna Terakhir</h3>
-
-                  <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                      <i class="fas fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove">
-                      <i class="fas fa-times"></i>
-                    </button>
-                  </div>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body p-0">
-                  <ul class="users-list clearfix">
-                    <?php foreach($users as $user): ?>
-                      <li>
-                        <img src="<?= base_url('uploads/'.$user['avatar']); ?>" alt="User Image">
-                        <a class="users-list-name" href="#"><?= $user['nama']; ?></a>
-                        <span class="users-list-date last-date" data-date="<?= $user['last_login']; ?>"></span>
-                      </li>
-                    <?php endforeach; ?>
-
-                  </ul>
-                  <!-- /.users-list -->
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer text-center">
-                  <a href="<?= route_to('user.index'); ?>">Lihat semua pengguna</a>
-                </div>
-                <!-- /.card-footer -->
-              </div>
-              <div class="card">
+            <div class="card">
                 <div class="card-header">
                   <h3 class="card-title">Buku Terbaru</h3>
 
@@ -335,6 +325,40 @@
                 </div>
                 <!-- /.card-footer -->
               </div>
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Pengguna Terakhir</h3>
+
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                  <ul class="users-list clearfix">
+                    <?php foreach($users as $user): ?>
+                      <li>
+                        <img src="<?= base_url('uploads/'.$user['avatar']); ?>" alt="User Image">
+                        <a class="users-list-name" href="#"><?= $user['nama']; ?></a>
+                        <span class="users-list-date last-date" data-date="<?= $user['last_login']; ?>"></span>
+                      </li>
+                    <?php endforeach; ?>
+
+                  </ul>
+                  <!-- /.users-list -->
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer text-center">
+                  <a href="<?= route_to('user.index'); ?>">Lihat semua pengguna</a>
+                </div>
+                <!-- /.card-footer -->
+              </div>
+              
             </div>
           <!-- /.col -->
         </div>
@@ -364,6 +388,7 @@ moment.locale('id')
 const pieChartCanvasKategori = $('#pieChartKategori').get(0).getContext('2d')
 const lineChartCanvas = $('#lineChart').get(0).getContext('2d')
 const lineChartTwoCanvas = $('#lineChart2').get(0).getContext('2d')
+const visitorGraphChartCanvas = $('#visitor-chart').get(0).getContext('2d')
 const urlData = "<?= route_to('data.chart'); ?>"
 const setBg = () => {
   const randomColor = Math.floor(Math.random()*16777215).toString(16);
@@ -445,6 +470,65 @@ $.ajax({
       type: 'line',
       data: lineChartDataTwo,
       options: lineChartOptions
+    })
+
+    // Sales graph chart
+    
+
+    var visitorGraphChartData = {
+      labels: data.dataChartVisitor.labels,
+      datasets: [
+        {
+          label: 'Pengunjung',
+          fill: false,
+          borderWidth: 2,
+          lineTension: 0,
+          spanGaps: true,
+          borderColor: '#efefef',
+          pointRadius: 3,
+          pointHoverRadius: 7,
+          pointColor: '#efefef',
+          pointBackgroundColor: '#efefef',
+          data: data.dataChartVisitor.data
+        }
+      ]
+    }
+
+    var visitorGraphChartOptions = {
+      maintainAspectRatio: false,
+      responsive: true,
+      legend: {
+        display: false
+      },
+      scales: {
+        xAxes: [{
+          ticks: {
+            fontColor: '#efefef'
+          },
+          gridLines: {
+            display: false,
+            color: '#efefef',
+            drawBorder: false
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            stepSize: 5000,
+            fontColor: '#efefef'
+          },
+          gridLines: {
+            display: true,
+            color: '#efefef',
+            drawBorder: false
+          }
+        }]
+      }
+    }
+
+    var salesGraphChart = new Chart(visitorGraphChartCanvas, { // lgtm[js/unused-local-variable]
+      type: 'line',
+      data: visitorGraphChartData,
+      options: visitorGraphChartOptions
     })
 
   }

@@ -30,6 +30,8 @@
   <link rel="stylesheet" href="<?= base_url('pages_assets/plugins/slick/slick-theme.css'); ?>">
   <!-- Colorbox -->
   <link rel="stylesheet" href="<?= base_url('pages_assets/plugins/colorbox/colorbox.css'); ?>">
+  <!-- Colorbox -->
+  <link rel="stylesheet" href="<?= base_url('pages_assets/plugins/flip/flip.min.css'); ?>">
   <!-- Template styles-->
   <link rel="stylesheet" href="<?= base_url('pages_assets/css/style.css'); ?>">
   <style>
@@ -54,6 +56,23 @@
       top: 50%;
       transform: translate(-50%,-50%);
       font: 14px arial;
+    }
+    .tick {
+      font-size: 1.6em;
+    }
+    /* rounder corners */
+    #my-flip {
+      /* increase border radius */
+      border-radius:.3125em;
+
+      /* increase spacing between letters */
+      letter-spacing: .5em;
+      text-indent: .5em;
+    }
+    /* black on white colors */
+    #my-flip .tick-flip-panel {
+      color: #555;
+      background-color: #fafafa;
     }
   </style> 
 

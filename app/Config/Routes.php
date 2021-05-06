@@ -219,6 +219,7 @@ $routes->post('image/delete', 'Admin\UploadController::deleteImage', ['as' => 'i
 $routes->post('gallery/image/upload', 'Admin\UploadController::uploadImageDZ', ['as' => 'gallery.upload']);
 $routes->post('gallery/image/delete', 'Admin\UploadController::deleteImageDZ', ['as' => 'gallery.delete']);
 $routes->get('data/chart', 'Admin\DashboardController::dataChart', ['as' => 'data.chart']);
+$routes->get('data/visitor/(:segment)', 'HomeController::getVisitor/$1', ['as' => 'data.visitor']);
 
 
 $routes->get('/admin/(:any)', 'Admin\DashboardController::default/$1');

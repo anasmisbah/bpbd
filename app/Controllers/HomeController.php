@@ -14,6 +14,8 @@ use App\Models\TentangkamiModel;
 use App\Models\KelebihankamiModel;
 use App\Models\NilaikamiModel;
 
+use App\Models\VisitorModel;
+
 class HomeController extends BaseController
 {
 	protected $beritaModel;
@@ -27,6 +29,8 @@ class HomeController extends BaseController
 	protected $kelebihankamiModel;
 	protected $nilaikamiModel;
 
+	protected $visitorModel;
+
 	public function __construct()
 	{
 		$this->beritaModel = new BeritaModel(); 
@@ -38,7 +42,9 @@ class HomeController extends BaseController
 		$this->itemlayananModel = new ItemlayananModel(); 
 		$this->tentangkamiModel = new TentangkamiModel(); 
 		$this->kelebihankamiModel = new KelebihankamiModel(); 
-		$this->nilaikamiModel = new NilaikamiModel(); 
+		$this->nilaikamiModel = new NilaikamiModel();
+
+		$this->visitorModel = new VisitorModel(); 
 	}
 	public function index()
 	{
@@ -56,6 +62,7 @@ class HomeController extends BaseController
 		$titlenilaikami = $this->nilaikamiModel->first();
 		$itemnilaikami = $this->nilaikamiModel->where('id >=',2)->findAll();
 
+		// $dataStatistik = $this->visitorModel->getStatistikVisitor('180.248.123.45');
 
 		$data = [
 			'beritaTerbaru' =>$beritaTerbaru,
@@ -80,5 +87,11 @@ class HomeController extends BaseController
 	public function default($url)
 	{
 		return redirect()->route('pages.beranda');
+	}
+
+	public function getVisitor($ipaddress)
+	{
+		$dataStatistik = $this->visitorModel->getStatistikVisitor($ipaddress);
+		return $this->response->setJSON($dataStatistik);
 	}
 }

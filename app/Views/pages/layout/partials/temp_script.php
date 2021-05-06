@@ -12,6 +12,8 @@
 	<script src="<?= base_url('pages_assets/plugins/colorbox/jquery.colorbox.js'); ?>"></script>
 	<!-- shuffle -->
 	<script src="<?= base_url('pages_assets/plugins/shuffle/shuffle.min.js'); ?>" defer></script>
+	<!-- shuffle -->
+	<script src="<?= base_url('pages_assets/plugins/flip/flip.min.js'); ?>" defer></script>
 
 
 	<!-- Google Map API Key-->
@@ -46,5 +48,13 @@
 			$(navId).addClass('active')
 		}
     })
+	const urlData = "<?= base_url('data/visitor'); ?>"
+	$.getJSON('http://ip-api.com/json', function(data) {
+		$.getJSON(`${urlData}/${data.query}`, function(dt) {
+			$("#today-visitor").html(dt.amountVisitorToday)
+			$("#total-visitor").html(dt.totalVisitor)
+			$("#online-visitor").html(dt.onlineVisitor)
+		});
+	});
 	 </script>
 	 <?= $this->renderSection('js'); ?>
